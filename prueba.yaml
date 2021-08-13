@@ -26,11 +26,12 @@ tags:
     url: "http://swagger.io"
 schemes:
 - "https"
-- "http"
 paths:
   /pet:
     delete:
       description: Ago
+      tags:
+        - "pet"
       responses:
         '200':
           description: OK
