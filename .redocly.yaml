@@ -1,6 +1,7 @@
 # See https://redoc.ly/docs/cli/configuration/ for more information.
 apiDefinitions:
   main: openapi/openapi.yaml
+  core: openapi/silohub-core.yaml
 lint:
   extends:
     - recommended
@@ -12,3 +13,12 @@ referenceDocs:
     colors:
       primary:
         main: "#32329f"
+generateCodeSamples:
+  languages:
+    - lang: curl
+    - lang: Node.js
+    - lang: C#
+    - lang: Python
+    - lang: Java
+    - lang: Go
+    - lang: Ruby
