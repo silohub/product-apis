@@ -1,0 +1,6 @@
+get:
+  tags:
+    - masterdata
+  responses:
+    '200':
+      description: OK
