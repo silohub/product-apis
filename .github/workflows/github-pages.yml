@@ -1,4 +1,4 @@
-name: Deploy API Pages
+name: Publish APIs
 on:
   push:
     branches:
@@ -10,6 +10,14 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2.3.1
+
+      - name: Replace version
+        uses: jacobtomlinson/gha-find-replace@v2
+        with:
+          find: "version: .*$"
+          replace: "version: ${{ github.run_number }}"
+          regex: true
+          include: openapi/*.yaml
 
       - name: Install and Build 🔧
         run: |

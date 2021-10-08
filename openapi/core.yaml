@@ -1,7 +1,7 @@
 openapi: 3.0.2
 info:
   title: SILOHUB Core API
-  version: '1'
+  version: 1
   contact:
     name: SILOHUB API Support
     email: api-support@silohub.ag
