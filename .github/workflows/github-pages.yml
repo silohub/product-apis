@@ -25,4 +25,4 @@ jobs:
           folder: build
           repository-name: silohub/public-api
           target-folder: ${GITHUB_REF##*/}
-          token: ${DEPLOY_TOKEN}
+          token: ${{ secrets.DEPLOY_TOKEN }}
