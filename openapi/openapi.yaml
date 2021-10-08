@@ -7,6 +7,9 @@ info:
     email: api-support@silohub.ag
     url: 'https://silohub.atlassian.net/servicedesk/customer/portals'
   description: Core entities in the product
+  x-logo:
+    url: https://www.silohub.ag/wp-content/uploads/2021/09/logo_silohub_blanco.svg
+    altText: Logo
 externalDocs:
   description: Confluence
   url: 'https://silohub.atlassian.net/wiki/spaces/SH/pages/82346030/SILOHUB+APIs'

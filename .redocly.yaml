@@ -1,18 +1,22 @@
 # See https://redoc.ly/docs/cli/configuration/ for more information.
 apiDefinitions:
   main: openapi/openapi.yaml
-  core: openapi/silohub-core.yaml
 lint:
   extends:
     - recommended
   rules:
     no-unused-components: warning
 referenceDocs:
-  htmlTemplate: ./docs/index.html
+  htmlTemplate: ./docs/index2.html
+  hideLogo: true
   theme:
+    menu:
+      backgroundColor: '#ffffff'
     colors:
       primary:
-        main: "#32329f"
+        main: "#f4a261"
+    typography:
+      fontFamily: fantasy
 generateCodeSamples:
   languages:
     - lang: curl

@@ -2,12 +2,14 @@
   "name": "silohub-core-api",
   "version": "1.0.0",
   "dependencies": {
-    "@redocly/openapi-cli": "^1.0.0-beta.62"
+    "@redocly/openapi-cli": "^1.0.0-beta.62",
+    "redoc-cli": "^0.12.3"
   },
   "private": true,
   "scripts": {
     "start": "openapi preview-docs",
-    "build": "openapi bundle -o dist",
+    "bundle": "openapi bundle -o build/openapi",
+    "build": "redoc-cli bundle -o build/index.html --cdn --options=docs/silohub-theme.json -t docs/silohub.hbs openapi/openapi.yaml",
     "test": "openapi lint"
   }
 }

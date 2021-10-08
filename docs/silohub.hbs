@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>SILOHUB API Reference - Develop</title>
+    <meta charset="utf8" />
+    <title>{{title}}</title>
     <!-- needed for adaptive design -->
-    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body {
-            margin: 0;
             padding: 0;
+            margin: 0;
         }
         @font-face {
             font-family: Jones;
@@ -17,11 +18,11 @@
             src: url(https://www.silohub.ag/wp-content/uploads/2021/09/Jones-Medium.woff) format('woff');
         }
     </style>
+    {{{redocHead}}}
 </head>
+
 <body>
-<redoc spec-url='openapi.json'>
-    <options></options>
-</redoc>
-<script src="https://cdn.jsdelivr.net/npm/redoc@next/bundles/redoc.standalone.js"></script>
+{{{redocHTML}}}
 </body>
+
 </html>

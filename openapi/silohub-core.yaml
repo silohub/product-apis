@@ -1,28 +1,28 @@
-openapi: "3.0.2"
+openapi: 3.0.2
 info:
   title: SILOHUB Core API
-  version: "1"
+  version: '1'
   contact:
-    name: "SILOHUB API Support"
+    name: SILOHUB API Support
     email: api-support@silohub.ag
-    url: https://silohub.atlassian.net/servicedesk/customer/portals
+    url: 'https://silohub.atlassian.net/servicedesk/customer/portals'
   description: Core entities in the product
-
 externalDocs:
   description: Confluence
-  url: https://silohub.atlassian.net/wiki/spaces/SH/pages/82346030/SILOHUB+APIs
+  url: 'https://silohub.atlassian.net/wiki/spaces/SH/pages/82346030/SILOHUB+APIs'
 servers:
-  - url: https://api.server.test/v1
+  - url: 'https://api.server.test/v1'
 paths:
   /especies:
     get:
       tags:
-        - "masterdata"
+        - masterdata
       responses:
         '200':
           description: OK
 tags:
-  - name: "core"
-    description: "Métodos de uso base"
-  - name: "masterdata"
-    description: "Datos de base"
+  - name: core
+    description: Métodos de uso base
+  - name: masterdata
+    description: Datos de base
+components: {}

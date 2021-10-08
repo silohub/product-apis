@@ -1,0 +1,15 @@
+{
+  "theme": {
+    "typography": {
+      "fontFamily": "Jones",
+      "headings": {
+        "fontFamily": "Jones"
+      }
+    },
+    "colors": {
+      "primary": {
+        "main": "orange"
+      }
+    }
+  }
+}
