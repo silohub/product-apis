@@ -24,5 +24,5 @@ jobs:
           branch: gh-pages
           folder: build
           repository-name: silohub/public-api
-          target-folder: ${{ github.ref##*/ }}
+          target-folder: ${{ github.ref }}
           token: ${{ secrets.DEPLOY_TOKEN }}
