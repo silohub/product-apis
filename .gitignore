@@ -2,3 +2,5 @@
 dist
 node_modules
 .idea
+# this is the generated file from build
+docs/openapi.json

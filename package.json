@@ -1,5 +1,6 @@
 {
   "name": "silohub-apis",
+  "homepage":"https://silohub.github.io/product-apis",
   "version": "1.0.0",
   "dependencies": {
     "@redocly/openapi-cli": "^1.0.0-beta.62"
@@ -7,7 +8,11 @@
   "private": true,
   "scripts": {
     "start": "openapi preview-docs",
-    "build": "openapi bundle -o dist",
-    "test": "openapi lint"
+    "build": "openapi bundle -o docs/openapi.json",
+    "test": "openapi lint",
+    "push": "gh-pages -d docs --remote github"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
   }
 }
