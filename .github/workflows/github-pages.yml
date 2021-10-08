@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - develop
+      - master
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -22,3 +23,6 @@ jobs:
         with:
           branch: gh-pages
           folder: build
+          repository-name: silohub/public-api
+          target-folder: ${GITHUB_REF##*/}
+          token: ${GITHUB_TOKEN}
