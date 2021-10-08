@@ -17,7 +17,7 @@ jobs:
           find: "version: .*$"
           replace: "version: ${{ github.run_number }}"
           regex: true
-          include: openapi/*.yaml
+          include: "openapi/*.yaml"
 
       - name: Install and Build 🔧
         run: |
