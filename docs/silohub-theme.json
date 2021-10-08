@@ -11,5 +11,6 @@
         "main": "orange"
       }
     }
-  }
+  },
+  "showConsole": true
 }
