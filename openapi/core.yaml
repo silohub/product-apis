@@ -1,23 +1,25 @@
 openapi: 3.0.2
 info:
   title: SILOHUB Core API
-  version: NO_TOCAR
+  version: develop
   contact:
-    name: SILOHUB API Support
-    email: api-support@silohub.ag
+    name: SILOHUB Support
+    email: support@silohub.ag
     url: 'https://silohub.atlassian.net/servicedesk/customer/portals'
-  description: Core entities in the product
+  description: Core entities of the product
   x-logo:
-    url: https://www.silohub.ag/wp-content/uploads/2021/09/logo_silohub_blanco.svg
-    altText: Logo
+    url: https://www.silohub.ag/wp-content/uploads/2021/09/signature-logo.png
+    altText: SILOHUB Logo
 externalDocs:
   description: Confluence
   url: 'https://silohub.atlassian.net/wiki/spaces/SH/pages/82346030/SILOHUB+APIs'
 servers:
   - url: 'https://api.server.test/v1'
 paths:
-  /especies:
-    $ref: paths/especies.yaml
+  /companies:
+    $ref: paths/companies/get.yaml
+  /companies/{id}:
+    $ref: paths/companies/{id}/get.yaml
 tags:
   - name: core
     description: Métodos de uso base

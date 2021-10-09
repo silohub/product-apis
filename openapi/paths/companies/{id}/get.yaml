@@ -1,0 +1,13 @@
+get:
+  operationId: getCompanyById
+  summary: Obtiene una empresa por id
+  parameters:
+    - name: id
+      in: path
+      description: Id único de la empresa
+      required: true
+  tags:
+    - masterdata
+  responses:
+    '200':
+      description: OK
