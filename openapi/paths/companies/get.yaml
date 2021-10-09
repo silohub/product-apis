@@ -1,7 +1,6 @@
 get:
+  operationId: getAllCompanies
   summary: Obtiene todas las empresas
-  tags:
-    - masterdata
   responses:
     '200':
       description: OK

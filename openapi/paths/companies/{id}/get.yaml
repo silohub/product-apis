@@ -6,8 +6,17 @@ get:
       in: path
       description: Id único de la empresa
       required: true
-  tags:
-    - masterdata
   responses:
     '200':
-      description: OK
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Company.yaml
+          example:
+            companyId: user1
+            legalName: SILOHUB AAA
+    '403':
+      description: Forbidden
+    '404':
+      description: User not found

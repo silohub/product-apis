@@ -1,0 +1,17 @@
+type: object
+properties:
+  companyId:
+    description: Unique Identifier
+    type: string
+    format: uuid
+    example: 106e6248-9e1e-4f06-b152-446684d0c1ab
+  legalName:
+    description: Company Legal Name
+    type: string
+    minLength: 5
+    example: SILOHUB Argentina SAS
+  idType:
+    description: Id Type
+    type: string
+    minLength: 5
+    example: CUIT
