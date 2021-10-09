@@ -1,6 +1,8 @@
 get:
   operationId: getAllCompanies
   summary: Obtiene todas las empresas
+  tags:
+    - companies
   security:
     - oauth: ['read:companies']
   responses:
@@ -15,6 +17,8 @@ get:
 post:
   operationId: createCompany
   summary: Create a new company
+  tags:
+    - companies
   security:
     - oauth: ['write:companies']
   requestBody:

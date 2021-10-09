@@ -17,17 +17,16 @@ externalDocs:
   description: Confluence
   url: 'https://silohub.atlassian.net/wiki/spaces/SH/pages/82346030/SILOHUB+APIs'
 servers:
-  - url: 'https://api.server.test/v1'
+  - url: 'https://api-develop.silohub.net/'
+    description: Develop Server
 paths:
   /companies:
     $ref: paths/companies.yaml
   /companies/{companyId}:
-    $ref: "paths/companies/{companyId}.yaml"
+    $ref: paths/companies/{companyId}.yaml
 tags:
-  - name: core
-    description: Métodos de uso base
-  - name: masterdata
-    description: Datos de base
+  - name: companies
+    description: Companies Data
 components:
   securitySchemes:
     oauth:
