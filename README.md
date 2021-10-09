@@ -159,7 +159,7 @@ You will use `$ref`s to reference schema from your path definitions.
 Example addition to the `openapi.yaml` file:
 ```yaml
 '/customers/{id}':
-  $ref: './paths/customers@{id}.yaml'
+  $ref: './paths/customers@{companyId}.yaml'
 ```
 
 Here is an example of a YAML file named `customers@{id}.yaml` in the `paths` folder:

@@ -1,0 +1,8 @@
+- companyId: eb4add5c-a00c-41b7-b5bd-3a9b559f3361
+  legalName: Company 1 example
+  idType: CUIT
+  idValue: "30223337771"
+- companyId: 164c1de9-be22-4f29-857e-6989999fe848
+  legalName: Company 2 example
+  idType: CUIT
+  idValue: "30998887771"

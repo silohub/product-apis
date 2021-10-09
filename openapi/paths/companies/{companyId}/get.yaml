@@ -1,10 +1,10 @@
 get:
   operationId: getCompanyById
-  summary: Obtiene una empresa por id
+  summary: Obtiene una empresa por companyId
   parameters:
-    - name: id
+    - name: companyId
       in: path
-      description: Id único de la empresa
+      description: companyId único de la empresa
       required: true
   responses:
     '200':
@@ -13,9 +13,12 @@ get:
         application/json:
           schema:
             $ref: ../../../components/schemas/Company.yaml
-          example:
-            companyId: user1
-            legalName: SILOHUB AAA
+          examples:
+            company1:
+              $ref: ../../../components/examples/Company1.yaml
+            company2:
+              $ref: ../../../components/examples/Company2.yaml
+
     '403':
       description: Forbidden
     '404':

@@ -21,8 +21,8 @@ servers:
 paths:
   /companies:
     $ref: paths/companies/get.yaml
-  /companies/{id}:
-    $ref: paths/companies/{id}/get.yaml
+  /companies/{companyId}:
+    $ref: paths/companies/{companyId}/get.yaml
 tags:
   - name: core
     description: Métodos de uso base

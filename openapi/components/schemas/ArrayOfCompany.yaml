@@ -1,0 +1,6 @@
+type: array
+description: Collection of companies
+items:
+  $ref: ../schemas/Company.yaml
+example:
+  $ref: ../examples/ArrayOfCompany1.yaml

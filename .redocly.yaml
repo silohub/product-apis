@@ -1,14 +1,14 @@
 # See https://redoc.ly/docs/cli/configuration/ for more information.
 apiDefinitions:
   core: openapi/core.yaml
-  admin: openapi/admin.yaml
+#  admin: openapi/admin.yaml
 lint:
   extends:
     - recommended
   rules:
     no-unused-components: warning
 referenceDocs:
-  htmlTemplate: ./docs/index2.html
+  htmlTemplate: ./docs/silohub.hbs
   hideLogo: true
   theme:
     menu:
@@ -17,7 +17,9 @@ referenceDocs:
       primary:
         main: "#f4a261"
     typography:
-      fontFamily: fantasy
+      fontFamily: Jones
+      headings:
+        fontFamily: Jones
 generateCodeSamples:
   languages:
     - lang: curl
