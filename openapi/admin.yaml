@@ -2,7 +2,7 @@ openapi: 3.0.2
 info:
   title: SILOHUB Tenant Administration API
   description: Esta API es la base para la administracion del entorno SILOHUB
-  version: "1.0"
+  version: NO_TOCAR
   x-logo:
     url: https://www.silohub.ag/wp-content/uploads/2021/09/logo_silohub_blanco.svg
     altText: Logo
