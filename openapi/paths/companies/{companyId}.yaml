@@ -1,0 +1,81 @@
+get:
+  operationId: getCompanyById
+  summary: Obtiene una empresa por companyId
+  security:
+    - oauth: ['read:companies']
+  parameters:
+    - name: companyId
+      in: path
+      description: companyId único de la empresa
+      required: true
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/Company.yaml
+          examples:
+            company1:
+              $ref: ../../components/examples/Company1.yaml
+            company2:
+              $ref: ../../components/examples/Company2.yaml
+
+    '403':
+      description: Forbidden
+    '404':
+      description: Company not found
+put:
+    operationId: updateCompany
+    summary: Actualiza la informacion completa de una empresa
+    security:
+      - oauth: [ 'write:companies' ]
+    parameters:
+      - name: companyId
+        in: path
+        description: companyId único de la empresa
+        required: true
+    requestBody:
+      description: Company Information
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/CreateCompany.yaml
+          examples:
+            company1:
+              $ref: ../../components/examples/CreateCompany1.yaml
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: ../../components/schemas/Company.yaml
+            examples:
+              company1:
+                $ref: ../../components/examples/Company1.yaml
+              company2:
+                $ref: ../../components/examples/Company2.yaml
+
+      '403':
+        description: Forbidden
+      '404':
+        description: Company not found
+delete:
+  operationId: deleteCompany
+  summary: Elimina una empresa
+  security:
+    - oauth: [ 'write:companies' ]
+  parameters:
+    - name: companyId
+      in: path
+      description: companyId único de la empresa
+      required: true
+  responses:
+    '204':
+      description: Deleted
+    '403':
+      description: Forbidden
+    '404':
+      description: Company not found

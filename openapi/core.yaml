@@ -20,9 +20,9 @@ servers:
   - url: 'https://api.server.test/v1'
 paths:
   /companies:
-    $ref: paths/companies/companies.yaml
+    $ref: paths/companies.yaml
   /companies/{companyId}:
-    $ref: paths/companies/{companyId}/get.yaml
+    $ref: "paths/companies/{companyId}.yaml"
 tags:
   - name: core
     description: Métodos de uso base

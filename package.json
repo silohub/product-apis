@@ -7,6 +7,8 @@
   },
   "private": true,
   "scripts": {
+    "login": "openapi login",
+    "logout": "openapi logout",
     "start": "openapi preview-docs",
     "build": "redoc-cli bundle -o build/${npm_config_file}.html --cdn --options=docs/silohub-theme.json -t docs/silohub.hbs openapi/${npm_config_file}.yaml",
     "test": "openapi lint"

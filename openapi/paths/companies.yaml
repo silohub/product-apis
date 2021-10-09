@@ -9,7 +9,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../../components/schemas/ArrayOfCompany.yaml
+            $ref: ../components/schemas/ArrayOfCompany.yaml
     '403':
       description: Forbidden
 post:
@@ -23,19 +23,19 @@ post:
     content:
       application/json:
         schema:
-          $ref: ../../components/schemas/CreateCompany.yaml
+          $ref: ../components/schemas/CreateCompany.yaml
         examples:
           company1:
-            $ref: ../../components/examples/CreateCompany1.yaml
+            $ref: ../components/examples/CreateCompany1.yaml
   responses:
     '201':
       description: Company created
       content:
         application/json:
           schema:
-            $ref: ../../components/schemas/Company.yaml
+            $ref: ../components/schemas/Company.yaml
           examples:
             company1:
-              $ref: ../../components/examples/Company1.yaml
+              $ref: ../components/examples/Company1.yaml
     '403':
       description: Forbidden
