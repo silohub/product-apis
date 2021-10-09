@@ -1,6 +1,7 @@
 openapi: 3.0.2
 info:
   title: SILOHUB Core API
+  description: Core entities of the product
   version: develop
   license:
     name: Privada
@@ -9,7 +10,6 @@ info:
     name: SILOHUB Support
     email: support@silohub.ag
     url: 'https://silohub.atlassian.net/servicedesk/customer/portals'
-  description: Core entities of the product
   x-logo:
     url: https://www.silohub.ag/wp-content/uploads/2021/09/signature-logo.png
     altText: SILOHUB Logo
@@ -28,3 +28,7 @@ tags:
     description: Métodos de uso base
   - name: masterdata
     description: Datos de base
+components:
+  securitySchemes:
+    auth:
+      $ref: components/securitySchemes/auth.yaml

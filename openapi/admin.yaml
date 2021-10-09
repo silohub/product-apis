@@ -3,17 +3,21 @@ info:
   title: SILOHUB Tenant Administration API
   description: Esta API es la base para la administracion del entorno SILOHUB
   version: develop
+  license:
+    name: Privada
+    url: https://www.silohub.ag
+  contact:
+    name: SILOHUB Support
+    email: support@silohub.ag
+    url: 'https://silohub.atlassian.net/servicedesk/customer/portals'
   x-logo:
     url: https://www.silohub.ag/wp-content/uploads/2021/09/logo_silohub_blanco.svg
     altText: Logo
-host: api-develop.silohub.net
-basePath: /tenant-admin
-schemes:
-  - https
-consumes:
-  - application/json
-produces:
-  - application/json
+externalDocs:
+  description: Confluence
+  url: 'https://silohub.atlassian.net/wiki/spaces/SH/pages/82346030/SILOHUB+APIs'
+servers:
+  - url: 'https://api.silohub.net/develop/tenant-admin'
 tags:
   - name: Tenant
     description: Tenants son nuestros clientes.
