@@ -23,9 +23,13 @@ jobs:
           regex: false
           include: "openapi/*.yaml"
 
-      - name: Install and Build 🔧
+      - name: Install and Test 🔧
         run: |
           npm install
+          npm run test
+
+      - name: Build 🔧
+        run: |
           npm run build --file=core
           npm run build --file=admin
           cp docs/favicon.png docs/index.html build/
