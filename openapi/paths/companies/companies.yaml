@@ -1,0 +1,41 @@
+get:
+  operationId: getAllCompanies
+  summary: Obtiene todas las empresas
+  security:
+    - oauth: ['read:companies']
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/ArrayOfCompany.yaml
+    '403':
+      description: Forbidden
+post:
+  operationId: createCompany
+  summary: Create a new company
+  security:
+    - oauth: ['write:companies']
+  requestBody:
+    description: Company Information
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/CreateCompany.yaml
+        examples:
+          company1:
+            $ref: ../../components/examples/CreateCompany1.yaml
+  responses:
+    '201':
+      description: Company created
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/Company.yaml
+          examples:
+            company1:
+              $ref: ../../components/examples/Company1.yaml
+    '403':
+      description: Forbidden

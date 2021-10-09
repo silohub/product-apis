@@ -20,7 +20,7 @@ servers:
   - url: 'https://api.server.test/v1'
 paths:
   /companies:
-    $ref: paths/companies/get.yaml
+    $ref: paths/companies/companies.yaml
   /companies/{companyId}:
     $ref: paths/companies/{companyId}/get.yaml
 tags:
@@ -30,5 +30,5 @@ tags:
     description: Datos de base
 components:
   securitySchemes:
-    auth:
-      $ref: components/securitySchemes/auth.yaml
+    oauth:
+      $ref: components/securitySchemes/oauth.yaml

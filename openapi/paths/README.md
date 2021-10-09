@@ -83,7 +83,7 @@ It is pretty easy to reference:
 paths:
   '/customers/{id}':
     get:
-      $ref: ./paths/customers/{companyId}/get.yaml
+      $ref: ./paths/customers/{companyId}/companies.yaml
     put:
       $ref: ./paths/customers/{companyId}/put.yaml
 ```

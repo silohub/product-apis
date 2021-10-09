@@ -1,6 +1,8 @@
 get:
   operationId: getCompanyById
   summary: Obtiene una empresa por companyId
+  security:
+    - oauth: ['read:companies']
   parameters:
     - name: companyId
       in: path
