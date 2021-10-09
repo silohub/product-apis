@@ -2,6 +2,9 @@ openapi: 3.0.2
 info:
   title: SILOHUB Core API
   version: develop
+  license:
+    name: Privada
+    url: https://www.silohub.ag
   contact:
     name: SILOHUB Support
     email: support@silohub.ag

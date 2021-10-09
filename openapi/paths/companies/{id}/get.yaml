@@ -12,7 +12,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/Company.yaml
+            $ref: ../../../components/schemas/Company.yaml
           example:
             companyId: user1
             legalName: SILOHUB AAA
