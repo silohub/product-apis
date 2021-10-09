@@ -14,7 +14,7 @@ jobs:
       - name: Replace version
         uses: jacobtomlinson/gha-find-replace@v2
         with:
-          find: "version: .*$"
+          find: "version: [[:alpha:]]+$"
           replace: "version: ${{ github.run_number }}"
           regex: true
           include: "openapi/*.yaml"
@@ -25,6 +25,8 @@ jobs:
           npm run build --file=core
           npm run build --file=admin
           cp docs/favicon.png docs/index.html build/
+          tail -5 openapi/core.yaml
+          tail -5 openapi/admin.yaml
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.5
