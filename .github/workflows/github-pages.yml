@@ -18,8 +18,8 @@ jobs:
       - name: Replace version
         uses: jacobtomlinson/gha-find-replace@v2
         with:
-          find: "version: ${GIT_BRANCH_NAME}"
-          replace: "version: ${GIT_BRANCH_NAME}-${{ github.run_number }}"
+          find: "version: ${{ env.GIT_BRANCH_NAME }}"
+          replace: "version: ${{ env.GIT_BRANCH_NAME }}-${{ github.run_number }}"
           regex: false
           include: "openapi/*.yaml"
 
