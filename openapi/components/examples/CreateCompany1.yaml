@@ -3,3 +3,5 @@ value:
   legalName: Company 1 example
   idType: CUIT
   idValue: "30223337771"
+  uniqueReferences:
+    "ALGORITMO-ENTIDAD": "123456"

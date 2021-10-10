@@ -1,0 +1,7 @@
+type: object
+description: Key-Value pair of references, keys can be repeated between entities
+additionalProperties:
+  type: string
+example:
+  key1: value1
+  key2: value2

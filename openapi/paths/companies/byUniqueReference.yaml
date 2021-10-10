@@ -1,0 +1,45 @@
+get:
+  operationId: getCompanyByUniqueReference
+  summary: Obtiene una empresa por una referencia
+  tags:
+    - companies
+  security:
+    - oauth: ['read:companies']
+  parameters:
+    - name: type
+      in: query
+      schema:
+        type: string
+        minimum: 1
+        maximum: 1
+      description: Unique Reference Key Type
+      required: true
+      example:
+        - ALGORITMO-ENTIDAD
+    - name: value
+      in: query
+      schema:
+        type: string
+        minimum: 1
+        maximum: 1
+      description: Unique Reference Key Value
+      required: true
+      example:
+        - 123456
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/Company.yaml
+          examples:
+            company1:
+              $ref: ../../components/examples/Company1.yaml
+            company2:
+              $ref: ../../components/examples/Company2.yaml
+
+    '403':
+      description: Forbidden
+    '404':
+      description: Company not found

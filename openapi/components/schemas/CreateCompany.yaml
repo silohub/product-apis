@@ -16,6 +16,10 @@ properties:
     minLength: 11
     maxLength: 11
     example: 30998887771
+  uniqueReferences:
+    $ref: UniqueReferences.yaml
+  references:
+    $ref: References.yaml
 required:
   - legalName
   - idType
