@@ -12,6 +12,8 @@ get:
         application/json:
           schema:
             $ref: ../../components/schemas/companies/ArrayOfCompany.yaml
+    '400':
+      $ref: ../../components/responses/400.yaml
     '403':
       $ref: ../../components/responses/403.yaml
     '500':
@@ -36,6 +38,8 @@ post:
   responses:
     '201':
       $ref: ../../components/responses/companies/Company201.yaml
+    '400':
+      $ref: ../../components/responses/400.yaml
     '403':
       $ref: ../../components/responses/403.yaml
     '500':

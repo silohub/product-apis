@@ -11,6 +11,8 @@ get:
   responses:
     '200':
       $ref: ../../components/responses/companies/Company.yaml
+    '400':
+      $ref: ../../components/responses/400.yaml
     '403':
       $ref: ../../components/responses/403.yaml
     '404':

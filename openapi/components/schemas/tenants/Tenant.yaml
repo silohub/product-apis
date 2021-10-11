@@ -4,11 +4,13 @@ properties:
     $ref: ../common/Uuid.yaml
   country:
     $ref: ../common/Country.yaml
-  legalName:
-    description: Company Legal Name
+  billingCompanyId:
+    $ref: ../common/Uuid.yaml
+  displayName:
+    description: Tenant Display Name
     type: string
     minLength: 5
-    example: SILOHUB Argentina SAS
+    example: Gaviglio Digital
   notes:
     $ref: ../common/Notes.yaml
   created:
@@ -18,6 +20,7 @@ properties:
 required:
   - tenantId
   - country
-  - legalName
+  - billingCompanyId
+  - displayName
   - created
   - updated

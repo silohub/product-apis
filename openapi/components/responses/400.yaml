@@ -1,0 +1,5 @@
+description: Bad Request - Check parameters
+content:
+  application/json:
+    schema:
+      nullable: true

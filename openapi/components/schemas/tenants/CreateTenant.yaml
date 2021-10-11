@@ -2,13 +2,15 @@ type: object
 properties:
   country:
     $ref: ../common/Country.yaml
-  legalName:
-    description: Company Legal Name
+  billingCompanyId:
+    $ref: ../common/Uuid.yaml
+  displayName:
+    description: Tenant Display Name
     type: string
     minLength: 5
-    example: SILOHUB Argentina SAS
   notes:
     $ref: ../common/Notes.yaml
 required:
+  - billingCompanyId
   - country
-  - legalName
+  - displayName

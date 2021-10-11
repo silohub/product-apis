@@ -1,0 +1,11 @@
+summary: "Tenant 2"
+value:
+  tenantId: 2762fa75-346f-4a1c-82dc-0b67acdb765d
+  billingCompanyId: 164c1de9-be22-4f29-857e-6989999fe848
+  country: ARG
+  displayName: Tenant 2 Example
+  notes: |
+    This is **another** sample note.
+    You should be able to store long values here.
+  created: "2020-09-10T12:32:28Z"
+  updated: "2020-10-10T12:32:28Z"

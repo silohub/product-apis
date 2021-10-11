@@ -12,6 +12,8 @@ get:
         application/json:
           schema:
             $ref: ../../components/schemas/tenants/ArrayOfTenant.yaml
+    '400':
+      $ref: ../../components/responses/400.yaml
     '403':
       $ref: ../../components/responses/403.yaml
     '500':
@@ -32,10 +34,12 @@ post:
           $ref: ../../components/schemas/tenants/CreateTenant.yaml
         examples:
           company1:
-            $ref: ../../components/examples/companies/CreateCompany1.yaml
+            $ref: ../../components/examples/tenants/CreateTenant1.yaml
   responses:
     '201':
       $ref: ../../components/responses/tenants/Tenant201.yaml
+    '400':
+      $ref: ../../components/responses/400.yaml
     '403':
       $ref: ../../components/responses/403.yaml
     '500':
