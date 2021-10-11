@@ -2,7 +2,6 @@ type: array
 description: Key-Value pair of references, keys are unique between the entities. Like a unique key in a database.
 items:
   $ref: Reference.yaml
-minimum: 1
 example:
   key1: value1
   key2: value2

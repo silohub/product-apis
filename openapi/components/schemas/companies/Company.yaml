@@ -12,6 +12,8 @@ properties:
     type: string
     minLength: 5
     example: SILOHUB Argentina SAS
+  mainReference:
+    $ref: ../common/Reference.yaml
   uniqueReferences:
     $ref: ../common/UniqueReferences.yaml
   references:
@@ -26,6 +28,6 @@ required:
   - companyId
   - country
   - legalName
-  - uniqueReferences
+  - mainReference
   - created
   - updated

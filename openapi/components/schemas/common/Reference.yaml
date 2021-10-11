@@ -10,3 +10,6 @@ properties:
     description: Value of the Reference
     type: string
     example: "30223334445"
+required:
+  - refType
+  - refValue

@@ -7,6 +7,8 @@ properties:
     example: SILOHUB Argentina SAS
   country:
     $ref: ../common/Country.yaml
+  mainReference:
+    $ref: ../common/Reference.yaml
   uniqueReferences:
     $ref: ../common/UniqueReferences.yaml
   references:
@@ -16,4 +18,4 @@ properties:
 required:
   - country
   - legalName
-  - uniqueReferences
+  - mainReference

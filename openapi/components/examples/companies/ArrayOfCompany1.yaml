@@ -1,9 +1,10 @@
 - companyId: eb4add5c-a00c-41b7-b5bd-3a9b559f3361
   country: ARG
   legalName: Company 1 example
+  mainReference:
+    refType: "CUIT"
+    refValue: "30223337771"
   uniqueReferences:
-    - refType: "CUIT"
-      refValue: "30223337771"
     - refType: "ALGORITMO-ENTIDAD"
       refValue: "123456"
   created: "2021-09-10T12:32:28Z"
@@ -11,7 +12,7 @@
 - companyId: 164c1de9-be22-4f29-857e-6989999fe848
   country: ARG
   legalName: Company 2 example
-  uniqueReferences:
+  mainReference:
     - refType: "CUIT"
       refValue: "30998887771"
   created: "2021-10-01T12:32:28Z"
