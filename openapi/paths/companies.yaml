@@ -30,7 +30,7 @@ post:
           $ref: ../components/schemas/CreateCompany.yaml
         examples:
           company1:
-            $ref: ../components/examples/CreateCompany1.yaml
+            $ref: ../components/examples/companies/CreateCompany1.yaml
   responses:
     '201':
       description: Company created
@@ -40,6 +40,6 @@ post:
             $ref: ../components/schemas/Company.yaml
           examples:
             company1:
-              $ref: ../components/examples/Company1.yaml
+              $ref: ../components/examples/companies/Company1.yaml
     '403':
       description: Forbidden

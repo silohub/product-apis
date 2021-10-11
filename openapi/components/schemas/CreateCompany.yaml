@@ -19,9 +19,11 @@ properties:
     maxLength: 11
     example: 30998887771
   uniqueReferences:
-    $ref: UniqueReferences.yaml
+    $ref: common/UniqueReferences.yaml
   references:
-    $ref: References.yaml
+    $ref: common/References.yaml
+  notes:
+    $ref: common/Notes.yaml
 required:
   - country
   - legalName

@@ -35,9 +35,9 @@ get:
             $ref: ../../components/schemas/Company.yaml
           examples:
             company1:
-              $ref: ../../components/examples/Company1.yaml
+              $ref: ../../components/examples/companies/Company1.yaml
             company2:
-              $ref: ../../components/examples/Company2.yaml
+              $ref: ../../components/examples/companies/Company2.yaml
 
     '403':
       description: Forbidden

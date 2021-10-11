@@ -23,7 +23,7 @@ jobs:
           regex: false
           include: "openapi/*.yaml"
 
-      - name: Install and Test 🔧
+      - name: Verify OpenAPI 🔧
         run: |
           npm install
           npm run test
