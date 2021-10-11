@@ -1,0 +1,5 @@
+description: Forbidden - Unable to access the resource
+content:
+  application/json:
+    schema:
+      nullable: true

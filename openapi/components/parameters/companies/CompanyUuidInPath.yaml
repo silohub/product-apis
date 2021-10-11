@@ -1,6 +1,6 @@
 name: companyId
 in: path
-description: Entity Unique Uuid
+description: Company Unique Uuid
 required: true
 schema:
   $ref: ../../../components/schemas/common/Uuid.yaml

@@ -1,0 +1,6 @@
+type: array
+description: Collection of tenants
+items:
+  $ref: Tenant.yaml
+example:
+  $ref: ../../examples/companies/ArrayOfCompany1.yaml

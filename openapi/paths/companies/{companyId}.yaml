@@ -11,35 +11,39 @@ get:
     '200':
       $ref: ../../components/responses/companies/Company.yaml
     '403':
-      description: Forbidden
+      $ref: ../../components/responses/403.yaml
     '404':
       description: Company not found
+    '500':
+      $ref: ../../components/responses/500.yaml
 put:
-    operationId: updateCompany
-    summary: Actualiza la informacion completa de una empresa
-    tags:
-      - companies
-    security:
-      - oauth: [ 'write:companies' ]
-    parameters:
-      - $ref: ../../components/parameters/companies/CompanyUuidInPath.yaml
-    requestBody:
-      description: Company Information
-      required: true
-      content:
-        application/json:
-          schema:
-            $ref: ../../components/schemas/companies/CreateCompany.yaml
-          examples:
-            company1:
-              $ref: ../../components/examples/companies/CreateCompany1.yaml
-    responses:
-      '200':
-        $ref: ../../components/responses/companies/Company.yaml
-      '403':
-        description: Forbidden
-      '404':
-        description: Company not found
+  operationId: updateCompany
+  summary: Actualiza la informacion completa de una empresa
+  tags:
+    - companies
+  security:
+    - oauth: [ 'write:companies' ]
+  parameters:
+    - $ref: ../../components/parameters/companies/CompanyUuidInPath.yaml
+  requestBody:
+    description: Company Information
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/companies/CreateCompany.yaml
+        examples:
+          company1:
+            $ref: ../../components/examples/companies/CreateCompany1.yaml
+  responses:
+    '200':
+      $ref: ../../components/responses/companies/Company.yaml
+    '403':
+      $ref: ../../components/responses/403.yaml
+    '404':
+      description: Company not found
+    '500':
+      $ref: ../../components/responses/500.yaml
 delete:
   operationId: deleteCompany
   summary: Elimina una empresa
@@ -53,6 +57,8 @@ delete:
     '204':
       description: Deleted
     '403':
-      description: Forbidden
+      $ref: ../../components/responses/403.yaml
     '404':
       description: Company not found
+    '500':
+      $ref: ../../components/responses/500.yaml

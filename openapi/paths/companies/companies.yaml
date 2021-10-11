@@ -11,9 +11,11 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/companies/ArrayOfCompany.yaml
+            $ref: ../../components/schemas/companies/ArrayOfCompany.yaml
     '403':
-      description: Forbidden
+      $ref: ../../components/responses/403.yaml
+    '500':
+      $ref: ../../components/responses/500.yaml
 post:
   operationId: createCompany
   summary: Create a new company
@@ -27,12 +29,14 @@ post:
     content:
       application/json:
         schema:
-          $ref: ../components/schemas/companies/CreateCompany.yaml
+          $ref: ../../components/schemas/companies/CreateCompany.yaml
         examples:
           company1:
-            $ref: ../components/examples/companies/CreateCompany1.yaml
+            $ref: ../../components/examples/companies/CreateCompany1.yaml
   responses:
     '201':
-      $ref: ../components/responses/companies/Company201.yaml
+      $ref: ../../components/responses/companies/Company201.yaml
     '403':
-      description: Forbidden
+      $ref: ../../components/responses/403.yaml
+    '500':
+      $ref: ../../components/responses/500.yaml

@@ -1,0 +1,10 @@
+description: Created
+content:
+  application/json:
+    schema:
+      $ref: ../../schemas/tenants/Tenant.yaml
+    examples:
+      tenant1:
+        $ref: ../../examples/tenants/Tenant1.yaml
+      tenant2:
+        $ref: ../../examples/companies/Company2.yaml

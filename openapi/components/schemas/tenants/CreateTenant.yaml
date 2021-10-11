@@ -1,7 +1,5 @@
 type: object
 properties:
-  tenantId:
-    $ref: ../common/Uuid.yaml
   country:
     $ref: ../common/Country.yaml
   legalName:
@@ -11,13 +9,6 @@ properties:
     example: SILOHUB Argentina SAS
   notes:
     $ref: ../common/Notes.yaml
-  created:
-    $ref: ../common/AuditDate.yaml
-  updated:
-    $ref: ../common/AuditDate.yaml
 required:
-  - tenantId
   - country
   - legalName
-  - created
-  - updated

@@ -1,0 +1,42 @@
+get:
+  operationId: getAllTenants
+  summary: List all tenants
+  tags:
+    - tenants
+  security:
+    - oauth: ['read:tenants']
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/tenants/ArrayOfTenant.yaml
+    '403':
+      $ref: ../../components/responses/403.yaml
+    '500':
+      $ref: ../../components/responses/500.yaml
+post:
+  operationId: createTenant
+  summary: Create a new tenant
+  tags:
+    - tenants
+  security:
+    - oauth: ['write:tenants']
+  requestBody:
+    description: Tenant Information
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/tenants/CreateTenant.yaml
+        examples:
+          company1:
+            $ref: ../../components/examples/companies/CreateCompany1.yaml
+  responses:
+    '201':
+      $ref: ../../components/responses/tenants/Tenant201.yaml
+    '403':
+      $ref: ../../components/responses/403.yaml
+    '500':
+      $ref: ../../components/responses/500.yaml

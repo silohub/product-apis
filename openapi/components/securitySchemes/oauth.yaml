@@ -5,3 +5,5 @@ flows:
     scopes:
       'read:companies': read companies info
       'write:companies': modify or remove companies
+      'read:tenants': read tenants info
+      'write:tenants': modify or remove tenants

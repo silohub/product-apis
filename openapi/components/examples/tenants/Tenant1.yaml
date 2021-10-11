@@ -1,0 +1,10 @@
+summary: "Tenant 1"
+value:
+  tenantId: 8f61f768-3f34-4b7e-aa3f-d5f078267e19
+  country: ARG
+  legalName: Tenant 1 Example
+  notes: |
+    This is a sample note.
+    You should be able to store long values here.
+  created: "2021-09-10T12:32:28Z"
+  updated: "2021-10-10T12:32:28Z"

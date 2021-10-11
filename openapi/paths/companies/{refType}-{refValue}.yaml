@@ -12,6 +12,8 @@ get:
     '200':
       $ref: ../../components/responses/companies/Company.yaml
     '403':
-      description: Forbidden
+      $ref: ../../components/responses/403.yaml
     '404':
       description: Company not found
+    '500':
+      $ref: ../../components/responses/500.yaml

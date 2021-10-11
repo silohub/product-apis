@@ -21,16 +21,20 @@ servers:
     description: Develop Server
 paths:
   /companies:
-    $ref: paths/companies.yaml
+    $ref: paths/companies/companies.yaml
   /companies/{companyId}:
     $ref: paths/companies/{companyId}.yaml
   /companies/byUniqueReference:
     $ref: paths/companies/byUniqueReference.yaml
   /companies/{refType}/{refValue}:
     $ref: paths/companies/{refType}-{refValue}.yaml
+  /tenants:
+    $ref: paths/tenants/tenants.yaml
 tags:
   - name: companies
     description: Companies Data
+  - name: tenants
+    description: Tenants Data
 components:
   securitySchemes:
     oauth:
