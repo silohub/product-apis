@@ -1,7 +1,7 @@
 {
+  "expandResponses": "200, 201",
+  "jsonSampleExpandLevel": "4",
   "theme": {
-    "expandResponses": "200, 201",
-    "jsonSampleExpandLevel": "4",
     "typography": {
       "fontFamily": "Jones",
       "headings": {

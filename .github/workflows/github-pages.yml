@@ -27,14 +27,17 @@ jobs:
         run: |
           npm install
           npm run test
-
-      - name: Build 🔧
-        run: |
-          npm run build --file=core
-          npm run build --file=admin
-          cp docs/favicon.png docs/index.html build/
           head -5 openapi/core.yaml
           head -5 openapi/admin.yaml
+
+      - name: Bundle APIs 🔧
+        run: |
+          npm run bundle --file=core
+
+      - name: Build HTML files 🔧
+        run: |
+          npm run build --file=core
+          cp docs/favicon.png docs/index.html build/
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.5
