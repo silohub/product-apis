@@ -32,7 +32,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../../components/schemas/Company.yaml
+            $ref: ../../components/schemas/companies/Company.yaml
           examples:
             company1:
               $ref: ../../components/examples/companies/Company1.yaml

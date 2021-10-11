@@ -16,7 +16,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../../components/schemas/Company.yaml
+            $ref: ../../components/schemas/companies/Company.yaml
           examples:
             company1:
               $ref: ../../components/examples/companies/Company1.yaml
@@ -45,7 +45,7 @@ put:
       content:
         application/json:
           schema:
-            $ref: ../../components/schemas/CreateCompany.yaml
+            $ref: ../../components/schemas/companies/CreateCompany.yaml
           examples:
             company1:
               $ref: ../../components/examples/companies/CreateCompany1.yaml
@@ -55,7 +55,7 @@ put:
         content:
           application/json:
             schema:
-              $ref: ../../components/schemas/Company.yaml
+              $ref: ../../components/schemas/companies/Company.yaml
             examples:
               company1:
                 $ref: ../../components/examples/companies/Company1.yaml

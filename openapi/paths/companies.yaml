@@ -11,7 +11,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/ArrayOfCompany.yaml
+            $ref: ../components/schemas/companies/ArrayOfCompany.yaml
     '403':
       description: Forbidden
 post:
@@ -27,7 +27,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: ../components/schemas/CreateCompany.yaml
+          $ref: ../components/schemas/companies/CreateCompany.yaml
         examples:
           company1:
             $ref: ../components/examples/companies/CreateCompany1.yaml
@@ -37,7 +37,7 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/Company.yaml
+            $ref: ../components/schemas/companies/Company.yaml
           examples:
             company1:
               $ref: ../components/examples/companies/Company1.yaml

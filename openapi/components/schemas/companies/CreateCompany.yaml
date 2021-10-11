@@ -1,17 +1,12 @@
 type: object
 properties:
-  companyId:
-    description: Unique Identifier
-    type: string
-    format: uuid
-    example: 106e6248-9e1e-4f06-b152-446684d0c1ab
-  country:
-    $ref: common/Country.yaml
   legalName:
     description: Company Legal Name
     type: string
     minLength: 5
     example: SILOHUB Argentina SAS
+  country:
+    $ref: ../common/Country.yaml
   idType:
     description: Id Type
     type: string
@@ -24,20 +19,13 @@ properties:
     maxLength: 11
     example: 30998887771
   uniqueReferences:
-    $ref: common/UniqueReferences.yaml
+    $ref: ../common/UniqueReferences.yaml
   references:
-    $ref: common/References.yaml
+    $ref: ../common/References.yaml
   notes:
-    $ref: common/Notes.yaml
-  created:
-    $ref: common/AuditDate.yaml
-  updated:
-    $ref: common/AuditDate.yaml
+    $ref: ../common/Notes.yaml
 required:
-  - companyId
   - country
   - legalName
   - idType
   - idValue
-  - created
-  - updated
