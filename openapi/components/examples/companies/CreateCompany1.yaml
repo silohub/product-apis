@@ -2,7 +2,8 @@ summary: "Company 1"
 value:
   legalName: Company 1 example
   country: "ARG"
-  idType: CUIT
-  idValue: "30223337771"
   uniqueReferences:
-    "ALGORITMO-ENTIDAD": "123456"
+    - refType: "CUIT"
+      refValue: "30223337771"
+    - refType: "ALGORITMO-ENTIDAD"
+      refValue: "123456"

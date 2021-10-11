@@ -8,6 +8,8 @@ lint:
   rules:
     no-unused-components: warning
 referenceDocs:
+  expandResponses: 200, 201
+  jsonSampleExpandLevel: 4
   htmlTemplate: ./docs/silohub.hbs
   theme:
     menu:

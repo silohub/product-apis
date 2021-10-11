@@ -12,17 +12,6 @@ properties:
     type: string
     minLength: 5
     example: SILOHUB Argentina SAS
-  idType:
-    description: Id Type
-    type: string
-    minLength: 3
-    example: CUIT
-  idValue:
-    description: Id Value
-    type: string
-    minLength: 11
-    maxLength: 11
-    example: 30998887771
   uniqueReferences:
     $ref: ../common/UniqueReferences.yaml
   references:
@@ -37,7 +26,6 @@ required:
   - companyId
   - country
   - legalName
-  - idType
-  - idValue
+  - uniqueReferences
   - created
   - updated
