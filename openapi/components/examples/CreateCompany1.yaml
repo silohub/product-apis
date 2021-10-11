@@ -1,6 +1,7 @@
 summary: "Company 1"
 value:
   legalName: Company 1 example
+  country: "ARG"
   idType: CUIT
   idValue: "30223337771"
   uniqueReferences:

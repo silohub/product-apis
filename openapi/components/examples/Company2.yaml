@@ -1,6 +1,9 @@
 summary: "Company 2"
 value:
   companyId: 164c1de9-be22-4f29-857e-6989999fe848
+  country: ARG
   legalName: Company 2 example
   idType: CUIT
   idValue: "30998887771"
+  created: "2021-10-01T12:32:28Z"
+  updated: "2021-10-01T12:32:28Z"

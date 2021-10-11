@@ -9,7 +9,6 @@ lint:
     no-unused-components: warning
 referenceDocs:
   htmlTemplate: ./docs/silohub.hbs
-  hideLogo: true
   theme:
     menu:
       backgroundColor: '#ffffff'

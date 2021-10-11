@@ -5,6 +5,8 @@ properties:
     type: string
     minLength: 5
     example: SILOHUB Argentina SAS
+  country:
+    $ref: common/Country.yaml
   idType:
     description: Id Type
     type: string
@@ -21,6 +23,7 @@ properties:
   references:
     $ref: References.yaml
 required:
+  - country
   - legalName
   - idType
   - idValue
