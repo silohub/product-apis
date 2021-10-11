@@ -1,0 +1,11 @@
+name: companyId
+in: path
+description: Entity Unique Uuid
+required: true
+schema:
+  $ref: ../../../components/schemas/common/Uuid.yaml
+examples:
+  company1:
+    value: eb4add5c-a00c-41b7-b5bd-3a9b559f3361
+  company2:
+    value: 164c1de9-be22-4f29-857e-6989999fe848

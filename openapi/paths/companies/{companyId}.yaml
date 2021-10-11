@@ -6,23 +6,10 @@ get:
   security:
     - oauth: ['read:companies']
   parameters:
-    - name: companyId
-      in: path
-      description: companyId único de la empresa
-      required: true
+    - $ref: ../../components/parameters/companies/CompanyUuidInPath.yaml
   responses:
     '200':
-      description: Success
-      content:
-        application/json:
-          schema:
-            $ref: ../../components/schemas/companies/Company.yaml
-          examples:
-            company1:
-              $ref: ../../components/examples/companies/Company1.yaml
-            company2:
-              $ref: ../../components/examples/companies/Company2.yaml
-
+      $ref: ../../components/responses/companies/Company.yaml
     '403':
       description: Forbidden
     '404':
@@ -35,10 +22,7 @@ put:
     security:
       - oauth: [ 'write:companies' ]
     parameters:
-      - name: companyId
-        in: path
-        description: companyId único de la empresa
-        required: true
+      - $ref: ../../components/parameters/companies/CompanyUuidInPath.yaml
     requestBody:
       description: Company Information
       required: true
@@ -51,17 +35,7 @@ put:
               $ref: ../../components/examples/companies/CreateCompany1.yaml
     responses:
       '200':
-        description: Success
-        content:
-          application/json:
-            schema:
-              $ref: ../../components/schemas/companies/Company.yaml
-            examples:
-              company1:
-                $ref: ../../components/examples/companies/Company1.yaml
-              company2:
-                $ref: ../../components/examples/companies/Company2.yaml
-
+        $ref: ../../components/responses/companies/Company.yaml
       '403':
         description: Forbidden
       '404':
@@ -74,10 +48,7 @@ delete:
   security:
     - oauth: [ 'write:companies' ]
   parameters:
-    - name: companyId
-      in: path
-      description: companyId único de la empresa
-      required: true
+    - $ref: ../../components/parameters/companies/CompanyUuidInPath.yaml
   responses:
     '204':
       description: Deleted

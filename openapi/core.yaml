@@ -26,6 +26,8 @@ paths:
     $ref: paths/companies/{companyId}.yaml
   /companies/byUniqueReference:
     $ref: paths/companies/byUniqueReference.yaml
+  /companies/{refType}/{refValue}:
+    $ref: paths/companies/{refType}-{refValue}.yaml
 tags:
   - name: companies
     description: Companies Data

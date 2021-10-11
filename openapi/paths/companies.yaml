@@ -33,13 +33,6 @@ post:
             $ref: ../components/examples/companies/CreateCompany1.yaml
   responses:
     '201':
-      description: Company created
-      content:
-        application/json:
-          schema:
-            $ref: ../components/schemas/companies/Company.yaml
-          examples:
-            company1:
-              $ref: ../components/examples/companies/Company1.yaml
+      $ref: ../components/responses/companies/Company201.yaml
     '403':
       description: Forbidden

@@ -1,0 +1,4 @@
+type: string
+description: Reference Type
+pattern: '^[A-Z\-]+$'
+example: CUIT

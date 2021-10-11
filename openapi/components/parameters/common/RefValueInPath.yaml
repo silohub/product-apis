@@ -1,0 +1,9 @@
+name: refValue
+in: path
+description: Reference Value
+required: true
+schema:
+  $ref: ../../../components/schemas/common/RefValue.yaml
+examples:
+  CUIT:
+    value: "30223337771"

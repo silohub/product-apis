@@ -1,0 +1,10 @@
+description: Created
+content:
+  application/json:
+    schema:
+      $ref: ../../schemas/companies/Company.yaml
+    examples:
+      company1:
+        $ref: ../../examples/companies/Company1.yaml
+      company2:
+        $ref: ../../examples/companies/Company2.yaml

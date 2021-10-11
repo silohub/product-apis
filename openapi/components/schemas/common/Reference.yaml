@@ -2,14 +2,9 @@ type: object
 description: An external reference of the entity
 properties:
   refType:
-    description: Type of Reference
-    type: string
-    pattern: '^[A-Z\-]+$'
-    example: CUIT
+    $ref: RefType.yaml
   refValue:
-    description: Value of the Reference
-    type: string
-    example: "30223334445"
+    $ref: RefValue.yaml
 required:
   - refType
   - refValue

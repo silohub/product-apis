@@ -1,0 +1,9 @@
+name: refType
+in: path
+description: Reference Type
+required: true
+schema:
+  $ref: ../../../components/schemas/common/RefType.yaml
+examples:
+  CUIT:
+    value: "CUIT"

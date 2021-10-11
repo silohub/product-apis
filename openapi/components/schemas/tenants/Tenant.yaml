@@ -1,8 +1,10 @@
 type: object
-description: Algo??
 properties:
   companyId:
-    $ref: ../common/Uuid.yaml
+    description: Unique Identifier
+    type: string
+    format: uuid
+    example: 106e6248-9e1e-4f06-b152-446684d0c1ab
   country:
     $ref: ../common/Country.yaml
   legalName:
