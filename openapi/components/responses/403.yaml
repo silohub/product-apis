@@ -1,4 +1,5 @@
-description: Forbidden - Unable to access the resource
+x-summary: Forbidden
+description: Unable to access the resource. Check the security or permissions
 content:
   application/json:
     schema:

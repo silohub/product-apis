@@ -1,4 +1,5 @@
-description: Created
+x-summary: Created
+description: The Tenant was successfully created
 content:
   application/json:
     schema:

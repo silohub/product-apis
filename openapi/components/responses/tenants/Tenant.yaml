@@ -1,4 +1,5 @@
-description: Created
+x-summary: Success
+description: The response contains the tenant information
 content:
   application/json:
     schema:
@@ -8,3 +9,6 @@ content:
         $ref: ../../examples/tenants/Tenant1.yaml
       tenant2:
         $ref: ../../examples/tenants/Tenant2.yaml
+links:
+  GetBillingCompany:
+    $ref: ../../links/companies/CompanyById.yaml

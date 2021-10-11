@@ -1,4 +1,5 @@
-description: Unexpected Error
+x-summary: Unexpected Error
+description: This is a server side problem, check the message and logs.
 content:
   application/json:
     schema:
