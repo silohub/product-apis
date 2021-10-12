@@ -1,0 +1,9 @@
+description: Company Information
+required: true
+content:
+  application/json:
+    schema:
+      $ref: ../../schemas/companies/CreateCompany.yaml
+    examples:
+      tenant1:
+        $ref: ../../examples/companies/CreateCompany1.yaml

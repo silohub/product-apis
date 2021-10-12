@@ -4,7 +4,7 @@ properties:
   companyId:
     $ref: ../common/Uuid.yaml
   country:
-    $ref: ../common/Country.yaml
+    $ref: ../common/CountryCode.yaml
   legalName:
     description: Company Legal Name
     type: string

@@ -1,0 +1,9 @@
+type: string
+description: "[ISO 4217 Code](https://es.wikipedia.org/wiki/ISO_4217)"
+minLength: 3
+maxLength: 3
+example:
+  - ARS
+  - USD
+  - BRL
+  - CNY

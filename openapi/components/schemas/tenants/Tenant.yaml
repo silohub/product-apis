@@ -3,7 +3,7 @@ properties:
   tenantId:
     $ref: ../common/Uuid.yaml
   country:
-    $ref: ../common/Country.yaml
+    $ref: ../common/CountryCode.yaml
   billingCompanyId:
     $ref: ../common/Uuid.yaml
   displayName:

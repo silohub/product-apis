@@ -1,0 +1,11 @@
+name: currencyCode
+in: path
+description: Currency Code
+required: true
+schema:
+  $ref: ../../../components/schemas/common/CurrencyCode.yaml
+examples:
+  ARS:
+    value: ARS
+  USD:
+    value: USD

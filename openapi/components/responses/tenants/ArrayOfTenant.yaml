@@ -1,0 +1,6 @@
+x-summary: Success
+description: The response contains the list of tenants
+content:
+  application/json:
+    schema:
+      $ref: ../../schemas/tenants/ArrayOfTenant.yaml

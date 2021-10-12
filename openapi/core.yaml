@@ -32,6 +32,14 @@ paths:
     $ref: paths/tenants/tenants.yaml
   /tenants/{tenantId}:
     $ref: paths/tenants/{tenantId}.yaml
+  /currencies:
+    $ref: paths/currencies/currencies.yaml
+  /currencies/{currencyCode}:
+    $ref: paths/currencies/{currencyCode}.yaml
+  /countries:
+    $ref: paths/countries/countries.yaml
+  /countries/{countryCode}:
+    $ref: paths/countries/{countryCode}.yaml
 tags:
   - name: companies
     x-displayName: Companies
@@ -45,6 +53,18 @@ tags:
       Tenants
 
       [More Information](https://silohub.atlassian.net/wiki/spaces/SH/pages/92962817/Entidad+-+Tenant).
+  - name: currencies
+    x-displayName: Currencies
+    description: |
+      Currencies
+
+      [More Information](https://silohub.atlassian.net/wiki/spaces/SH/pages/93716545/Entidad+-+Currency).
+  - name: countries
+    x-displayName: Countries
+    description: |
+      Countries
+
+      [More Information](https://silohub.atlassian.net/wiki/spaces/SH/pages/93716553/Entidad+-+Country).
 components:
   securitySchemes:
     oauth:

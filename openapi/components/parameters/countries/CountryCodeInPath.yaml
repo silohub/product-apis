@@ -1,0 +1,13 @@
+name: countryCode
+in: path
+description: Country Code
+required: true
+schema:
+  $ref: ../../../components/schemas/common/CountryCode.yaml
+examples:
+  ARG:
+    value: ARG
+  BRA:
+    value: BRA
+  USA:
+    value: USA

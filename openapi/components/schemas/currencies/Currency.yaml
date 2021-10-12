@@ -1,0 +1,22 @@
+type: object
+properties:
+  code:
+    $ref: ../common/CurrencyCode.yaml
+  numericCode:
+    description: Curency numeric code
+    type: integer
+  decimals:
+    description: Decimals in the currency
+    type: integer
+  name:
+    description: Curency Name
+    type: string
+  active:
+    description: Is Active
+    type: boolean
+required:
+  - code
+  - numericCode
+  - decimals
+  - name
+  - active

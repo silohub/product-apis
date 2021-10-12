@@ -1,7 +1,7 @@
 type: object
 properties:
   country:
-    $ref: ../common/Country.yaml
+    $ref: ../common/CountryCode.yaml
   billingCompanyId:
     $ref: ../common/UuidEditable.yaml
   displayName:

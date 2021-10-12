@@ -6,7 +6,7 @@ properties:
     minLength: 5
     example: SILOHUB Argentina SAS
   country:
-    $ref: ../common/Country.yaml
+    $ref: ../common/CountryCode.yaml
   mainReference:
     $ref: ../common/Reference.yaml
   uniqueReferences:

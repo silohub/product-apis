@@ -1,0 +1,6 @@
+type: array
+description: Collection of countries
+items:
+  $ref: Country.yaml
+example:
+  $ref: ../../examples/countries/ArrayOfCountry.yaml

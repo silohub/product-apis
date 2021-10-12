@@ -1,0 +1,11 @@
+description: Currency Information
+required: true
+content:
+  application/json:
+    schema:
+      $ref: ../../schemas/currencies/UpdateCurrency.yaml
+    examples:
+      ARS:
+        $ref: ../../examples/currencies/UpdateARS.yaml
+      USD:
+        $ref: ../../examples/currencies/UpdateUSD.yaml

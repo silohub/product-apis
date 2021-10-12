@@ -1,0 +1,10 @@
+description: Success
+content:
+  application/json:
+    schema:
+      $ref: ../../schemas/currencies/Currency.yaml
+    examples:
+      ARS:
+        $ref: ../../examples/currencies/ARS.yaml
+      USD:
+        $ref: ../../examples/currencies/USD.yaml

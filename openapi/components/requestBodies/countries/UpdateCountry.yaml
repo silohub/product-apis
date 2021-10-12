@@ -1,0 +1,11 @@
+description: Country Information
+required: true
+content:
+  application/json:
+    schema:
+      $ref: ../../schemas/countries/UpdateCountry.yaml
+    examples:
+      ARG:
+        $ref: ../../examples/countries/UpdateARG.yaml
+      USA:
+        $ref: ../../examples/countries/UpdateUSA.yaml

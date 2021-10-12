@@ -1,0 +1,6 @@
+x-summary: Success
+description: The response contains the list of currencies
+content:
+  application/json:
+    schema:
+      $ref: ../../schemas/currencies/ArrayOfCurrency.yaml

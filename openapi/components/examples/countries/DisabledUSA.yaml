@@ -1,0 +1,6 @@
+summary: "USA"
+value:
+  code: USA
+  name: Estados Unidos
+  numericCode: 840
+  active: false

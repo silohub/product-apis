@@ -1,0 +1,12 @@
+description: Success
+content:
+  application/json:
+    schema:
+      $ref: ../../schemas/countries/Country.yaml
+    examples:
+      ARG:
+        $ref: ../../examples/countries/DisabledARG.yaml
+      BRA:
+        $ref: ../../examples/countries/DisabledBRA.yaml
+      USA:
+        $ref: ../../examples/countries/DisabledUSA.yaml

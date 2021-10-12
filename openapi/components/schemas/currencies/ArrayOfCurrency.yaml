@@ -1,0 +1,6 @@
+type: array
+description: Collection of currencies
+items:
+  $ref: Currency.yaml
+example:
+  $ref: ../../examples/currencies/ArrayOfCurrency.yaml

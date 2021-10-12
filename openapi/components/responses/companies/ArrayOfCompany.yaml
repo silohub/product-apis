@@ -1,0 +1,6 @@
+x-summary: Success
+description: The response contains the list of companies
+content:
+  application/json:
+    schema:
+      $ref: ../../schemas/companies/ArrayOfCompany.yaml

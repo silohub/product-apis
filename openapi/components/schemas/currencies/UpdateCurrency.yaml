@@ -1,0 +1,7 @@
+type: object
+properties:
+  active:
+    description: Is Active
+    type: boolean
+required:
+  - active

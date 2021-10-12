@@ -1,0 +1,6 @@
+x-summary: Success
+description: The response contains the list of countries
+content:
+  application/json:
+    schema:
+      $ref: ../../schemas/countries/ArrayOfCountry.yaml

@@ -1,0 +1,42 @@
+get:
+  operationId: getCurrencyByCode
+  summary: Obtiene una moneda por codigo
+  tags:
+    - currencies
+  security:
+    - oauth: ['read:currencies']
+  parameters:
+    - $ref: ../../components/parameters/currencies/CurrencyCodeInPath.yaml
+  responses:
+    '200':
+      $ref: ../../components/responses/currencies/Currency.yaml
+    '400':
+      $ref: ../../components/responses/400.yaml
+    '403':
+      $ref: ../../components/responses/403.yaml
+    '404':
+      description: Currency not found
+    '500':
+      $ref: ../../components/responses/500.yaml
+put:
+  operationId: disableCurrency
+  summary: Cambia el estado de una moneda
+  tags:
+    - currencies
+  security:
+    - oauth: [ 'write:currencies' ]
+  parameters:
+    - $ref: ../../components/parameters/currencies/CurrencyCodeInPath.yaml
+  requestBody:
+    $ref: ../../components/requestBodies/currencies/UpdateCurrency.yaml
+  responses:
+    '200':
+      $ref: ../../components/responses/currencies/CurrencyDisabled.yaml
+    '400':
+      $ref: ../../components/responses/400.yaml
+    '403':
+      $ref: ../../components/responses/403.yaml
+    '404':
+      description: Currency not found
+    '500':
+      $ref: ../../components/responses/500.yaml

@@ -1,13 +1,13 @@
 get:
-  operationId: getAllTenants
-  summary: List all tenants
+  operationId: getAllCountries
+  summary: List all countries
   tags:
-    - tenants
+    - countries
   security:
-    - oauth: ['read:tenants']
+    - oauth: ['read:countries']
   responses:
     '200':
-      $ref: ../../components/responses/tenants/ArrayOfTenant.yaml
+      $ref: ../../components/responses/countries/ArrayOfCountry.yaml
     '400':
       $ref: ../../components/responses/400.yaml
     '403':
@@ -15,17 +15,17 @@ get:
     '500':
       $ref: ../../components/responses/500.yaml
 post:
-  operationId: createTenant
-  summary: Create a new tenant
+  operationId: createCountry
+  summary: Create a new currency
   tags:
-    - tenants
+    - countries
   security:
-    - oauth: ['write:tenants']
+    - oauth: ['write:countries']
   requestBody:
-    $ref: ../../components/requestBodies/tenants/CreateTenant.yaml
+    $ref: ../../components/requestBodies/countries/Country.yaml
   responses:
     '201':
-      $ref: ../../components/responses/tenants/Tenant201.yaml
+      $ref: ../../components/responses/countries/Country.yaml
     '400':
       $ref: ../../components/responses/400.yaml
     '403':

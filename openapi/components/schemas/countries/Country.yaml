@@ -1,0 +1,18 @@
+type: object
+properties:
+  code:
+    $ref: ../common/CountryCode.yaml
+  numericCode:
+    description: Country numeric code
+    type: integer
+  name:
+    description: Country Name
+    type: string
+  active:
+    description: Is Active
+    type: boolean
+required:
+  - code
+  - numericCode
+  - name
+  - active

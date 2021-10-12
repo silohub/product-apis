@@ -7,11 +7,7 @@ get:
     - oauth: ['read:companies']
   responses:
     '200':
-      description: OK
-      content:
-        application/json:
-          schema:
-            $ref: ../../components/schemas/companies/ArrayOfCompany.yaml
+      $ref: ../../components/responses/companies/ArrayOfCompany.yaml
     '400':
       $ref: ../../components/responses/400.yaml
     '403':
@@ -26,15 +22,7 @@ post:
   security:
     - oauth: ['write:companies']
   requestBody:
-    description: Company Information
-    required: true
-    content:
-      application/json:
-        schema:
-          $ref: ../../components/schemas/companies/CreateCompany.yaml
-        examples:
-          company1:
-            $ref: ../../components/examples/companies/CreateCompany1.yaml
+    $ref: ../../components/requestBodies/companies/CreateCompany.yaml
   responses:
     '201':
       $ref: ../../components/responses/companies/Company201.yaml

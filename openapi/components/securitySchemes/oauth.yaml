@@ -7,3 +7,7 @@ flows:
       'write:companies': modify or remove companies
       'read:tenants': read tenants info
       'write:tenants': modify or remove tenants
+      'read:currencies': read currencies info
+      'write:currencies': modify or remove currencies
+      'read:countries': read countries info
+      'write:countries': modify or remove countries

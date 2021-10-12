@@ -1,0 +1,7 @@
+summary: "USD"
+value:
+  code: USD
+  name: Dólar estadounidense
+  numericCode: 840
+  decimals: 2
+  active: true

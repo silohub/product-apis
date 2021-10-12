@@ -28,15 +28,7 @@ put:
   parameters:
     - $ref: ../../components/parameters/companies/CompanyUuidInPath.yaml
   requestBody:
-    description: Company Information
-    required: true
-    content:
-      application/json:
-        schema:
-          $ref: ../../components/schemas/companies/CreateCompany.yaml
-        examples:
-          company1:
-            $ref: ../../components/examples/companies/CreateCompany1.yaml
+    $ref: ../../components/requestBodies/companies/CreateCompany.yaml
   responses:
     '200':
       $ref: ../../components/responses/companies/Company.yaml

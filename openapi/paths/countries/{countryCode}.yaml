@@ -1,0 +1,42 @@
+get:
+  operationId: getCountryByCode
+  summary: Obtiene una moneda por codigo
+  tags:
+    - countries
+  security:
+    - oauth: ['read:countries']
+  parameters:
+    - $ref: ../../components/parameters/countries/CountryCodeInPath.yaml
+  responses:
+    '200':
+      $ref: ../../components/responses/countries/Country.yaml
+    '400':
+      $ref: ../../components/responses/400.yaml
+    '403':
+      $ref: ../../components/responses/403.yaml
+    '404':
+      description: Country not found
+    '500':
+      $ref: ../../components/responses/500.yaml
+put:
+  operationId: disableCountry
+  summary: Cambia el estado de una moneda
+  tags:
+    - countries
+  security:
+    - oauth: [ 'write:countries' ]
+  parameters:
+    - $ref: ../../components/parameters/countries/CountryCodeInPath.yaml
+  requestBody:
+    $ref: ../../components/requestBodies/countries/UpdateCountry.yaml
+  responses:
+    '200':
+      $ref: ../../components/responses/countries/CountryDisabled.yaml
+    '400':
+      $ref: ../../components/responses/400.yaml
+    '403':
+      $ref: ../../components/responses/403.yaml
+    '404':
+      description: Country not found
+    '500':
+      $ref: ../../components/responses/500.yaml
