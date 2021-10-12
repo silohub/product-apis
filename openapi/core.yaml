@@ -42,7 +42,7 @@ paths:
     $ref: paths/countries/{countryCode}.yaml
   /users:
     $ref: paths/users/users.yaml
-  /user/{userId}:
+  /users/{userId}:
     $ref: paths/users/{userId}.yaml
 tags:
   - name: companies

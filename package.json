@@ -11,6 +11,7 @@
     "logout": "openapi logout",
     "start": "openapi preview-docs",
     "bundle": "openapi bundle openapi/${npm_config_file}.yaml -o build/${npm_config_file}.yaml",
+    "bundlejson": "openapi bundle openapi/${npm_config_file}.yaml -o build/${npm_config_file}.json",
     "build": "redoc-cli bundle -o build/${npm_config_file}.html --cdn --options=docs/silohub-theme.json -t docs/silohub.hbs openapi/${npm_config_file}.yaml",
     "test": "openapi lint"
   }
