@@ -3,4 +3,5 @@ value:
   code: USA
   name: Estados Unidos
   numericCode: 840
+  currencyCode: USD
   active: false

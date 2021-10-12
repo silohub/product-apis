@@ -3,4 +3,5 @@ value:
   code: BRA
   name: Brasil
   numericCode: 76
+  currencyCode: BRL
   active: false

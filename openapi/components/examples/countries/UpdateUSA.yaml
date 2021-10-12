@@ -1,3 +1,4 @@
 summary: "USA"
 value:
+  currencyCode: USD
   active: false

@@ -8,6 +8,8 @@ properties:
   name:
     description: Country Name
     type: string
+  currencyCode:
+    $ref: ../common/CurrencyCode.yaml
   active:
     description: Is Active
     type: boolean
@@ -15,4 +17,5 @@ required:
   - code
   - numericCode
   - name
+  - currencyCode
   - active

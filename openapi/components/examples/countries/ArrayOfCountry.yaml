@@ -1,12 +1,15 @@
 - code: ARG
   name: Argentina
   numericCode: 32
+  currencyCode: ARS
   active: true
 - code: BRA
   name: Brasil
   numericCode: 76
+  currencyCode: BRL
   active: true
 - code: USA
   name: Estados Unidos
   numericCode: 840
+  currencyCode: USD
   active: true

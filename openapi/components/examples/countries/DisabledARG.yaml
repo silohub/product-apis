@@ -3,4 +3,5 @@ value:
   code: ARG
   name: Argentina
   numericCode: 32
+  currencyCode: ARS
   active: false
