@@ -11,3 +11,5 @@ flows:
       'write:currencies': modify or remove currencies
       'read:countries': read countries info
       'write:countries': modify or remove countries
+      'read:users': read users info
+      'write:users': modify or remove users

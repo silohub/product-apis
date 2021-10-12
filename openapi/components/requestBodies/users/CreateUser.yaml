@@ -1,0 +1,11 @@
+description: User Information
+required: true
+content:
+  application/json:
+    schema:
+      $ref: ../../schemas/users/CreateUser.yaml
+    examples:
+      User1:
+        $ref: ../../examples/users/CreateUser1.yaml
+      User2:
+        $ref: ../../examples/users/CreateUser2.yaml

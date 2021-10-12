@@ -1,6 +1,6 @@
 get:
   operationId: getCountryByCode
-  summary: Obtiene una moneda por codigo
+  summary: Obtiene un país por codigo
   tags:
     - countries
   security:
@@ -19,8 +19,8 @@ get:
     '500':
       $ref: ../../components/responses/500.yaml
 put:
-  operationId: disableCountry
-  summary: Cambia el estado de una moneda
+  operationId: updateCountry
+  summary: Cambia el estado de un país (solo la moneda o activo)
   tags:
     - countries
   security:

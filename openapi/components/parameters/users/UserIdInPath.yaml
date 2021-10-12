@@ -1,0 +1,13 @@
+name: userId
+in: path
+description: User Unique Uuid
+required: true
+schema:
+  $ref: ../../../components/schemas/common/Uuid.yaml
+examples:
+  User1:
+    value: 74327988-2c24-4931-8547-2a870d86c044
+  User2:
+    value: 14d320f3-215d-4aee-99c3-be410720ec21
+  User3:
+    value: e651cee8-c1b9-4a68-83f7-d4488da99792

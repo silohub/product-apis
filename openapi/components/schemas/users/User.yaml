@@ -1,0 +1,22 @@
+type: object
+properties:
+  userId:
+    $ref: ../common/Uuid.yaml
+  displayName:
+    description: User Display Name
+    type: string
+  uniqueReferences:
+    $ref: ../common/UniqueReferences.yaml
+  references:
+    $ref: ../common/References.yaml
+  notes:
+    $ref: ../common/Notes.yaml
+  created:
+    $ref: ../common/AuditDate.yaml
+  updated:
+    $ref: ../common/AuditDate.yaml
+required:
+  - userId
+  - displayName
+  - created
+  - updated

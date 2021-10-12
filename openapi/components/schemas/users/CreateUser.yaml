@@ -1,0 +1,13 @@
+type: object
+properties:
+  displayName:
+    description: User Display Name
+    type: string
+  uniqueReferences:
+    $ref: ../common/UniqueReferences.yaml
+  references:
+    $ref: ../common/References.yaml
+  notes:
+    $ref: ../common/Notes.yaml
+required:
+  - displayName

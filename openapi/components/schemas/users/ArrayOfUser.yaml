@@ -1,0 +1,6 @@
+type: array
+description: Collection of users
+items:
+  $ref: User.yaml
+example:
+  $ref: ../../examples/users/ArrayOfUser1.yaml

@@ -6,7 +6,7 @@ get:
   security:
     - oauth: ['read:companies']
   parameters:
-    - $ref: ../../components/parameters/companies/CompanyUuidInPath.yaml
+    - $ref: ../../components/parameters/companies/CompanyIdInPath.yaml
   responses:
     '200':
       $ref: ../../components/responses/companies/Company.yaml
@@ -26,7 +26,7 @@ put:
   security:
     - oauth: [ 'write:companies' ]
   parameters:
-    - $ref: ../../components/parameters/companies/CompanyUuidInPath.yaml
+    - $ref: ../../components/parameters/companies/CompanyIdInPath.yaml
   requestBody:
     $ref: ../../components/requestBodies/companies/CreateCompany.yaml
   responses:
@@ -48,7 +48,7 @@ delete:
   security:
     - oauth: [ 'write:companies' ]
   parameters:
-    - $ref: ../../components/parameters/companies/CompanyUuidInPath.yaml
+    - $ref: ../../components/parameters/companies/CompanyIdInPath.yaml
   responses:
     '204':
       description: Deleted

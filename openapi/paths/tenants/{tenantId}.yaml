@@ -6,7 +6,7 @@ get:
   security:
     - oauth: ['read:tenants']
   parameters:
-    - $ref: ../../components/parameters/tenants/TenantUuidInPath.yaml
+    - $ref: ../../components/parameters/tenants/TenantIdInPath.yaml
   responses:
     '200':
       $ref: ../../components/responses/tenants/Tenant.yaml
@@ -26,7 +26,7 @@ put:
   security:
     - oauth: [ 'write:tenants' ]
   parameters:
-    - $ref: ../../components/parameters/tenants/TenantUuidInPath.yaml
+    - $ref: ../../components/parameters/tenants/TenantIdInPath.yaml
   requestBody:
     $ref: ../../components/requestBodies/tenants/CreateTenant.yaml
   responses:
@@ -48,7 +48,7 @@ delete:
   security:
     - oauth: [ 'write:tenants' ]
   parameters:
-    - $ref: ../../components/parameters/tenants/TenantUuidInPath.yaml
+    - $ref: ../../components/parameters/tenants/TenantIdInPath.yaml
   responses:
     '204':
       description: Deleted

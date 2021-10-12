@@ -5,6 +5,8 @@ get:
     - countries
   security:
     - oauth: ['read:countries']
+  parameters:
+    - $ref: ../../components/parameters/common/Active.yaml
   responses:
     '200':
       $ref: ../../components/responses/countries/ArrayOfCountry.yaml
@@ -16,7 +18,7 @@ get:
       $ref: ../../components/responses/500.yaml
 post:
   operationId: createCountry
-  summary: Create a new currency
+  summary: Create a new country
   tags:
     - countries
   security:

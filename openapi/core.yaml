@@ -40,6 +40,10 @@ paths:
     $ref: paths/countries/countries.yaml
   /countries/{countryCode}:
     $ref: paths/countries/{countryCode}.yaml
+  /users:
+    $ref: paths/users/users.yaml
+  /user/{userId}:
+    $ref: paths/users/{userId}.yaml
 tags:
   - name: companies
     x-displayName: Companies
@@ -65,6 +69,12 @@ tags:
       Countries
 
       [More Information](https://silohub.atlassian.net/wiki/spaces/SH/pages/93716553/Entidad+-+Country).
+  - name: users
+    x-displayName: Users
+    description: |
+      Users
+
+      [More Information](https://silohub.atlassian.net/wiki/spaces/SH/pages/93716577/Entidad+-+User).
 components:
   securitySchemes:
     oauth:

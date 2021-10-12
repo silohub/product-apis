@@ -19,7 +19,7 @@ get:
     '500':
       $ref: ../../components/responses/500.yaml
 put:
-  operationId: disableCurrency
+  operationId: inactivateCurrency
   summary: Cambia el estado de una moneda
   tags:
     - currencies

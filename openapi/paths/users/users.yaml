@@ -1,15 +1,15 @@
 get:
-  operationId: getAllCurrencies
-  summary: List all currencies
+  operationId: getAllUsers
+  summary: List all users
   tags:
-    - currencies
+    - users
   security:
-    - oauth: ['read:currencies']
+    - oauth: ['read:users']
   parameters:
     - $ref: ../../components/parameters/common/Active.yaml
   responses:
     '200':
-      $ref: ../../components/responses/currencies/ArrayOfCurrency.yaml
+      $ref: ../../components/responses/users/ArrayOfUser.yaml
     '400':
       $ref: ../../components/responses/400.yaml
     '403':
@@ -17,17 +17,17 @@ get:
     '500':
       $ref: ../../components/responses/500.yaml
 post:
-  operationId: createCurrency
-  summary: Create a new currency
+  operationId: createUser
+  summary: Create a new user
   tags:
-    - currencies
+    - users
   security:
-    - oauth: ['write:currencies']
+    - oauth: ['write:users']
   requestBody:
-    $ref: ../../components/requestBodies/currencies/Currency.yaml
+    $ref: ../../components/requestBodies/users/CreateUser.yaml
   responses:
     '201':
-      $ref: ../../components/responses/currencies/Currency.yaml
+      $ref: ../../components/responses/users/User.yaml
     '400':
       $ref: ../../components/responses/400.yaml
     '403':

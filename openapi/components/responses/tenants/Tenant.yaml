@@ -9,6 +9,7 @@ content:
         $ref: ../../examples/tenants/Tenant1.yaml
       tenant2:
         $ref: ../../examples/tenants/Tenant2.yaml
-links:
-  GetBillingCompany:
-    $ref: ../../links/companies/CompanyById.yaml
+# not supported yet in UI pages
+#links:
+#  GetBillingCompany:
+#    $ref: ../../links/companies/CompanyById.yaml

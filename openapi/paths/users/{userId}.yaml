@@ -1,0 +1,42 @@
+get:
+  operationId: getUserById
+  summary: Obtiene una usuario por Id
+  tags:
+    - users
+  security:
+    - oauth: ['read:users']
+  parameters:
+    - $ref: ../../components/parameters/users/UserIdInPath.yaml
+  responses:
+    '200':
+      $ref: ../../components/responses/users/User.yaml
+    '400':
+      $ref: ../../components/responses/400.yaml
+    '403':
+      $ref: ../../components/responses/403.yaml
+    '404':
+      description: Currency not found
+    '500':
+      $ref: ../../components/responses/500.yaml
+put:
+  operationId: updateUser
+  summary: Cambia el estado de un usuario
+  tags:
+    - users
+  security:
+    - oauth: [ 'write:users' ]
+  parameters:
+    - $ref: ../../components/parameters/users/UserIdInPath.yaml
+  requestBody:
+    $ref: ../../components/requestBodies/users/CreateUser.yaml
+  responses:
+    '200':
+      $ref: ../../components/responses/users/User.yaml
+    '400':
+      $ref: ../../components/responses/400.yaml
+    '403':
+      $ref: ../../components/responses/403.yaml
+    '404':
+      description: Currency not found
+    '500':
+      $ref: ../../components/responses/500.yaml

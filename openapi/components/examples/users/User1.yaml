@@ -1,0 +1,15 @@
+summary: "User 1"
+value:
+  userId: 74327988-2c24-4931-8547-2a870d86c044
+  displayName: User 1 example
+  uniqueReferences:
+    - refType: "DNI"
+      refValue: "33444555"
+  references:
+    - refType: "SITUACION"
+      refValue: "Pendiente"
+  notes: |
+    This is a sample note.
+    You should be able to store long values here.
+  created: "2021-09-10T12:32:28Z"
+  updated: "2021-10-10T12:32:28Z"
