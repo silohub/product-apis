@@ -3,7 +3,7 @@ properties:
   country:
     $ref: ../common/Country.yaml
   billingCompanyId:
-    $ref: ../common/Uuid.yaml
+    $ref: ../common/UuidEditable.yaml
   displayName:
     description: Tenant Display Name
     type: string

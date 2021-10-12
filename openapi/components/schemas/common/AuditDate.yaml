@@ -1,5 +1,6 @@
 type: string
 description: Audit Timestamp (UTC)
 format: date-time
+readOnly: true
 example:
   key1: 2017-07-21T17:32:28Z

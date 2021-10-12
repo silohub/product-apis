@@ -1,0 +1,11 @@
+name: tenantId
+in: path
+description: Tenant Unique Uuid
+required: true
+schema:
+  $ref: ../../../components/schemas/common/Uuid.yaml
+examples:
+  company1:
+    value: 8f61f768-3f34-4b7e-aa3f-d5f078267e19
+  company2:
+    value: 2762fa75-346f-4a1c-82dc-0b67acdb765d

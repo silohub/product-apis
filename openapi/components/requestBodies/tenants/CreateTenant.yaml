@@ -1,0 +1,9 @@
+description: Tenant Information
+required: true
+content:
+  application/json:
+    schema:
+      $ref: ../../schemas/tenants/CreateTenant.yaml
+    examples:
+      tenant1:
+        $ref: ../../examples/tenants/CreateTenant1.yaml

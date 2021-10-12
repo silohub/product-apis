@@ -1,0 +1,4 @@
+type: string
+description: Unique Identifier
+format: uuid
+example: 106e6248-9e1e-4f06-b152-446684d0c1ab

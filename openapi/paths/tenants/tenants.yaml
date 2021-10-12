@@ -26,15 +26,7 @@ post:
   security:
     - oauth: ['write:tenants']
   requestBody:
-    description: Tenant Information
-    required: true
-    content:
-      application/json:
-        schema:
-          $ref: ../../components/schemas/tenants/CreateTenant.yaml
-        examples:
-          company1:
-            $ref: ../../components/examples/tenants/CreateTenant1.yaml
+    $ref: ../../components/requestBodies/tenants/CreateTenant.yaml
   responses:
     '201':
       $ref: ../../components/responses/tenants/Tenant201.yaml

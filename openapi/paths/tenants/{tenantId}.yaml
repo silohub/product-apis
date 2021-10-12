@@ -1,0 +1,62 @@
+get:
+  operationId: getTenantById
+  summary: Obtiene un tenant por tenantId
+  tags:
+    - tenants
+  security:
+    - oauth: ['read:tenants']
+  parameters:
+    - $ref: ../../components/parameters/tenants/TenantUuidInPath.yaml
+  responses:
+    '200':
+      $ref: ../../components/responses/tenants/Tenant.yaml
+    '400':
+      $ref: ../../components/responses/400.yaml
+    '403':
+      $ref: ../../components/responses/403.yaml
+    '404':
+      description: Tenant not found
+    '500':
+      $ref: ../../components/responses/500.yaml
+put:
+  operationId: updateTenant
+  summary: Actualiza la informacion completa de una tenant
+  tags:
+    - tenants
+  security:
+    - oauth: [ 'write:tenants' ]
+  parameters:
+    - $ref: ../../components/parameters/tenants/TenantUuidInPath.yaml
+  requestBody:
+    $ref: ../../components/requestBodies/tenants/CreateTenant.yaml
+  responses:
+    '200':
+      $ref: ../../components/responses/tenants/Tenant.yaml
+    '400':
+      $ref: ../../components/responses/400.yaml
+    '403':
+      $ref: ../../components/responses/403.yaml
+    '404':
+      description: Company not found
+    '500':
+      $ref: ../../components/responses/500.yaml
+delete:
+  operationId: deleteTenant
+  summary: Elimina un tenant
+  tags:
+    - tenants
+  security:
+    - oauth: [ 'write:tenants' ]
+  parameters:
+    - $ref: ../../components/parameters/tenants/TenantUuidInPath.yaml
+  responses:
+    '204':
+      description: Deleted
+    '400':
+      $ref: ../../components/responses/400.yaml
+    '403':
+      $ref: ../../components/responses/403.yaml
+    '404':
+      description: Company not found
+    '500':
+      $ref: ../../components/responses/500.yaml

@@ -30,11 +30,21 @@ paths:
     $ref: paths/companies/{refType}-{refValue}.yaml
   /tenants:
     $ref: paths/tenants/tenants.yaml
+  /tenants/{tenantId}:
+    $ref: paths/tenants/{tenantId}.yaml
 tags:
   - name: companies
-    description: Companies Data
+    x-displayName: Companies
+    description: |
+      Companies
+
+      [More Information](https://silohub.atlassian.net/wiki/spaces/SH/pages/83591169/Entidad+-+Empresa).
   - name: tenants
-    description: Tenants Data
+    x-displayName: Tenants
+    description: |
+      Tenants
+
+      [More Information](https://silohub.atlassian.net/wiki/spaces/SH/pages/92962817/Entidad+-+Tenant).
 components:
   securitySchemes:
     oauth:
