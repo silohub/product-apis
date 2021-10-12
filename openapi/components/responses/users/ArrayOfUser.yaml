@@ -1,0 +1,6 @@
+x-summary: Success
+description: The response contains the list of users
+content:
+  application/json:
+    schema:
+      $ref: ../../schemas/users/ArrayOfUser.yaml

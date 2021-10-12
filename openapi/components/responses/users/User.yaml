@@ -1,0 +1,12 @@
+description: Success
+content:
+  application/json:
+    schema:
+      $ref: ../../schemas/users/User.yaml
+    examples:
+      User1:
+        $ref: ../../examples/users/User1.yaml
+      User2:
+        $ref: ../../examples/users/User2.yaml
+      User3:
+        $ref: ../../examples/users/User3.yaml
