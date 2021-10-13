@@ -1,7 +1,7 @@
 type: oauth2
 flows:
   clientCredentials:
-    tokenUrl: 'https://iam-develop/auth/realms/SILOHUB/protocol/openid-connect/token'
+    tokenUrl: 'https://iam-develop.silohub.net/auth/realms/SILOHUB/protocol/openid-connect/token'
     scopes:
       'read:companies': read companies info
       'write:companies': modify or remove companies
