@@ -25,7 +25,7 @@ externalDocs:
   url: 'https://silohub.atlassian.net/wiki/spaces/SH/pages/82346030/SILOHUB+APIs'
 servers:
   - url: 'https://api-develop.silohub.net'
-    description: Develop Server
+    description: Desarrollo
 paths:
   /companies:
     $ref: paths/companies/companies.yaml
@@ -52,37 +52,36 @@ paths:
   /users/{userId}:
     $ref: paths/users/{userId}.yaml
 tags:
+  - name: users
+    x-displayName: Usuarios
+    description: |
+      ## Usuarios
+      ### Más información
+      * [User Docs](https://silohub.atlassian.net/wiki/spaces/PUB/pages/98730016)
   - name: companies
     x-displayName: Compañías
     description: |
-      Compañías
-
-      ## Más información
-      * [API Home](https://silohub.atlassian.net/wiki/spaces/PUB/pages/99155987)
-  - name: tenants
-    x-displayName: Tenants
-    description: |
-      Tenants
-
-      [More Information](https://silohub.atlassian.net/wiki/spaces/SH/pages/92962817/Entidad+-+Tenant).
+      ## Compañías
+      ### Más información
+      * [User Docs](https://silohub.atlassian.net/wiki/spaces/PUB/pages/99057727)
   - name: currencies
-    x-displayName: Currencies
+    x-displayName: Monedas
     description: |
-      Currencies
-
-      [More Information](https://silohub.atlassian.net/wiki/spaces/SH/pages/93716545/Entidad+-+Currency).
+      ## Monedas
+      ### Más información
+      * [User Docs](https://silohub.atlassian.net/wiki/spaces/PUB/pages/98435109)
   - name: countries
-    x-displayName: Countries
+    x-displayName: Países
     description: |
-      Countries
-
-      [More Information](https://silohub.atlassian.net/wiki/spaces/SH/pages/93716553/Entidad+-+Country).
-  - name: users
-    x-displayName: Users
+      ## Países
+      ### Más información
+      * [User Docs](https://silohub.atlassian.net/wiki/spaces/PUB/pages/98828346)
+  - name: tenants
+    x-displayName: Organizaciones
     description: |
-      Users
-
-      [More Information](https://silohub.atlassian.net/wiki/spaces/SH/pages/93716577/Entidad+-+User).
+      ## Organizaciones
+      ### Más información
+      * [User Docs](https://silohub.atlassian.net/wiki/spaces/PUB/pages/98730009)
 components:
   securitySchemes:
     oauth:
