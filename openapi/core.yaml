@@ -1,7 +1,14 @@
 openapi: 3.0.3
 info:
   title: SILOHUB Core API
-  description: Core entities of the product
+  description: |
+    *Esta API contiene las entidades comunes y básicas para mantener el producto.*
+
+     Para probar esta API se debe realizar una autorización para obtener un token.
+
+    ### Más información
+    * [API Home](https://silohub.atlassian.net/wiki/spaces/PUB/pages/99155987)
+    * [API Core](https://silohub.atlassian.net/wiki/spaces/PUB/pages/99221531)
   version: develop
   license:
     name: Privada
@@ -46,11 +53,12 @@ paths:
     $ref: paths/users/{userId}.yaml
 tags:
   - name: companies
-    x-displayName: Companies
+    x-displayName: Compañías
     description: |
-      Companies
+      Compañías
 
-      [More Information](https://silohub.atlassian.net/wiki/spaces/SH/pages/83591169/Entidad+-+Empresa).
+      ## Más información
+      * [API Home](https://silohub.atlassian.net/wiki/spaces/PUB/pages/99155987)
   - name: tenants
     x-displayName: Tenants
     description: |

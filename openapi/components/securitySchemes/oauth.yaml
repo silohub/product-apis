@@ -1,15 +1,6 @@
 type: oauth2
 flows:
   clientCredentials:
+    x-defaultClientId: demo
     tokenUrl: 'https://iam-develop.silohub.net/auth/realms/SILOHUB/protocol/openid-connect/token'
-    scopes:
-      'read:companies': read companies info
-      'write:companies': modify or remove companies
-      'read:tenants': read tenants info
-      'write:tenants': modify or remove tenants
-      'read:currencies': read currencies info
-      'write:currencies': modify or remove currencies
-      'read:countries': read countries info
-      'write:countries': modify or remove countries
-      'read:users': read users info
-      'write:users': modify or remove users
+    scopes: {}
