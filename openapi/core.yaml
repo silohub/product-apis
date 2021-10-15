@@ -20,9 +20,6 @@ info:
   x-logo:
     url: https://www.silohub.ag/wp-content/uploads/2021/09/signature-logo.png
     altText: SILOHUB Logo
-externalDocs:
-  description: Confluence
-  url: 'https://silohub.atlassian.net/wiki/spaces/SH/pages/82346030/SILOHUB+APIs'
 servers:
   - url: 'https://api-develop.silohub.net'
     description: Desarrollo
