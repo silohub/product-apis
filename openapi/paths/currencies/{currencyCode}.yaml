@@ -4,7 +4,7 @@ get:
   tags:
     - currencies
   security:
-    - oauth: ['read:currencies']
+    - OAuth2: []
   parameters:
     - $ref: ../../components/parameters/currencies/CurrencyCodeInPath.yaml
   responses:
@@ -24,7 +24,7 @@ put:
   tags:
     - currencies
   security:
-    - oauth: [ 'write:currencies' ]
+    - OAuth2: []
   parameters:
     - $ref: ../../components/parameters/currencies/CurrencyCodeInPath.yaml
   requestBody:

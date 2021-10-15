@@ -4,7 +4,7 @@ get:
   tags:
     - tenants
   security:
-    - oauth: ['read:tenants']
+    - OAuth2: []
   parameters:
     - $ref: ../../components/parameters/tenants/TenantIdInPath.yaml
   responses:
@@ -24,7 +24,7 @@ put:
   tags:
     - tenants
   security:
-    - oauth: [ 'write:tenants' ]
+    - OAuth2: []
   parameters:
     - $ref: ../../components/parameters/tenants/TenantIdInPath.yaml
   requestBody:
@@ -46,7 +46,7 @@ delete:
   tags:
     - tenants
   security:
-    - oauth: [ 'write:tenants' ]
+    - OAuth2: []
   parameters:
     - $ref: ../../components/parameters/tenants/TenantIdInPath.yaml
   responses:

@@ -1,4 +1,6 @@
 type: object
+description: |
+  Un usuario del sistema
 properties:
   userId:
     $ref: ../common/Uuid.yaml

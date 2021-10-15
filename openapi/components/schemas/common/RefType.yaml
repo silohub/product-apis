@@ -1,4 +1,5 @@
 type: string
-description: Reference Type
+description: |
+  Tipo de referencia. Por ejemplo CUIT
 pattern: '^[A-Z\-]+$'
 example: CUIT

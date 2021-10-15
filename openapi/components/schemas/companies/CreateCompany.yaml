@@ -3,8 +3,11 @@ properties:
   legalName:
     description: Company Legal Name
     type: string
-    minLength: 5
     example: SILOHUB Argentina SAS
+  displayName:
+    description: Nombre de fantasía de la compañía
+    type: string
+    example: SILOHUB
   country:
     $ref: ../common/CountryCode.yaml
   mainReference:
@@ -18,4 +21,5 @@ properties:
 required:
   - country
   - legalName
+  - displayName
   - mainReference

@@ -11,10 +11,12 @@
     window.onload = function () {
         // Begin Swagger UI call region
         const ui = SwaggerUIBundle({
-            url: "core.yaml", //Location of Open API spec in the repo
+            url: "../build/core.yaml", //Location of Open API spec in the repo
             dom_id: '#swagger-ui',
-            deepLinking: true,
+            deepLinking: false,
             displayOperationId: true,
+            defaultModelRendering: 'model',
+            defaultModelsExpandDepth: -1,
             presets: [
                 SwaggerUIBundle.presets.apis,
                 SwaggerUIBundle.SwaggerUIStandalonePreset

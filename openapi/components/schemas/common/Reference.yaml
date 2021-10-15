@@ -1,5 +1,8 @@
 type: object
-description: An external reference of the entity
+description: |
+  Referencia externa de la entidad.
+
+  Siempre consiste en un tipo de referencia y el valor de la ella.
 properties:
   refType:
     $ref: RefType.yaml

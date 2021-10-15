@@ -6,10 +6,13 @@ properties:
   country:
     $ref: ../common/CountryCode.yaml
   legalName:
-    description: Company Legal Name
+    description: Nombre legal de la compañia
     type: string
-    minLength: 5
     example: SILOHUB Argentina SAS
+  displayName:
+    description: Nombre de fantasía de la compañía
+    type: string
+    example: SILOHUB
   mainReference:
     $ref: ../common/Reference.yaml
   uniqueReferences:
@@ -26,6 +29,7 @@ required:
   - companyId
   - country
   - legalName
+  - displayName
   - mainReference
   - created
   - updated

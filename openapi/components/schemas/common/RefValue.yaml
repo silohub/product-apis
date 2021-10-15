@@ -1,4 +1,5 @@
 type: string
-description: Reference Value
+description: |
+  Valor de la referencia. Por ejemplo el número de CUIT
 pattern: '^[A-Za-z0-9\-_]+$'
 example: 30224445556

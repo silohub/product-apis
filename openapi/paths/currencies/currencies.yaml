@@ -4,7 +4,7 @@ get:
   tags:
     - currencies
   security:
-    - oauth: ['read:currencies']
+    - OAuth2: []
   parameters:
     - $ref: ../../components/parameters/common/Active.yaml
   responses:
@@ -22,7 +22,7 @@ post:
   tags:
     - currencies
   security:
-    - oauth: ['write:currencies']
+    - OAuth2: []
   requestBody:
     $ref: ../../components/requestBodies/currencies/Currency.yaml
   responses:

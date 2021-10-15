@@ -1,10 +1,12 @@
 get:
   operationId: getUserById
-  summary: Obtiene una usuario por Id
+  summary: Obtiene una usuario por su userId
+  description: |
+    Blah
   tags:
     - users
   security:
-    - oauth: ['read:users']
+    - OAuth2: []
   parameters:
     - $ref: ../../components/parameters/users/UserIdInPath.yaml
   responses:
@@ -21,10 +23,12 @@ get:
 put:
   operationId: updateUser
   summary: Cambia el estado de un usuario
+  description: |
+    Blah
   tags:
     - users
   security:
-    - oauth: [ 'write:users' ]
+    - OAuth2: []
   parameters:
     - $ref: ../../components/parameters/users/UserIdInPath.yaml
   requestBody:

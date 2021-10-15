@@ -1,10 +1,15 @@
 get:
   operationId: getAllUsers
-  summary: List all users
+  summary: Obtiene una lista de usuarios
+  description: |
+    Realiza una consulta de usuarios por los criterios definidos por los parámetros.
+
+    ### Pendiente
+    - agregar el parámetro con la query GraphQL
   tags:
     - users
   security:
-    - oauth: ['read:users']
+    - OAuth2: []
   parameters:
     - $ref: ../../components/parameters/common/Active.yaml
   responses:
@@ -18,11 +23,14 @@ get:
       $ref: ../../components/responses/500.yaml
 post:
   operationId: createUser
-  summary: Create a new user
+  summary: Crear un nuevo usuario
+  description: |
+    Crea un usuario nuevo en el sistema con la información suministrada.
+    El userId se genera cuando se realiza la creación.
   tags:
     - users
   security:
-    - oauth: ['write:users']
+    - OAuth2: []
   requestBody:
     $ref: ../../components/requestBodies/users/CreateUser.yaml
   responses:

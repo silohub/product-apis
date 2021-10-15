@@ -4,7 +4,7 @@ get:
   tags:
     - tenants
   security:
-    - oauth: ['read:tenants']
+    - OAuth2: []
   responses:
     '200':
       $ref: ../../components/responses/tenants/ArrayOfTenant.yaml
@@ -20,7 +20,7 @@ post:
   tags:
     - tenants
   security:
-    - oauth: ['write:tenants']
+    - OAuth2: []
   requestBody:
     $ref: ../../components/requestBodies/tenants/CreateTenant.yaml
   responses:

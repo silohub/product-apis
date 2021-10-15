@@ -84,5 +84,5 @@ tags:
       * [User Docs](https://silohub.atlassian.net/wiki/spaces/PUB/pages/98730009)
 components:
   securitySchemes:
-    oauth:
-      $ref: components/securitySchemes/oauth.yaml
+    OAuth2:
+      $ref: components/securitySchemes/OAuth2.yaml

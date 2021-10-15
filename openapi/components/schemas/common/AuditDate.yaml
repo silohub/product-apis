@@ -1,5 +1,6 @@
 type: string
-description: Audit Timestamp (UTC)
+description: |
+  [Marca temporal](https://es.wikipedia.org/wiki/Marca_temporal) (Timestamp)
 format: date-time
 readOnly: true
 example:

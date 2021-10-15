@@ -1,6 +1,7 @@
 summary: "Company 1"
 value:
   legalName: Company 1 example
+  displayName: Company 1
   country: "ARG"
   mainReference:
     refType: "CUIT"

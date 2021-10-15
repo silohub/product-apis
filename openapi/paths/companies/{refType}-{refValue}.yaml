@@ -1,10 +1,10 @@
 get:
   operationId: getCompanyByMainReference
-  summary: Get a Company by its main reference
+  summary: Obtiene una compañía por su referencia principal
   tags:
     - companies
   security:
-    - oauth: ['read:companies']
+    - OAuth2: []
   parameters:
     - $ref: ../../components/parameters/common/RefTypeInPath.yaml
     - $ref: ../../components/parameters/common/RefValueInPath.yaml

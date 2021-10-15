@@ -1,3 +1,4 @@
 type: string
-description: Entity Notes
+description: |
+  Notas adicionales
 maxLength: 5000

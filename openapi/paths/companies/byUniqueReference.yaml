@@ -1,10 +1,10 @@
 get:
   operationId: getCompanyByUniqueReference
-  summary: Obtiene una empresa por una referencia
+  summary: Obtiene una empresa por una referencia única
   tags:
     - companies
   security:
-    - oauth: ['read:companies']
+    - OAuth2: []
   parameters:
     - $ref: ../../components/parameters/common/RefType.yaml
     - $ref: ../../components/parameters/common/RefValue.yaml

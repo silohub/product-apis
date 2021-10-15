@@ -4,7 +4,7 @@ get:
   tags:
     - countries
   security:
-    - oauth: ['read:countries']
+    - OAuth2: []
   parameters:
     - $ref: ../../components/parameters/common/Active.yaml
   responses:
@@ -22,7 +22,7 @@ post:
   tags:
     - countries
   security:
-    - oauth: ['write:countries']
+    - OAuth2: []
   requestBody:
     $ref: ../../components/requestBodies/countries/Country.yaml
   responses:

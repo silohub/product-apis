@@ -1,10 +1,14 @@
 get:
   operationId: getAllCompanies
-  summary: Obtiene todas las empresas
+  summary: Obtiene todas las compañías
+  description: |
+
+    ### Pendiente
+    - agregar el parámetro con la query GraphQL
   tags:
     - companies
   security:
-    - oauth: ['read:companies']
+    - OAuth2: []
   responses:
     '200':
       $ref: ../../components/responses/companies/ArrayOfCompany.yaml
@@ -16,11 +20,13 @@ get:
       $ref: ../../components/responses/500.yaml
 post:
   operationId: createCompany
-  summary: Create a new company
+  summary: Crear una nueva compañía
+  description: |
+    Blah
   tags:
     - companies
   security:
-    - oauth: ['write:companies']
+    - OAuth2: []
   requestBody:
     $ref: ../../components/requestBodies/companies/CreateCompany.yaml
   responses:

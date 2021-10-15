@@ -1,10 +1,12 @@
 get:
   operationId: getCompanyById
   summary: Obtiene una empresa por companyId
+  description: |
+
   tags:
     - companies
   security:
-    - oauth: ['read:companies']
+    - OAuth2: []
   parameters:
     - $ref: ../../components/parameters/companies/CompanyIdInPath.yaml
   responses:
@@ -24,7 +26,7 @@ put:
   tags:
     - companies
   security:
-    - oauth: [ 'write:companies' ]
+    - OAuth2: []
   parameters:
     - $ref: ../../components/parameters/companies/CompanyIdInPath.yaml
   requestBody:
@@ -43,10 +45,12 @@ put:
 delete:
   operationId: deleteCompany
   summary: Elimina una empresa
+  description: |
+
   tags:
     - companies
   security:
-    - oauth: [ 'write:companies' ]
+    - OAuth2: []
   parameters:
     - $ref: ../../components/parameters/companies/CompanyIdInPath.yaml
   responses:
