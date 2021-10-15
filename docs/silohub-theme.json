@@ -14,5 +14,6 @@
       }
     }
   },
+  "showExtensions": true,
   "showConsole": false
 }

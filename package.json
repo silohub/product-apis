@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "dependencies": {
     "@redocly/openapi-cli": "^1.0.0-beta.62",
-    "redoc-cli": "^0.12.3"
+    "redoc-cli": "^0.13.0"
   },
   "private": true,
   "scripts": {
