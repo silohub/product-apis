@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
 set -e # exit on first failed command
-#set -x # mostrar cada comando que se ejecuta
+set -x # mostrar cada comando que se ejecuta
 # este script inicializa el entorno de codemagic antes de empezar a ejecutar
 #
 # depende de estas variables de entorno
 # ...
 #
 # shellcheck disable=SC2128
-BIN_DIR=$(dirname "${BASH_SOURCE}")
-BIN_DIR=$(cd "$BIN_DIR" && pwd) # lo transformamos en absoluto para evitar problemas
+GITHUB_DIR=$(dirname "${BASH_SOURCE}")
+GITHUB_DIR=$(cd "$GITHUB_DIR" && pwd) # lo transformamos en absoluto para evitar problemas
+BIN_DIR=$(dirname "$GITHUB_DIR")
 BASE_DIR=$(dirname "$BIN_DIR")
 #
 # buscamos la versiones requeridas y defaults
