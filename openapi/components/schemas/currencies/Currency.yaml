@@ -1,8 +1,10 @@
 type: object
+description: |
+  Una moneda definida por la ISO
 properties:
-  code:
+  currencyCode:
     $ref: ../common/CurrencyCode.yaml
-  numericCode:
+  currencyNumericCode:
     description: Curency numeric code
     type: integer
   decimals:

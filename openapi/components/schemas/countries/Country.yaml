@@ -1,8 +1,10 @@
 type: object
+description: |
+  Un país definido por la ISO
 properties:
-  code:
+  countryCode:
     $ref: ../common/CountryCode.yaml
-  numericCode:
+  countryNumericCode:
     description: Country numeric code
     type: integer
   name:

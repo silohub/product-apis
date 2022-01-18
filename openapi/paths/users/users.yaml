@@ -10,6 +10,7 @@ get:
     - users
   security:
     - OAuth2: []
+  x-security-role: admin:read
   parameters:
     - $ref: ../../components/parameters/common/Active.yaml
   responses:
