@@ -44,6 +44,8 @@ paths:
         description: Id unico del Tenant
         in: path
         required: true
+        schema:
+          type: string
     get:
       operationId: getTenant
       tags:
