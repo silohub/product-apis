@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -e # exit on first failed command
-#set -x # mostrar cada comando que se ejecuta
+set -x # mostrar cada comando que se ejecuta
 # este script inicializa el entorno de github antes de empezar a ejecutar
 #
 # depende de estas variables de entorno
@@ -26,5 +26,10 @@ corepack enable
 corepack prepare pnpm@"$PNPM_VERSION" --activate
 # pnpm install
 pnpm install --frozen-lockfile --prefer-frozen-lockfile
+#
+# agregamos el registry en el .npmrc
+ls -la .*
+echo "registry=https://npm.pkg.github.com/@silohub" >> .npmrc
+ls -la .*
 #
 echo "--> Setup Done <--"
