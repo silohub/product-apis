@@ -28,8 +28,8 @@ corepack prepare pnpm@"$PNPM_VERSION" --activate
 pnpm install --frozen-lockfile --prefer-frozen-lockfile
 #
 # agregamos el registry en el .npmrc
-ls -la .*
-echo "registry=https://npm.pkg.github.com/@silohub" >> .npmrc
-ls -la .*
+ls -la .npn*
+echo "registry=https://npm.pkg.github.com/@silohub" >> $BASE_DIR/.npmrc
+ls -la .npm*
 #
 echo "--> Setup Done <--"
