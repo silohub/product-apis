@@ -22,6 +22,6 @@ for API in $APIS ; do
   # verificamos que el build sea correcto
   echo "-- Publicando el paquete API $API"
   export API
-  pnpm --dir packages/"$API" publish
+  pnpm --dir packages/"$API" publish --no-git-checks
   echo "Done.."
 done
