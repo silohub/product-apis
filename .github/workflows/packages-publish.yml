@@ -19,6 +19,7 @@ jobs:
         with:
           node-version: '16.13.1'
           cache: 'pnpm'
+          registry-url: 'https://npm.pkg.github.com'
       - name: Git branch name
         id: git-branch-name
         uses: EthanSK/git-branch-name-action@v1
@@ -26,3 +27,6 @@ jobs:
         run: |
           bin/github/setup.sh
           bin/github/generate-packages.sh
+          bin/github/publish-packages.sh
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

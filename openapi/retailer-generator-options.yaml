@@ -2,7 +2,7 @@ additionalProperties:
   author: IT Admin <it-admin@silohub.ag>
   typescriptThreePlus: true
   npmVersion: 3.0.0
-  npmName: retailer-api
+  npmName: @silohub/api-client-retailer
   supportsES6: true
   withInterfaces: true
 #  withSeparateModelsAndApi: true
