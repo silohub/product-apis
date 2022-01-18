@@ -31,4 +31,12 @@ pnpm install --frozen-lockfile --prefer-frozen-lockfile
 #echo "registry=https://npm.pkg.github.com/silohub/" >> "$BASE_DIR/.npmrc"
 #
 cat $HOME/.npmrc || true
+echo ">>"
+echo "$NODE_AUTH_TOKEN"
+echo ">>"
+echo "$GITHUB_TOKEN"
+echo ">>"
+echo "$NPM_CONFIG_USERCONFIG"
+cat "$NPM_CONFIG_USERCONFIG"
+echo ">>"
 echo "--> Setup Done <--"
