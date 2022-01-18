@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -e # exit on first failed command
-set -x # mostrar cada comando que se ejecuta
+#set -x # mostrar cada comando que se ejecuta
 # este script inicializa el entorno de codemagic antes de empezar a ejecutar
 #
 # depende de estas variables de entorno
@@ -22,10 +22,12 @@ fi
 . "$BIN_DIR/.load-properties-file.sh" "$SILOHUB_VERSION_ENV"
 #
 # usamos node 16
-nvm install "$NODE_VERSION"
+#nvm install "$NODE_VERSION"
 #
 # habilitamos pnpm
 corepack enable
 corepack prepare pnpm@"$PNPM_VERSION" --activate
 # pnpm install
 pnpm install --frozen-lockfile --prefer-frozen-lockfile
+#
+echo "done setup"

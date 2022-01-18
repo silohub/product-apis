@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -e # exit on first failed command
-#set -x # mostrar cada comando que se ejecuta
+set -x # mostrar cada comando que se ejecuta
 # este script arma la distribución web para todas las variaciones de la app
 #
 # depende de estas variables de entorno
