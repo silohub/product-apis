@@ -20,7 +20,6 @@ jobs:
           node-version: '16.13.1'
           cache: 'pnpm'
           registry-url: 'https://npm.pkg.github.com'
-          scope: '@silohub'
       - name: Git branch name
         id: git-branch-name
         uses: EthanSK/git-branch-name-action@v1
@@ -30,5 +29,5 @@ jobs:
           bin/github/generate-packages.sh
           bin/github/publish-packages.sh
         env:
+          # esta es la variable que usa npm para publicar
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

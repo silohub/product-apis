@@ -19,10 +19,9 @@ export FCI_BRANCH
 # Buscamos la lista de APIs para generar
 APIS=$("$BIN_DIR"/github/list-apis.sh)
 for API in $APIS ; do
-  # verificamos que el build sea correcto
   echo "-- Generando la API $API"
   export API
-  pnpm run package-build
-  pnpm --dir packages/"$API" install
+  . "$BIN_DIR/generate-package.sh"
+  echo "Done $API.."
 done
 echo "--> Generate Done <--"
