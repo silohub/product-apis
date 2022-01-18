@@ -23,7 +23,7 @@ for API in $APIS ; do
   echo "-- Publicando el paquete API $API"
   export API
   cd "$BASE_DIR/packages/$API"
-  pnpm publish --no-git-checks --registry=https://npm.pkg.github.com/ --access public --force
+  pnpm publish --registry=https://npm.pkg.github.com/ --access public --force
   cd -
   echo "Done.."
 done
