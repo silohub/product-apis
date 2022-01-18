@@ -5,7 +5,8 @@ on:
       - develop
       - master
 jobs:
-  build-and-deploy:
+  publish-api-packages:
+    name: Publish API Packages
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
@@ -22,4 +23,4 @@ jobs:
         id: git-branch-name
         uses: EthanSK/git-branch-name-action@v1
       - name: Generate Packages
-        run: bin/generate-packages.sh
+        run: bin/github/generate-packages.sh
