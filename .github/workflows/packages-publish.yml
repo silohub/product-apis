@@ -19,7 +19,8 @@ jobs:
         with:
           node-version: '16.13.1'
           cache: 'pnpm'
-          registry-url: 'https://npm.pkg.github.com'
+          registry-url: 'https://registry.npmjs.org/'
+          scope: '@silohub'
       - name: Git branch name
         id: git-branch-name
         uses: EthanSK/git-branch-name-action@v1
