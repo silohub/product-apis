@@ -24,7 +24,5 @@ for API in $APIS ; do
   export API
   pnpm run package-build
   pnpm --dir packages/"$API" install
-#  pnpm --dir packages/"$API" build
-  echo "Done.."
-  ls -la $BASE_DIR/packages/$API
 done
+echo "--> Generate Done <--"
