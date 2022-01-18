@@ -21,8 +21,11 @@ fi
 # cargamos las properties en el entorno
 . "$BIN_DIR/.load-properties-file.sh" "$SILOHUB_VERSION_ENV"
 #
+# usamos node 16
+nvm install "$NODE_VERSION"
 #
-# pnpm install
+# habilitamos pnpm
 corepack enable
 corepack prepare pnpm@"$PNPM_VERSION" --activate
+# pnpm install
 pnpm install --frozen-lockfile --prefer-frozen-lockfile
