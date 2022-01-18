@@ -2,8 +2,8 @@ name: Publish APIs
 on:
   push:
     branches:
-      - develop
-      - master
+      - develop2
+      - master2
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest

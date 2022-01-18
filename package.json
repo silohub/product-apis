@@ -1,18 +1,23 @@
 {
-  "name": "silohub-core-api",
-  "version": "1.0.0",
-  "dependencies": {
-    "@redocly/openapi-cli": "^1.0.0-beta.62",
-    "redoc-cli": "^0.13.0"
+  "devDependencies": {
+    "npe": "^1.2.0",
+    "@openapitools/openapi-generator-cli": "^2.4.25"
   },
+  "name": "product-apis",
+  "version": "3.0.0",
+  "repository": "https://github.com/silohub/product-apis.git",
+  "author": "IT Admin SILOHUB <it-admin@silohub.ag>",
+  "license": "UNLICENSED",
   "private": true,
+  "description": "Open API Project",
+  "engines": {
+    "pnpm": "6.26.1",
+    "npm": "np-npm-8.1",
+    "yarn": "np-yarn-1.22"
+  },
+  "homepage": "https://github.com/silohub/product-apis",
   "scripts": {
-    "login": "openapi login",
-    "logout": "openapi logout",
-    "start": "openapi preview-docs",
-    "bundle": "openapi bundle openapi/${npm_config_file}.yaml -o build/${npm_config_file}.yaml",
-    "bundlejson": "openapi bundle openapi/${npm_config_file}.yaml -o build/${npm_config_file}.json",
-    "build": "redoc-cli bundle -o build/${npm_config_file}.html --cdn --options=docs/silohub-theme.json -t docs/silohub.hbs openapi/${npm_config_file}.yaml",
-    "test": "openapi lint"
+    "package-retailer": "openapi-generator-cli generate --input-spec openapi/retailer.yaml --output packages/retailer --generator-name typescript-axios --config openapi/retailer-generator-options.yaml",
+    "package-config-help": "openapi-generator-cli config-help --generator-name typescript-axios"
   }
 }
