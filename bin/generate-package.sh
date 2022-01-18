@@ -19,7 +19,6 @@ echo "-- Generando la API $API"
 pnpm run package-build
 #
 pnpm --dir packages/"$API" exec npe scripts.prepare "pnpm run build"
-#pnpm --dir packages/"$API" exec npe publishConfig.registry "https://npm.pkg.github.com"
 pnpm --dir packages/"$API" exec npe repository "$REPO"
 pnpm --dir packages/"$API" install
 #

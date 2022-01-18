@@ -30,4 +30,4 @@ jobs:
           bin/github/publish-packages.sh
         env:
           # esta es la variable que usa npm para publicar
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
