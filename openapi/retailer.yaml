@@ -20,7 +20,7 @@ servers:
   - url: 'https://api.silohub.net/develop/tenant-admin'
 tags:
   - name: Tenant
-    description: Tenants son nuestros clientes.
+    description: Tenants son nuestros clientes, son unos genios.
     externalDocs:
       url: https://silohub.atlassian.net/wiki/spaces/SH/pages/17760258/Arch-Tenant
 x-google-backend:

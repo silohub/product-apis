@@ -27,7 +27,7 @@ for API in $APIS ; do
   echo "-- Publicando el paquete API $API"
   export API
   cd "$BASE_DIR/packages/$API"
-  pnpm publish --access public --tag "latest${PRE_RELEASE_SUFFIX:?la variable PRE_RELEASE_SUFFIX no esta definida}" --force
+  pnpm publish --access public --tag "latest${PRE_RELEASE_SUFFIX:?la variable PRE_RELEASE_SUFFIX no esta definida}"
   cd -
   echo "Done.."
 done
