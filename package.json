@@ -19,7 +19,7 @@
   "homepage": "https://github.com/silohub/product-apis",
   "scripts": {
     "package-build": "openapi-generator-cli generate --input-spec openapi/$API.yaml --output packages/$API --generator-name typescript-axios --config openapi/$API-generator-options.yaml",
-    "package-retailer": "openapi-generator-cli generate --input-spec openapi/retailer.yaml --output packages/retailer --generator-name typescript-axios --config openapi/retailer-generator-options.yaml",
+    "package-validate": "openapi-generator-cli validate --input-spec openapi/$API.yaml",
     "package-config-help": "openapi-generator-cli config-help --generator-name typescript-axios"
   }
 }

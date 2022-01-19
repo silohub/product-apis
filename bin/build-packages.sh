@@ -16,12 +16,20 @@ export FCI_BRANCH
 # esto carga las variables de entorno y verifica las versiones
 . "$(dirname "${BASH_SOURCE}")/.load-env.sh"
 #
+# definimos variables para generar paquetes
+export BUILD_NUMBER=local
+. "$BIN_DIR/.prepare-build.sh"
+#
 # Buscamos la lista de APIs para generar
 APIS=$("$BIN_DIR"/github/list-apis.sh)
 #
 for API in $APIS ; do
-  echo "-- Generando la API $API"
+  export API
+  . "$BIN_DIR/validate-package.sh"
+done
+echo "--> Validation Done <--"
+for API in $APIS ; do
   export API
   . "$BIN_DIR/generate-package.sh"
-  echo "Done $API.."
 done
+echo "--> Generation Done <--"

@@ -40,7 +40,7 @@ if [[ $(pnpm --version) != "$PNPM_VERSION" ]]; then
 fi
 #
 # este proyecto por ahora solo necesita el openapi generator cli
-pnpm add --save-dev npe @openapitools/openapi-generator-cli@^"$OPENAPI_VERSION" --workspace-root
+pnpm add --save-dev @openapitools/openapi-generator-cli@^"$OPENAPI_VERSION" check-node-version npe --workspace-root
 #
 # configuramos el package.json
 pnpm exec npe name product-apis
@@ -58,5 +58,8 @@ pnpm exec npe engines.yarn "np-yarn-$YARN_VERSION"
 pnpm exec npe homepage "${REPO/.git/}"
 #
 # ahora los scripts de openapi
-pnpm exec npe scripts.package-retailer "openapi-generator-cli generate --input-spec openapi/retailer.yaml --output packages/retailer --generator-name typescript-axios --config openapi/retailer-generator-options.yaml"
+# shellcheck disable=SC2016
+pnpm exec npe scripts.package-build 'openapi-generator-cli generate --input-spec openapi/$API.yaml --output packages/$API --generator-name typescript-axios --config openapi/$API-generator-options.yaml'
+# shellcheck disable=SC2016
+pnpm exec npe scripts.package-validate 'openapi-generator-cli validate --input-spec openapi/$API.yaml'
 pnpm exec npe scripts.package-config-help "openapi-generator-cli config-help --generator-name typescript-axios"

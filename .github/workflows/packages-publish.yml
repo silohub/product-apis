@@ -32,3 +32,4 @@ jobs:
         env:
           # esta es la variable que usa npm para publicar
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+          BUILD_NUMBER: ${{ github.run_number }}
