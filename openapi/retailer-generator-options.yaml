@@ -1,5 +1,4 @@
 additionalProperties:
-  author: IT Admin <it-admin@silohub.ag>
   typescriptThreePlus: true
   npmVersion: 3.0.0
   npmName: "@silohub/api-client-retailer"
