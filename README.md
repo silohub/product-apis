@@ -1,3 +1,5 @@
+[![Publish API Packages](https://github.com/silohub/product-apis/actions/workflows/packages-publish.yml/badge.svg)](https://github.com/silohub/product-apis/actions/workflows/packages-publish.yml)
+
 # SILOHUB Core API OpenAPI Definition
 
 ## Working on your OpenAPI Definition
