@@ -20,7 +20,7 @@ fi
 # cargamos las properties en el entorno
 . "$BIN_DIR/.load-properties-file.sh" "$SILOHUB_VERSION_ENV"
 #
-PACKAGE_VERSION="$MAJOR_VERSION.$MINOR_VERSION.$HOTFIX_VERSION"
+PACKAGE_VERSION="$MAJOR_VERSION.$MINOR_VERSION"
 #
 # limpiamos TOOODO!!!
 # esto es comun a todos
