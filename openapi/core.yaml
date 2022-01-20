@@ -30,27 +30,9 @@ paths:
   /companies:
     $ref: paths/companies/companies.yaml
   /companies/{companyId}:
-    $ref: paths/companies/{companyId}.yaml
+    $ref: paths/companies/companyId.yaml
   /companies/byUniqueReference:
     $ref: paths/companies/byUniqueReference.yaml
-  /companies/{refType}/{refValue}:
-    $ref: paths/companies/{refType}-{refValue}.yaml
-  /tenants:
-    $ref: paths/tenants/tenants.yaml
-  /tenants/{tenantId}:
-    $ref: paths/tenants/{tenantId}.yaml
-  /currencies:
-    $ref: paths/currencies/currencies.yaml
-  /currencies/{currencyCode}:
-    $ref: paths/currencies/{currencyCode}.yaml
-  /countries:
-    $ref: paths/countries/countries.yaml
-  /countries/{countryCode}:
-    $ref: paths/countries/{countryCode}.yaml
-  /users:
-    $ref: paths/users/users.yaml
-  /users/{userId}:
-    $ref: paths/users/{userId}.yaml
 tags:
   - name: users
     x-displayName: Usuarios

@@ -3,7 +3,7 @@ in: path
 description: Company Unique Uuid
 required: true
 schema:
-  $ref: ../../../components/schemas/common/Uuid.yaml
+  $ref: ../components/schemas/common/Uuid.yaml
 examples:
   company1:
     value: eb4add5c-a00c-41b7-b5bd-3a9b559f3361

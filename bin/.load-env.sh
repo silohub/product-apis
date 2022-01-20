@@ -38,6 +38,7 @@ fi
 
 export BASE_DIR
 export BIN_DIR
+export BUILD_DIR="$BASE_DIR/build"
 export NODE_VERSION
 export NPM_VERSION
 export PNPM_VERSION

@@ -1,8 +1,10 @@
 openapi: 3.0.3
 info:
-  title: SILOHUB Retailer API
-  description: Esta API es la base para la administracion del entorno SILOHUB
-  version: develop
+  title: SILOHUB Retailer Application Backend for Front (BFF) API
+  description: |
+    Esta API es el "Back for Front" (BFF) de la aplicación "SILOHUB Retailer".
+    Provee los servicios para la aplicación de usuario (Web, Android, iOS).
+  version: 0.0
   license:
     name: UNLICENSED
     url: https://www.silohub.ag
@@ -59,4 +61,4 @@ paths:
 components:
   securitySchemes:
     OAuth2:
-      $ref: components/securitySchemes/OAuth2.yaml
+      $ref: ../../components/securitySchemes/OAuth2.yaml

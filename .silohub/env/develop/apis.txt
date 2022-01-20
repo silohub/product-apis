@@ -1,4 +1,6 @@
 #
-# este archivo contiene las APIs que vamos a generar paquetes y documentacion
-retailer
+# este archivo contiene las APIs que vamos a generar paquetes y documentación
+bff-retailer/v0
+#api-retailer/v0
+#api-admin/v0
 #

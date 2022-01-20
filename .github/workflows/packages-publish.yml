@@ -5,8 +5,8 @@ on:
       - develop
       - master
 jobs:
-  publish-api-packages:
-    name: Publish API Packages
+  publish:
+    name: Publish API Docs and Packages
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
@@ -24,11 +24,28 @@ jobs:
       - name: Git branch name
         id: git-branch-name
         uses: EthanSK/git-branch-name-action@v1
-      - name: Generate Packages
-        run: |
-          bin/github/setup.sh
-          bin/github/generate-packages.sh
-          bin/github/publish-packages.sh
+      - uses: ASzc/change-string-case-action@v2
+        id: GIT_BRANCH
+        with:
+          string: ${{ env.GIT_BRANCH_NAME }}
+      - name: Setup
+        run: bin/github/setup.sh
+      - name: Generate Openapi files
+        run: bin/github/generate-api-files.sh
+        env:
+          # esta es la variable que usa npm para publicar
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+          BUILD_NUMBER: ${{ github.run_number }}
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4.2.2
+        with:
+          branch: gh-pages
+          folder: build/docs
+          destination: adsa
+          target-folder: docs/${{ env.GIT_BRANCH_NAME }}
+          clean: false
+      - name: Generate NPM Internal Packages
+        run: bin/github/publish-internal-packages.sh
         env:
           # esta es la variable que usa npm para publicar
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}

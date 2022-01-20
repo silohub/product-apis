@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e # exit on first failed command
 #set -x # mostrar cada comando que se ejecuta
-# este script arma la distribución web para todas las variaciones de la app
+# este script publica en el npm registry de github los paquetes
 #
 # depende de estas variables de entorno
 # $GITHUB_REF_NAME - el branch donde está corriendo
@@ -27,7 +27,7 @@ for API in $APIS ; do
   echo "-- Publicando el paquete API $API"
   export API
   cd "$BASE_DIR/build/packages/$API"
-  pnpm publish --access public --tag "latest${PRE_RELEASE_SUFFIX:?la variable PRE_RELEASE_SUFFIX no esta definida}"
+#  pnpm publish --access public --tag "latest${PRE_RELEASE_SUFFIX:?la variable PRE_RELEASE_SUFFIX no esta definida}"
   cd -
   echo "Done.."
 done
