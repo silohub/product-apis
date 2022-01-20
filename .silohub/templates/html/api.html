@@ -1,11 +1,23 @@
 <!doctype html> <!-- Important: must specify -->
-<html>
+<html lang="es">
 <head>
     <meta charset="utf-8"> <!-- Important: rapi-doc uses utf8 characters -->
     <script type="module" src="https://unpkg.com/rapidoc/dist/rapidoc-min.js"></script>
     <link rel="stylesheet" href="../../font-jones.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.jpeg">
+    <title>SILOHUB API Documentation</title>
 </head>
 <body>
+<!--
+ToDo para Nico:
+- Cambiar con javascript el title de la pagina que sea el texto dentro de div con id="api-title"
+- ver si podemos incluir el numero de build en el index.html... quizas tengamos que cambiar el index.html por un template... no sé
+- agregar un footer con nuestras redes sociales? :-D
+- tunear el 404 https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-custom-404-page-for-your-github-pages-site
+- editar el root.html que va en la raiz del proyecto... o por lo menos la raiz de docs...
+ToDo para Mariano:
+- buscar un font mono-espaciado oficial... además del Jones y se cambia en el mono-font
+-->
 <rapi-doc spec-url="openapi.yaml"
           theme="dark"
           show-header="true"
@@ -13,6 +25,8 @@
           allow-spec-file-load="false"
           heading-text="Hola Nico"
           regular-font="Jones"
-> </rapi-doc>
+>
+    <img id="logo" alt="SILOHUB Logo" slot="logo" src="../../logo.png">
+</rapi-doc>
 </body>
 </html>
