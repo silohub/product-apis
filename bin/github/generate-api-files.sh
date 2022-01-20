@@ -20,10 +20,10 @@ export FCI_BRANCH
 #
 # limpiamos el build por las dudas, para arrancar de cero
 rm -rf "${BUILD_DIR:?la variable BUILD_DIR no esta definida}"
-mkdir -p "$BUILD_DIR"
+DOCS_DIR="$BUILD_DIR/docs"
+mkdir -p "$DOCS_DIR"
 #
 # copiamos los fonts en el build
-DOCS_DIR="$BUILD_DIR/docs"
 cp "${BASE_DIR:?la variable BASE_DIR no esta definida}"/.silohub/templates/docs/* "$DOCS_DIR"
 #
 # Buscamos la lista de APIs para generar
