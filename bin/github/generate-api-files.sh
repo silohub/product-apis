@@ -18,8 +18,12 @@ export FCI_BRANCH
 # esto prepara las variables de entorno para el build
 . "$BIN_DIR/.prepare-build.sh"
 #
+# limpiamos el build por las dudas, para arrancar de cero
+rm -rf "${BUILD_DIR:?la variable BUILD_DIR no esta definida}"
+mkdir -p "$BUILD_DIR"
+#
 # copiamos los fonts en el build
-DOCS_DIR="${BUILD_DIR:?la variable BUILD_DIR no esta definida}/docs"
+DOCS_DIR="$BUILD_DIR/docs"
 cp "${BASE_DIR:?la variable BASE_DIR no esta definida}"/.silohub/templates/docs/* "$DOCS_DIR"
 #
 # Buscamos la lista de APIs para generar
