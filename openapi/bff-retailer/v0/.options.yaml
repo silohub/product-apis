@@ -1,3 +1,0 @@
-additionalProperties:
-  outputFile: openapi.yaml
-  disallowAdditionalPropertiesIfNotPresent: false

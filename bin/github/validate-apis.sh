@@ -19,8 +19,8 @@ export FCI_BRANCH
 . "$BIN_DIR/.prepare-build.sh"
 #
 # limpiamos el build por las dudas, para arrancar de cero
-DOCS_DIR="${BUILD_DIR:?la variable BUILD_DIR no esta definida}/docs"
-rm -rf "$DOCS_DIR"
+rm -rf "${BUILD_DIR:?la variable BUILD_DIR no esta definida}"
+DOCS_DIR="$BUILD_DIR/docs"
 mkdir -p "$DOCS_DIR"
 #
 # copiamos los fonts en el build
@@ -30,6 +30,6 @@ cp "${BASE_DIR:?la variable BASE_DIR no esta definida}"/.silohub/templates/docs/
 APIS=$("$BIN_DIR"/github/list-apis.sh)
 for API in $APIS ; do
   export API
-  . "$BIN_DIR/.generate-api-file.sh"
+  . "$BIN_DIR/.validate-api.sh"
 done
-echo "--> Generate API Files Done <--"
+echo "--> Validate Done <--"

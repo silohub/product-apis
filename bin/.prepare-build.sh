@@ -15,7 +15,6 @@ set -e # exit on first failed command
 # shellcheck disable=SC2128
 BIN_DIR=$(dirname "${BASH_SOURCE}")
 BIN_DIR=$(cd "$BIN_DIR" && pwd) # lo transformamos en absoluto para evitar problemas
-BASE_DIR=$(dirname "$BIN_DIR")
 #
 #
 BASE_VERSION="${MAJOR_VERSION:?No está MAJOR_VERSION definida}.${MINOR_VERSION:?No está MINOR_VERSION definida}.${BUILD_NUMBER:?No esta BUILD_NUMBER definido}"

@@ -40,7 +40,7 @@ if [[ $(pnpm --version) != "$PNPM_VERSION" ]]; then
 fi
 #
 # este proyecto por ahora solo necesita el openapi generator cli
-pnpm add --save-dev @openapitools/openapi-generator-cli@^"$OPENAPI_VERSION" check-node-version npe --workspace-root
+pnpm add --save-dev @openapitools/openapi-generator-cli@^"$OPENAPI_VERSION" check-node-version npe mustache --workspace-root
 #
 # configuramos el package.json
 pnpm exec npe name product-apis

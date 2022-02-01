@@ -1,0 +1,11 @@
+inputSpec: openapi/{{{ api }}}.yaml
+generatorName: openapi-yaml
+outputDir: build/api-files/{{{ api }}}
+globalProperties:
+  supportingFiles: openapi.yaml
+  debugOpenAPI: false
+  debugModels: false
+  debugSupportingFiles: false
+additionalProperties:
+  outputFile: openapi.yaml
+  disallowAdditionalPropertiesIfNotPresent: false

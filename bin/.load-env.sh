@@ -35,7 +35,9 @@ if [[ $(cd "$BASE_DIR"; pnpm exec check-node-version --node "$NODE_VERSION" --pn
   exit 1
 fi
 #
-
+# nos aseguramos que usamos la version correcta del generador
+pnpm exec openapi-generator-cli version-manager set "$OPENAPI_GENERATOR_VERSION"
+#
 export BASE_DIR
 export BIN_DIR
 export BUILD_DIR="$BASE_DIR/build"
