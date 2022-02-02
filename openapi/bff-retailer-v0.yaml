@@ -28,6 +28,8 @@ tags:
 x-google-backend:
   address: http://localhost.silohub.ag
 paths:
+  /companies:
+    $ref: paths/companies/companies.yaml
   /tenants:
     get:
       operationId: getAllTenants

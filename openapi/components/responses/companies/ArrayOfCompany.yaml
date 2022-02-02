@@ -4,3 +4,6 @@ content:
   application/json:
     schema:
       $ref: ../../schemas/companies/ArrayOfCompany.yaml
+  application/x-protobuf:
+    schema:
+      $ref: ../../schemas/companies/ArrayOfCompany.yaml

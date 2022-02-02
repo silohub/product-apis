@@ -32,23 +32,24 @@ jobs:
         run: bin/github/setup.sh
       - name: Validate
         run: bin/github/validate-apis.sh
-      - name: Generate Openapi files
-        run: bin/github/generate-api-files.sh
+      - name: Generate
+        run: bin/github/generate-apis.sh
+      - name: Publish
+        run: bin/github/publish-apis.sh
         env:
           # esta es la variable que usa npm para publicar
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
-          BUILD_NUMBER: ${{ github.run_number }}
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4.2.2
-        with:
-          branch: gh-pages
-          folder: build/docs
-          destination: adsa
-          target-folder: docs/${{ env.GIT_BRANCH_NAME }}
-          clean: false
-      - name: Generate NPM Internal Packages
-        run: bin/github/publish-internal-packages.sh
-        env:
-          # esta es la variable que usa npm para publicar
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
-          BUILD_NUMBER: ${{ github.run_number }}
+#      - name: Deploy to GitHub Pages
+#        uses: JamesIves/github-pages-deploy-action@v4.2.2
+#        with:
+#          branch: gh-pages
+#          folder: build/docs
+#          destination: adsa
+#          target-folder: docs/${{ env.GIT_BRANCH_NAME }}
+#          clean: false
+#      - name: Generate NPM Internal Packages
+#        run: bin/github/publish-internal-packages.sh
+#        env:
+#          # esta es la variable que usa npm para publicar
+#          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+#          BUILD_NUMBER: ${{ github.run_number }}

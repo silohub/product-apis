@@ -5,27 +5,23 @@ set -e # exit on first failed command
 #
 # depende de estas variables de entorno
 # $GITHUB_REF_NAME - el branch donde está corriendo
-# $BUILD_NUMBER - el numero de build
-#
-# transformamos GITHUB_REF_NAME en FCI_BRANCH para unificar criterios
-FCI_BRANCH=${GITHUB_REF_NAME:?No está definida la variable de entorno GITHUB_REF_NAME. No podemos seguir}
-export FCI_BRANCH
+# GITHUB_RUN_NUMBER - el numero de build
 #
 # shellcheck disable=SC2128
-# esto carga las variables de entorno y verifica las versiones
-. "$(dirname "${BASH_SOURCE}")/../.load-env.sh"
-#
-# esto prepara las variables de entorno para el build
-. "$BIN_DIR/.prepare-build.sh"
+. "$(dirname "${BASH_SOURCE}")/github-init.sh"
 #
 # limpiamos el build por las dudas, para arrancar de cero
-PACKAGES_DIR="${BUILD_DIR:?la variable BUILD_DIR no esta definida}/server-packages"
-rm -rf "$PACKAGES_DIR"
-mkdir -p "$PACKAGES_DIR"
+if [[ -n $CLEAN_ROOT ]]; then
+  echo "--> Clean root <--"
+  ROOT_DIR="${BUILD_DIR:?la variable BUILD_DIR no esta definida}/server-packages"
+  rm -rf "$ROOT_DIR"
+  mkdir -p "$ROOT_DIR"
+  CONF_DIR="${BUILD_DIR:?la variable BUILD_DIR no esta definida}/config/server-packages"
+  rm -rf "$CONF_DIR"
+  mkdir -p "$CONF_DIR"
+fi
 #
-# Buscamos la lista de APIs para generar
-APIS=$("$BIN_DIR"/github/list-apis.sh)
-for API in $APIS ; do
+for API in ${APIS:?Horroooorrr!!} ; do
   export API
   . "$BIN_DIR/.generate-server-package.sh"
 done

@@ -8,3 +8,6 @@ content:
         $ref: ../../examples/companies/Company1.yaml
       company2:
         $ref: ../../examples/companies/Company2.yaml
+  application/x-protobuf:
+    schema:
+      $ref: ../../schemas/companies/Company.yaml

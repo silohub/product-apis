@@ -15,6 +15,8 @@ VIEW_FILE="$CONFIG_DIR/config.json"
 CONFIG_FILE="$CONFIG_DIR/config.yaml"
 OUTPUT_DIR="${BUILD_DIR:?la variable BUILD_DIR no esta definida}/server-packages/${API:?la variable API no esta definida}"
 #
+export API_TRANSLATED=${API//-/.}
+export SHGH_TOKEN="asdasdasdadsadada"
 #
 # Borrando
 rm -rf "$OUTPUT_DIR"
@@ -23,9 +25,17 @@ mkdir -p "$OUTPUT_DIR"
 echo "-- Preparando la configuración de server-packages - $INPUT_SPEC"
 rm -rf "$CONFIG_DIR"
 mkdir -p "$CONFIG_DIR"
-echo "{ \"api\": \"$API\" }" > "$VIEW_FILE"
+. "$BIN_DIR/.generate-json-file.sh" "${VIEW_FILE}" "API API_TRANSLATED SHGH_TOKEN"
+#
 pnpm exec mustache "$VIEW_FILE" "$TEMPLATE_FILE" "$CONFIG_FILE"
 #
 echo "-- Generando el paquete para el server para la API - $INPUT_SPEC"
 pnpm exec openapi-generator-cli batch --root-dir "$BASE_DIR" --verbose "$CONFIG_FILE"
+#
+# Cambiamos el flag de ejecutable al gradlew
+chmod +x "$OUTPUT_DIR/gradlew"
+#
+# ahora compilamos y armamos el jar
+cd "$OUTPUT_DIR"
+./gradlew jar
 #

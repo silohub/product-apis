@@ -1,30 +1,26 @@
 #!/usr/bin/env bash
 set -e # exit on first failed command
 #set -x # mostrar cada comando que se ejecuta
-# este script arma la distribución web para todas las variaciones de la app
+# este script inicializa variables para todos los scripts de Github
 #
 # depende de estas variables de entorno
 # $GITHUB_REF_NAME - el branch donde está corriendo
-# $BUILD_NUMBER - el numero de build
-# $APP_CODE - el nombre de la aplicacion a compilar
+# GITHUB_RUN_NUMBER - el numero de build
 #
 # transformamos GITHUB_REF_NAME en FCI_BRANCH para unificar criterios
-FCI_BRANCH=$(git branch --show-current)
+FCI_BRANCH=${GITHUB_REF_NAME:?No está definida la variable de entorno GITHUB_REF_NAME. No podemos seguir}
 export FCI_BRANCH
+#
+BUILD_NUMBER=${GITHUB_RUN_NUMBER:?No está definida la variable de entorno GITHUB_RUN_NUMBER. No podemos seguir}
+export BUILD_NUMBER
 #
 # shellcheck disable=SC2128
 # esto carga las variables de entorno y verifica las versiones
-. "$(dirname "${BASH_SOURCE}")/.load-env.sh"
+. "$(dirname "${BASH_SOURCE}")/../.load-env.sh"
 #
-# definimos variables para generar paquetes
-export BUILD_NUMBER=local
+# esto prepara las variables de entorno para el build
 . "$BIN_DIR/.prepare-build.sh"
 #
 # Buscamos la lista de APIs para generar
 APIS=$("$BIN_DIR"/github/list-apis.sh)
-#
-for API in $APIS ; do
-  export API
-  . "$BIN_DIR/validate-package.sh"
-done
-echo "--> Validation Done <--"
+export APIS

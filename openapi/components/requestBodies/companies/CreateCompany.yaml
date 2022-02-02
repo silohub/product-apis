@@ -7,3 +7,6 @@ content:
     examples:
       tenant1:
         $ref: ../../examples/companies/CreateCompany1.yaml
+  application/x-protobuf:
+    schema:
+      $ref: ../../schemas/companies/CreateCompany.yaml
