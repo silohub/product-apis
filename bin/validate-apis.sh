@@ -4,11 +4,9 @@ set -e # exit on first failed command
 # este script valida que las definiciones de las APIs sean correctas así no falla la compilación
 # solo invocamos al script para GitHub
 #
-GITHUB_REF_NAME=$(git branch --show-current)
-GITHUB_RUN_NUMBER=local
-#
-export GITHUB_REF_NAME
-export GITHUB_RUN_NUMBER
+# shellcheck disable=SC2128
+# ahora generamos los archivos YAML compilados
+. "$(dirname "${BASH_SOURCE}")/.local-init.sh"
 #
 # shellcheck disable=SC2128
 . "$(dirname "${BASH_SOURCE}")/github/validate-apis.sh"

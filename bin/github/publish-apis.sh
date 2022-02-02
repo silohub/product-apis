@@ -8,7 +8,7 @@ set -e # exit on first failed command
 # GITHUB_RUN_NUMBER - el numero de build
 #
 # shellcheck disable=SC2128
-. "$(dirname "${BASH_SOURCE}")/github-init.sh"
+. "$(dirname "${BASH_SOURCE}")/.github-init.sh"
 #
 # Buscamos la lista de APIs para generar
 for API in ${APIS:?Horroooorrr!!} ; do

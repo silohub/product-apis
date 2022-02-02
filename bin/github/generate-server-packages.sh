@@ -8,7 +8,7 @@ set -e # exit on first failed command
 # GITHUB_RUN_NUMBER - el numero de build
 #
 # shellcheck disable=SC2128
-. "$(dirname "${BASH_SOURCE}")/github-init.sh"
+. "$(dirname "${BASH_SOURCE}")/.github-init.sh"
 #
 # limpiamos el build por las dudas, para arrancar de cero
 if [[ -n $CLEAN_ROOT ]]; then
