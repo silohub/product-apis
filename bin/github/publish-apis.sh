@@ -18,7 +18,7 @@ for API in ${APIS:?Horroooorrr!!} ; do
   # Publish Server Package
   echo "--> Publicando el paquete Server $API"
   cd "$BUILD_DIR/server-packages/$API"
-  ./gradlew publish
+  ./gradlew --console plain --no-daemon publish
   cd -
 done
 echo "--> Generate Done <--"

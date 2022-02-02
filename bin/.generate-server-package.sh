@@ -36,5 +36,5 @@ chmod +x "$OUTPUT_DIR/gradlew"
 #
 # ahora compilamos y armamos el jar
 cd "$OUTPUT_DIR"
-./gradlew jar
+./gradlew --console plain --no-daemon jar
 #
