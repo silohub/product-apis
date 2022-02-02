@@ -1,18 +1,30 @@
-inputSpec: openapi/{{{ api }}}.yaml
+inputSpec: openapi/{{{ API }}}.yaml
 generatorName: java-micronaut-server
-outputDir: build/server-packages/{{{ api }}}
+outputDir: build/server-packages/{{{ API }}}
+templateDir: .silohub/templates/server-packages/generator
+#
+generateControllerAsAbstract: true
+hideGenerationTimestamp: true
+build: gradle
+artifactId: {{{ API }}}
+groupId: ag.silohub.openapi.server
+apiPackage: ag.silohub.openapi.server.{{{ API_TRANSLATED }}}
+#
 globalProperties:
-  #supportingFiles: common/configuration/gradlew/*
   verbose: true
   apiTests: false
   apiDocs: false
   modelTests: false
   modelDocs: false
-templateDir: build/template
-
-build: gradle
-generateControllerAsAbstract: true
-apiPackage: ag.silohub.server.tenant.api
+#
 additionalProperties:
-#  outputFile: openapi.yaml
-#  disallowAdditionalPropertiesIfNotPresent: false
+  micronautVersion: 3.1.1
+  shghUser: {{{ SHGH_USER }}}
+  shghToken: {{{ SHGH_TOKEN }}}
+#
+typeMappings:
+  DateTime: java.time.OffsetDateTime
+  LocalDateTime: java.time.OffsetDateTime
+importMappings:
+  DateTime: java.time.OffsetDateTime
+  LocalDateTime: java.time.OffsetDateTime

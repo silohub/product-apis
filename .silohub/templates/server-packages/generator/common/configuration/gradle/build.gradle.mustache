@@ -3,14 +3,23 @@ plugins {
     id("groovy")
     {{/isTestSpock}}
     id("com.github.johnrengelman.shadow") version "7.1.1"
-    id("io.micronaut.application") version "3.1.1"
+    id("io.micronaut.library") version "3.1.1"
+    id("maven-publish")
 }
 
 version = "{{artifactVersion}}"
-group = "{{invokerPackage}}"
+group = "{{groupId}}"
 
 repositories {
     mavenCentral()
+    maven {
+        name = "SILOHUB Product APIs"
+        url = uri("https://maven.pkg.github.com/silohub/product-apis")
+        credentials {
+            username = "{{{ shghUser }}}"
+            password = "{{{ shghToken }}}"
+        }
+    }
 }
 
 micronaut {
@@ -30,6 +39,7 @@ micronaut {
 
 dependencies {
     annotationProcessor("io.micronaut:micronaut-http-validation")
+    api("io.projectreactor:reactor-core:3.4.11")
     {{#useAuth}}
     annotationProcessor("io.micronaut.security:micronaut-security-annotations")
     {{/useAuth}}
@@ -45,13 +55,28 @@ dependencies {
     runtimeOnly("ch.qos.logback:logback-classic")
 }
 
-// TODO Set the main class
-application {
-    mainClass.set("{{invokerPackage}}.Application")
-}
 java {
     sourceCompatibility = JavaVersion.toVersion("1.8")
     targetCompatibility = JavaVersion.toVersion("1.8")
+    withSourcesJar()
 }
 
 graalvmNative.toolchainDetection = false
+
+publishing {
+    repositories {
+        maven {
+            name = "silohub-github"
+            url = uri("https://maven.pkg.github.com/silohub/product-apis")
+            credentials {
+                username = "{{{ shghUser }}}"
+                password = "{{{ shghToken }}}"
+            }
+        }
+    }
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
+}
