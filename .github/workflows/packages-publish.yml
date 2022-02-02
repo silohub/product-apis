@@ -30,6 +30,8 @@ jobs:
           string: ${{ env.GIT_BRANCH_NAME }}
       - name: Setup
         run: bin/github/setup.sh
+      - name: Validate
+        run: bin/github/validate-apis.sh
       - name: Generate Openapi files
         run: bin/github/generate-api-files.sh
         env:

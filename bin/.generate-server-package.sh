@@ -8,26 +8,24 @@ set -e # exit on first failed command
 # $BASE_DIR - raíz del proyecto
 # $BUILD_DIR - donde dejamos los compilados
 #
-TEMPLATES_DIR="${BASE_DIR:?la variable BASE_DIR no esta definida}/.silohub/templates/api-files"
+TEMPLATES_DIR="${BASE_DIR:?la variable BASE_DIR no esta definida}/.silohub/templates/server-packages"
 TEMPLATE_FILE="$TEMPLATES_DIR/config.yaml.mustache"
-CONFIG_DIR="${BUILD_DIR:?la variable BUILD_DIR no esta definida}/config/api-files/${API:?la variable API no esta definida}"
+CONFIG_DIR="${BUILD_DIR:?la variable BUILD_DIR no esta definida}/config/server-packages/${API:?la variable API no esta definida}"
 VIEW_FILE="$CONFIG_DIR/config.json"
 CONFIG_FILE="$CONFIG_DIR/config.yaml"
-OUTPUT_DIR="${BUILD_DIR:?la variable BUILD_DIR no esta definida}/api-files/${API:?la variable API no esta definida}"
+OUTPUT_DIR="${BUILD_DIR:?la variable BUILD_DIR no esta definida}/server-packages/${API:?la variable API no esta definida}"
+#
 #
 # Borrando
 rm -rf "$OUTPUT_DIR"
 mkdir -p "$OUTPUT_DIR"
 #
-echo "-- Preparando la configuración de api-files - $INPUT_SPEC"
+echo "-- Preparando la configuración de server-packages - $INPUT_SPEC"
 rm -rf "$CONFIG_DIR"
 mkdir -p "$CONFIG_DIR"
 echo "{ \"api\": \"$API\" }" > "$VIEW_FILE"
 pnpm exec mustache "$VIEW_FILE" "$TEMPLATE_FILE" "$CONFIG_FILE"
 #
-echo "-- Empaquetando la API - $INPUT_SPEC"
-pnpm exec openapi-generator-cli batch --root-dir "$BASE_DIR" "$CONFIG_FILE"
-#
-# ahora copiamos el index.html de la doc
-#cp "$TEMPLATE_DIR/api.html" "$OUTPUT_DIR/index.html"
+echo "-- Generando el paquete para el server para la API - $INPUT_SPEC"
+pnpm exec openapi-generator-cli batch --root-dir "$BASE_DIR" --verbose "$CONFIG_FILE"
 #

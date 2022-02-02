@@ -23,5 +23,5 @@ Algunas de las cosas que usamos para publicar las APIs
 - [RapiDoc](https://mrin9.github.io/RapiDoc/) esto sirva para mostrar la api Yaml en formato entendible... está muy buena!
 
 # Customizar templates
-- para extraer los templates de server: `pnpm exec openapi-generator-cli author template --output build/template --generator java-micronaut-server`
+- para extraer los templates de server: `pnpm exec openapi-generator-cli author template --generator-name java-micronaut-server --output .silohub/templates/server-packages/generator`
 - para extraer los templates de api-files: `pnpm exec openapi-generator-cli author template --output build/templates/api-files --generator-name openapi-yaml`

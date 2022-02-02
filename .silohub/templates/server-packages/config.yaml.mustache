@@ -1,0 +1,18 @@
+inputSpec: openapi/{{{ api }}}.yaml
+generatorName: java-micronaut-server
+outputDir: build/server-packages/{{{ api }}}
+globalProperties:
+  #supportingFiles: common/configuration/gradlew/*
+  verbose: true
+  apiTests: false
+  apiDocs: false
+  modelTests: false
+  modelDocs: false
+templateDir: build/template
+
+build: gradle
+generateControllerAsAbstract: true
+apiPackage: ag.silohub.server.tenant.api
+additionalProperties:
+#  outputFile: openapi.yaml
+#  disallowAdditionalPropertiesIfNotPresent: false
