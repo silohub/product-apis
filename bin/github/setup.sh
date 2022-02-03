@@ -28,3 +28,5 @@ corepack prepare pnpm@"$PNPM_VERSION" --activate
 pnpm install --frozen-lockfile --prefer-frozen-lockfile
 #
 echo "--> Setup Done <--"
+echo "--->DEPLOY_TOKEN=$DEPLOY_TOKEN"
+echo "--->NODE_AUTH_TOKEN=$NODE_AUTH_TOKEN"

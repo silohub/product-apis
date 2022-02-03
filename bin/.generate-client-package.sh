@@ -39,7 +39,7 @@ pnpm exec openapi-generator-cli batch --root-dir "$BASE_DIR" --verbose "$CONFIG_
 #
 # compilar el repo
 cd "$OUTPUT_DIR"
-pnpm install
+pnpm ci
 cd -
 #
 #cp "$BASE_DIR/.npmrc" "$PACKAGE_DIR/"
