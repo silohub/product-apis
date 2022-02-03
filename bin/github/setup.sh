@@ -30,6 +30,8 @@ pnpm install --frozen-lockfile --prefer-frozen-lockfile
 #
 # ahora reemplazo en numero de version en las APIs así no jode la publicación
 #
+FCI_BRANCH=${GITHUB_REF_NAME:?No está definida la variable de entorno GITHUB_REF_NAME. No podemos seguir}
+export FCI_BRANCH
 BUILD_NUMBER=${GITHUB_RUN_NUMBER:?No está definida la variable de entorno GITHUB_RUN_NUMBER. No podemos seguir}
 export BUILD_NUMBER
 echo "Cambiando el número de patch de las APIs por $BUILD_NUMBER"
