@@ -22,15 +22,15 @@ rm -rf "$OUTPUT_DIR"
 mkdir -p "$OUTPUT_DIR"
 #
 GIT_ORIGIN_URL=$(git config --get remote.origin.url)
-REPO="https://github.com/silohub/${GIT_ORIGIN_URL##*/}"
-HOME="${REPO/.git/}"
-export REPO
-export HOME
+REPOSITORY="https://github.com/silohub/${GIT_ORIGIN_URL##*/}"
+HOMEPAGE="${REPOSITORY/.git/}"
+export REPOSITORY
+export HOMEPAGE
 #
 echo "-- Preparando la configuración de client-packages - $INPUT_SPEC"
 rm -rf "$CONFIG_DIR"
 mkdir -p "$CONFIG_DIR"
-. "$BIN_DIR/.generate-json-file.sh" "${VIEW_FILE}" "API API_TRANSLATED SHGH_USER SHGH_TOKEN REPO HOME"
+. "$BIN_DIR/.generate-json-file.sh" "${VIEW_FILE}" "API API_TRANSLATED SHGH_USER SHGH_TOKEN REPOSITORY HOMEPAGE"
 #
 pnpm exec mustache "$VIEW_FILE" "$TEMPLATE_FILE" "$CONFIG_FILE"
 #
