@@ -19,7 +19,6 @@ git remote set-url origin "$ORIGIN_FIXED"
 git remote -v
 pnpm exec gh-pages --dist "$BUILD_DIR/api-files" --branch gh-pages --dest "docs/$FCI_BRANCH" --message "APIs Updated - $BUILD_NUMBER" --user "Github Actions <it-admin@silohub.ag>"
 #
-exit
 # Buscamos la lista de APIs para generar
 for API in ${APIS:?Horroooorrr!!} ; do
   export API
