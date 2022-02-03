@@ -1,0 +1,364 @@
+openapi: 3.0.3
+info:
+  contact:
+    email: support@silohub.ag
+    name: SILOHUB Support
+    url: https://silohub.atlassian.net/servicedesk/customer/portals
+  description: |
+    Esta API es el "Back for Front" (BFF) de la aplicación "SILOHUB Retailer".
+    Provee los servicios para la aplicación de usuario (Web, Android, iOS).
+  license:
+    name: UNLICENSED
+    url: https://www.silohub.ag
+  title: Retailer Application Backend
+  version: 0.0.2
+  x-logo:
+    url: https://www.silohub.ag/wp-content/uploads/2021/09/logo_silohub_blanco.svg
+    altText: Logo
+externalDocs:
+  description: Confluence
+  url: https://silohub.atlassian.net/wiki/spaces/SH/pages/82346030/SILOHUB+APIs
+servers:
+- url: https://api.silohub.net/develop/tenant-admin
+tags:
+- description: Tenants son nuestros clientes, son unos genios.
+  externalDocs:
+    url: https://silohub.atlassian.net/wiki/spaces/SH/pages/17760258/Arch-Tenant
+  name: Tenant
+paths:
+  /companies:
+    get:
+      description: |2
+
+        ### Pendiente
+        - agregar el parámetro con la query GraphQL
+      operationId: getAllCompanies
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ArrayOfCompany'
+            application/x-protobuf:
+              schema:
+                $ref: '#/components/schemas/ArrayOfCompany'
+          description: The response contains the list of companies
+          x-summary: Success
+        "400":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: Check parameters and try again.
+          x-summary: Bad Request
+        "403":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: Unable to access the resource. Check the security or permissions
+          x-summary: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: This is a server side problem, check the message and logs.
+          x-summary: Unexpected Error
+      summary: Obtiene todas las compañías
+      tags:
+      - companies
+    post:
+      description: |
+        Blah
+      operationId: createCompany
+      requestBody:
+        $ref: '#/components/requestBodies/CreateCompany'
+      responses:
+        "201":
+          content:
+            application/json:
+              examples:
+                company1:
+                  $ref: '#/components/examples/Company1'
+                company2:
+                  $ref: '#/components/examples/Company2'
+              schema:
+                $ref: '#/components/schemas/Company'
+            application/x-protobuf:
+              schema:
+                $ref: '#/components/schemas/Company'
+          description: Created
+        "400":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: Check parameters and try again.
+          x-summary: Bad Request
+        "403":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: Unable to access the resource. Check the security or permissions
+          x-summary: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: This is a server side problem, check the message and logs.
+          x-summary: Unexpected Error
+      summary: Crear una nueva compañía
+      tags:
+      - companies
+  /tenants:
+    get:
+      operationId: getAllTenants
+      responses:
+        "200":
+          description: OK
+        "401":
+          description: No estas autorizado. Chequea la autorización y/o los permisos.
+      summary: Devuelve todos los Tenants disponibles
+      tags:
+      - Tenant
+  /tenants/{id}:
+    get:
+      operationId: getTenant
+      parameters:
+      - description: Id unico del Tenant
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+        "401":
+          description: No estas autorizado para acceder a este recurso. Chequea la
+            autorización y/o los permisos.
+      summary: Devuelve el Tenants con ese id
+      tags:
+      - Tenant
+components:
+  examples:
+    Company1:
+      summary: Company 1
+      value:
+        companyId: eb4add5c-a00c-41b7-b5bd-3a9b559f3361
+        country: ARG
+        legalName: Company 1 example
+        displayName: Company 1
+        mainReference:
+          refType: CUIT
+          refValue: "30223337771"
+        uniqueReferences:
+        - refType: ALGORITMO-ENTIDAD
+          refValue: "123456"
+        - refType: ID-SAP
+          refValue: 222-333-4444
+        references:
+        - refType: ZONA
+          refValue: OESTE
+        - refType: SITUACION
+          refValue: Pendiente
+        notes: |
+          This is a sample note.
+          You should be able to store long values here.
+        created: 2021-09-10T12:32:28Z
+        updated: 2021-10-10T12:32:28Z
+    Company2:
+      summary: Company 2
+      value:
+        companyId: 164c1de9-be22-4f29-857e-6989999fe848
+        country: ARG
+        legalName: Company 2 example
+        displayName: Company 2
+        mainReference:
+          refType: CUIT
+          refValue: "30998887771"
+        created: 2021-10-01T12:32:28Z
+        updated: 2021-10-01T12:32:28Z
+    CreateCompany1:
+      summary: Company 1
+      value:
+        legalName: Company 1 example
+        displayName: Company 1
+        country: ARG
+        mainReference:
+          refType: CUIT
+          refValue: "30223337771"
+        uniqueReferences:
+        - refType: ALGORITMO-ENTIDAD
+          refValue: "123456"
+  requestBodies:
+    CreateCompany:
+      content:
+        application/json:
+          examples:
+            tenant1:
+              $ref: '#/components/examples/CreateCompany1'
+          schema:
+            $ref: '#/components/schemas/CreateCompany'
+        application/x-protobuf:
+          schema:
+            $ref: '#/components/schemas/CreateCompany'
+      description: Company Information
+      required: true
+  schemas:
+    ArrayOfCompany:
+      description: Collection of companies
+      example:
+        $ref: ../../examples/companies/ArrayOfCompany1.yaml
+      items:
+        $ref: '#/components/schemas/Company'
+      type: array
+    Company:
+      description: Algo??
+      properties:
+        companyId:
+          $ref: '#/components/schemas/Uuid'
+        country:
+          $ref: '#/components/schemas/CountryCode'
+        legalName:
+          description: Nombre legal de la compañia
+          example: SILOHUB Argentina SAS
+          type: string
+        displayName:
+          description: Nombre de fantasía de la compañía
+          example: SILOHUB
+          type: string
+        mainReference:
+          $ref: '#/components/schemas/Reference'
+        uniqueReferences:
+          $ref: '#/components/schemas/UniqueReferences'
+        references:
+          $ref: '#/components/schemas/References'
+        notes:
+          $ref: '#/components/schemas/Notes'
+        created:
+          $ref: '#/components/schemas/AuditDate'
+        updated:
+          $ref: '#/components/schemas/AuditDate'
+      required:
+      - companyId
+      - country
+      - created
+      - displayName
+      - legalName
+      - mainReference
+      - updated
+      type: object
+    CreateCompany:
+      properties:
+        legalName:
+          description: Company Legal Name
+          example: SILOHUB Argentina SAS
+          type: string
+        displayName:
+          description: Nombre de fantasía de la compañía
+          example: SILOHUB
+          type: string
+        country:
+          $ref: '#/components/schemas/CountryCode'
+        mainReference:
+          $ref: '#/components/schemas/Reference'
+        uniqueReferences:
+          $ref: '#/components/schemas/UniqueReferences'
+        references:
+          $ref: '#/components/schemas/References'
+        notes:
+          $ref: '#/components/schemas/Notes'
+      required:
+      - country
+      - displayName
+      - legalName
+      - mainReference
+      type: object
+    Uuid:
+      description: |
+        [Identificador único universal](https://es.wikipedia.org/wiki/Identificador_%C3%BAnico_universal) (UUID)
+      format: uuid
+      readOnly: true
+      type: string
+    CountryCode:
+      description: |
+        Identificador de país según [ISO 3166-1 alpha-3](https://es.wikipedia.org/wiki/ISO_3166-1)
+      example: '[ARG, BRA, CHL, URY, USA]'
+      maxLength: 3
+      minLength: 3
+      type: string
+    Reference:
+      description: |
+        Referencia externa de la entidad.
+
+        Siempre consiste en un tipo de referencia y el valor de la ella.
+      properties:
+        refType:
+          $ref: '#/components/schemas/RefType'
+        refValue:
+          $ref: '#/components/schemas/RefValue'
+      required:
+      - refType
+      - refValue
+      type: object
+    UniqueReferences:
+      description: Key-Value pair of references, keys are unique between the entities.
+        Like a unique key in a database.
+      example:
+        key1: value1
+        key2: value2
+      items:
+        $ref: '#/components/schemas/Reference'
+      type: array
+    References:
+      description: Key-Value pair of references, keys can be repeated between entities
+      example:
+        key1: value1
+        key2: value2
+      items:
+        $ref: '#/components/schemas/Reference'
+      type: array
+    Notes:
+      description: |
+        Notas adicionales
+      maxLength: 5000
+      type: string
+    AuditDate:
+      description: |
+        [Marca temporal](https://es.wikipedia.org/wiki/Marca_temporal) (Timestamp)
+      format: date-time
+      readOnly: true
+      type: string
+    RefType:
+      description: |
+        Tipo de referencia. Por ejemplo CUIT
+      example: CUIT
+      pattern: ^[A-Z\-]+$
+      type: string
+    RefValue:
+      description: |
+        Valor de la referencia. Por ejemplo el número de CUIT
+      example: "30224445556"
+      pattern: ^[A-Za-z0-9\-_]+$
+      type: string
+  securitySchemes:
+    OAuth2:
+      flows:
+        clientCredentials:
+          scopes: {}
+          tokenUrl: https://iam-develop.silohub.net/auth/realms/SILOHUB/protocol/openid-connect/token
+      type: oauth2
+x-google-backend:
+  address: http://localhost.silohub.ag
