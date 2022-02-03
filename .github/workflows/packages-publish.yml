@@ -41,11 +41,3 @@ jobs:
         run: bin/github/generate-apis.sh
       - name: Publish
         run: bin/github/publish-apis.sh
-#      - name: Deploy to GitHub Pages
-#        uses: JamesIves/github-pages-deploy-action@v4.2.2
-#        with:
-#          branch: gh-pages
-#          folder: build/docs
-#          destination: adsa
-#          target-folder: docs/${{ env.GIT_BRANCH_NAME }}
-#          clean: false

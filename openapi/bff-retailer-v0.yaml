@@ -4,7 +4,7 @@ info:
   description: |
     Esta API es el "Back for Front" (BFF) de la aplicación "SILOHUB Retailer".
     Provee los servicios para la aplicación de usuario (Web, Android, iOS).
-  version: "0.0.3"
+  version: "0.0"
   license:
     name: UNLICENSED
     url: https://www.silohub.ag
