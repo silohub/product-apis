@@ -10,5 +10,5 @@ API_MINOR=$(echo "$API_VERSION" | cut -d . -f 2)
 #
 NEW_VERSION="$API_MAJOR.$API_MINOR.${BUILD_NUMBER:?No tenemos build number!}"
 echo "Cambiamos la version de $API por $NEW_VERSION"
-sed -I .backup "s/^  version:.*/  version: \"$NEW_VERSION\"/g" "$YAML_FILE"
+sed -i "s/^  version:.*/  version: \"$NEW_VERSION\"/g" "$YAML_FILE"
 #
