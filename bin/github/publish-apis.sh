@@ -10,13 +10,15 @@ set -e # exit on first failed command
 # shellcheck disable=SC2128
 . "$(dirname "${BASH_SOURCE}")/.github-init.sh"
 #
+#
+# Publish Html
+echo "--> Publicando el HTML"
+pnpm exec gh-pages --dist "$BUILD_DIR/api-files" --branch gh-pages --dest "docs/$FCI_BRANCH" --message "APIs Updated - $BUILD_NUMBER" --user "Github Actions <it-admin@silohub.ag>"
+#
+exit
 # Buscamos la lista de APIs para generar
 for API in ${APIS:?Horroooorrr!!} ; do
   export API
-  #
-  # Publish Html
-  echo "--> Publicando la API $API"
-  pnpm exec gh-pages --dist "$BUILD_DIR/api-files/$API" --branch gh-pages --dest "docs/$FCI_BRANCH/$API" --message "API Updated - $BUILD_NUMBER" --user "Github Actions <it-admin@silohub.ag>"
   #
   # Publish Client Package
   echo "--> Publicando el paquete Client $API"

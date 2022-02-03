@@ -10,11 +10,13 @@ set -e # exit on first failed command
 # shellcheck disable=SC2128
 . "$(dirname "${BASH_SOURCE}")/.github-init.sh"
 #
+# shellcheck disable=SC2128
 # Buscamos la lista de APIs para generar
+. "$(dirname "${BASH_SOURCE}")/generate-api-index.sh"
 for API in ${APIS:?Horroooorrr!!} ; do
   export API
   . "$BIN_DIR/.generate-api-file.sh"
-  . "$BIN_DIR/.generate-client-package.sh"
-  . "$BIN_DIR/.generate-server-package.sh"
+#  . "$BIN_DIR/.generate-client-package.sh"
+#  . "$BIN_DIR/.generate-server-package.sh"
 done
 echo "--> Generate Done <--"
