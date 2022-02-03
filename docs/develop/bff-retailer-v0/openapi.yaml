@@ -10,7 +10,7 @@ info:
   license:
     name: UNLICENSED
     url: https://www.silohub.ag
-  title: SILOHUB Retailer Application Backend for Front (BFF) API
+  title: Retailer Application Backend
   version: 0.0.1
   x-logo:
     url: https://www.silohub.ag/wp-content/uploads/2021/09/logo_silohub_blanco.svg
