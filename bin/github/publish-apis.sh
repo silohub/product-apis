@@ -15,8 +15,8 @@ set -e # exit on first failed command
 echo "--> Publicando el HTML"
 ORIGIN=$(git config --get remote.origin.url)
 ORIGIN_FIXED="${ORIGIN/silohub/silohub-admin:$DEPLOY_TOKEN}"
-git remote set-url "$ORIGIN_FIXED"
-pnpm exec gh-pages --dist "$BUILD_DIR/api-files" --branch gh-pages --dest "docs/$FCI_BRANCH" --message "APIs Updated - $BUILD_NUMBER" --user "Github Actions <it-admin@silohub.ag>" --remote
+git remote set-url --add origin-fixed "$ORIGIN_FIXED"
+pnpm exec gh-pages --dist "$BUILD_DIR/api-files" --branch gh-pages --dest "docs/$FCI_BRANCH" --message "APIs Updated - $BUILD_NUMBER" --user "Github Actions <it-admin@silohub.ag>" --remote origin-fixed
 #
 exit
 # Buscamos la lista de APIs para generar

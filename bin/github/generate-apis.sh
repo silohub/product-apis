@@ -16,7 +16,7 @@ set -e # exit on first failed command
 for API in ${APIS:?Horroooorrr!!} ; do
   export API
   . "$BIN_DIR/.generate-api-file.sh"
-#  . "$BIN_DIR/.generate-client-package.sh"
-#  . "$BIN_DIR/.generate-server-package.sh"
+  . "$BIN_DIR/.generate-client-package.sh"
+  . "$BIN_DIR/.generate-server-package.sh"
 done
 echo "--> Generate Done <--"
