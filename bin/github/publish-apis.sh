@@ -15,11 +15,8 @@ set -x # mostrar cada comando que se ejecuta
 echo "--> Publicando el HTML"
 ORIGIN=$(git config --get remote.origin.url)
 ORIGIN_FIXED="${ORIGIN/silohub/silohub-admin:$DEPLOY_TOKEN}"
-cat .git/config
-echo "--> Publicando el HTML $ORIGIN - $ORIGIN_FIXED"
-git remote set-url origin-fixed "$ORIGIN_FIXED"
+git remote set-url origin "$ORIGIN_FIXED"
 git remote -v
-cat .git/config
 pnpm exec gh-pages --dist "$BUILD_DIR/api-files" --branch gh-pages --dest "docs/$FCI_BRANCH" --message "APIs Updated - $BUILD_NUMBER" --user "Github Actions <it-admin@silohub.ag>"
 #
 exit
