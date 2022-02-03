@@ -27,6 +27,9 @@ CONFIG_DIR="${BUILD_DIR:?la variable BUILD_DIR no esta definida}/config/api-file
 VIEW_FILE="$CONFIG_DIR/config.json"
 OUTPUT_DIR="${BUILD_DIR:?la variable BUILD_DIR no esta definida}/api-files"
 HTML_FILE="$OUTPUT_DIR/index.html"
+# Borrando
+rm -rf "$OUTPUT_DIR"
+mkdir -p "$OUTPUT_DIR"
 #
 echo "-- Preparando la configuración de api-index"
 echo "{ \"APIS\": [" > "$VIEW_FILE"
