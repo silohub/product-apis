@@ -49,9 +49,3 @@ jobs:
 #          destination: adsa
 #          target-folder: docs/${{ env.GIT_BRANCH_NAME }}
 #          clean: false
-#      - name: Generate NPM Internal Packages
-#        run: bin/github/publish-internal-packages.sh
-#        env:
-#          # esta es la variable que usa npm para publicar
-#          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
-#          BUILD_NUMBER: ${{ github.run_number }}

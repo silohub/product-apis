@@ -15,6 +15,12 @@ for API in ${APIS:?Horroooorrr!!} ; do
   export API
   #. "$BIN_DIR/.publish-api-file.sh"
   #
+  # Publish Client Package
+  echo "--> Publicando el paquete Client $API"
+  cd "$BUILD_DIR/client-packages/$API"
+  pnpm publish --access public
+  cd -
+  #
   # Publish Server Package
   echo "--> Publicando el paquete Server $API"
   cd "$BUILD_DIR/server-packages/$API"

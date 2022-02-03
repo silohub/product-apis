@@ -1,0 +1,14 @@
+inputSpec: openapi/{{{ API }}}.yaml
+generatorName: typescript-axios
+outputDir: build/client-packages/{{{ API }}}
+templateDir: .silohub/templates/client-packages/generator
+#
+additionalProperties:
+  typescriptThreePlus: true
+#  npmVersion: 3.0.0
+  npmName: "@silohub/ag-silohub-openapi-client-{{{ API }}}"
+  npmRepository: {{{ REPO }}}
+  npmHomepage: {{{ HOME }}}
+  supportsES6: true
+  withInterfaces: true
+#  withSeparateModelsAndApi: true

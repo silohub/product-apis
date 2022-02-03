@@ -1,0 +1,35 @@
+{
+  "name": "{{npmName}}",
+  "version": "{{npmVersion}}",
+  "description": "OpenAPI client for {{npmName}}",
+  "author": "IT Admin SILOHUB <it-admin@silohub.ag>",
+  "homepage": "{{{ npmHomepage }}}",
+  "keywords": [
+    "axios",
+    "typescript",
+    "openapi-client",
+    "openapi-generator",
+    "silohub",
+    "silohub-openapi",
+    "{{npmName}}"
+  ],
+  "license": "UNLICENSED",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc --outDir dist/",
+    "prepare": "pnpm run build"
+  },
+  "dependencies": {
+    "axios": "^0.21.4"
+  },
+  "devDependencies": {
+    "@types/node": "^12.11.5",
+    "typescript": "^3.6.4"
+  }{{#npmRepository}},{{/npmRepository}}
+{{#npmRepository}}
+  "publishConfig": {
+    "registry": "{{npmRepository}}"
+  }
+{{/npmRepository}}
+}

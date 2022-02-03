@@ -25,9 +25,6 @@ export SHGH_TOKEN
 # esto carga las variables de entorno y verifica las versiones
 . "$(dirname "${BASH_SOURCE}")/../.load-env.sh"
 #
-# esto prepara las variables de entorno para el build
-. "$BIN_DIR/.prepare-build.sh"
-#
 # Buscamos la lista de APIs para generar
 APIS=$("$BIN_DIR"/github/list-apis.sh)
 export APIS
