@@ -16,7 +16,7 @@ for API in ${APIS:?Horroooorrr!!} ; do
   #
   # Publish Html
   echo "--> Publicando la API $API"
-  pnpm exec gh-pages --dist "$BUILD_DIR/api-files/$API" --branch gh-pages --dest "docs/$FCI_BRANCH/$API" --message "API Updated - $BUILD_NUMBER"
+  pnpm exec gh-pages --dist "$BUILD_DIR/api-files/$API" --branch gh-pages --dest "docs/$FCI_BRANCH/$API" --message "API Updated - $BUILD_NUMBER" --user "Github Actions <it-admin@silohub.ag>"
   #
   # Publish Client Package
   echo "--> Publicando el paquete Client $API"
