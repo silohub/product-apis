@@ -18,7 +18,7 @@ for API in ${APIS:?Horroooorrr!!} ; do
   # Publish Client Package
   echo "--> Publicando el paquete Client $API"
   cd "$BUILD_DIR/client-packages/$API"
-  pnpm publish --access public
+  pnpm publish --access public --no-git-checks
   cd -
   #
   # Publish Server Package
