@@ -13,7 +13,10 @@ set -e # exit on first failed command
 # Buscamos la lista de APIs para generar
 for API in ${APIS:?Horroooorrr!!} ; do
   export API
-  #. "$BIN_DIR/.publish-api-file.sh"
+  #
+  # Publish Html
+  echo "--> Publicando la API $API"
+  pnpm exec gh-pages --dist "$BUILD_DIR/api-files/$API" --branch gh-pages --dest "docs/$FCI_BRANCH/$API" --message "API Updated - $BUILD_NUMBER"
   #
   # Publish Client Package
   echo "--> Publicando el paquete Client $API"

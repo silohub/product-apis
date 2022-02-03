@@ -1,10 +1,10 @@
 openapi: 3.0.3
 info:
-  title: SILOHUB Retailer Application Backend for Front (BFF) API
+  title: "Retailer Application Backend"
   description: |
     Esta API es el "Back for Front" (BFF) de la aplicación "SILOHUB Retailer".
     Provee los servicios para la aplicación de usuario (Web, Android, iOS).
-  version: "0.0.1"
+  version: "0.0.2"
   license:
     name: UNLICENSED
     url: https://www.silohub.ag

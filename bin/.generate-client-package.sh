@@ -15,8 +15,6 @@ VIEW_FILE="$CONFIG_DIR/config.json"
 CONFIG_FILE="$CONFIG_DIR/config.yaml"
 OUTPUT_DIR="${BUILD_DIR:?la variable BUILD_DIR no esta definida}/client-packages/${API:?la variable API no esta definida}"
 #
-export API_TRANSLATED=${API//-/.}
-#
 # Borrando
 rm -rf "$OUTPUT_DIR"
 mkdir -p "$OUTPUT_DIR"
@@ -27,10 +25,8 @@ HOMEPAGE="${REPOSITORY/.git/}"
 export REPOSITORY
 export HOMEPAGE
 #
-echo "-- Preparando la configuración de client-packages - $INPUT_SPEC"
-rm -rf "$CONFIG_DIR"
-mkdir -p "$CONFIG_DIR"
-. "$BIN_DIR/.generate-json-file.sh" "${VIEW_FILE}" "API API_TRANSLATED SHGH_USER SHGH_TOKEN REPOSITORY HOMEPAGE"
+echo "-- Preparando la configuración de client-packages - $API"
+. "$BIN_DIR/.build-config-file.sh" "${VIEW_FILE}" "SHGH_USER SHGH_TOKEN REPOSITORY HOMEPAGE"
 #
 pnpm exec mustache "$VIEW_FILE" "$TEMPLATE_FILE" "$CONFIG_FILE"
 #
