@@ -41,6 +41,4 @@ done
 echo "] }" >> "$VIEW_FILE"
 #
 pnpm exec mustache "$VIEW_FILE" "$TEMPLATE_FILE" "$HTML_FILE"
-exit
-
 echo "--> Generate API Index Done <--"
