@@ -1,4 +1,17 @@
 [![Publish API Packages](https://github.com/silohub/product-apis/actions/workflows/packages-publish.yml/badge.svg)](https://github.com/silohub/product-apis/actions/workflows/packages-publish.yml)
+[![pages-build-deployment](https://github.com/silohub/product-apis/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/silohub/product-apis/actions/workflows/pages/pages-build-deployment)
+
+## Setup del repositorio
+Para compilar este repositorio se necesitan un par de configuraciones adicionales:
+### Conseguir un Personal access token (PAT) de GitHub
+Como nos tenemos que conectar al repositorio de paquetes privado de Github, necesitas tu usuario y un PAT para autenticarte.
+- Acá se generan los Personal access tokens: (https://github.com/settings/tokens)
+- Hay que generar un token con el scope **read:packages** por lo menos
+- La expiración pueden dejarla en **"No expiration"** si es que dejan solo el permiso para leer
+- luego tenes que crear dos propiedades en tu shell
+  - **SHGH_USER**: tu usuario github
+  - **SHGH_TOKEN**: el PAT que te bajaste recién
+- Este mismo token va a servir para conectarse en el repo de frontends, backends... :-)
 
 # Estructura de directorios
 - **openapi**: tiene las fuentes de las APIs. Separadas en la estructura sugerida por OpenAPI.
