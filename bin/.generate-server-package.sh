@@ -19,7 +19,7 @@ OUTPUT_DIR="${BUILD_DIR:?la variable BUILD_DIR no esta definida}/server-packages
 rm -rf "$OUTPUT_DIR"
 mkdir -p "$OUTPUT_DIR"
 #
-echo "-- Preparando la configuración de server-packages - $$API"
+echo "-- Preparando la configuración de server-packages - $API"
 . "$BIN_DIR/.build-config-file.sh" "${VIEW_FILE}" "SHGH_USER SHGH_TOKEN"
 #
 pnpm exec mustache "$VIEW_FILE" "$TEMPLATE_FILE" "$CONFIG_FILE"
