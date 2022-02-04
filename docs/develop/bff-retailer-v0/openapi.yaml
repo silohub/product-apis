@@ -11,7 +11,7 @@ info:
     name: UNLICENSED
     url: https://www.silohub.ag
   title: Retailer Application Backend
-  version: 0.0.68
+  version: 0.0.69
   x-logo:
     url: https://www.silohub.ag/wp-content/uploads/2021/09/logo_silohub_blanco.svg
     altText: Logo
