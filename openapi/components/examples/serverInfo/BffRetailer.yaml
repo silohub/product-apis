@@ -1,0 +1,5 @@
+summary: "BFF Retailer"
+value:
+  version: 1.0.1234-develop
+  versionShort: 1.0
+  runtimeEnvironment: test

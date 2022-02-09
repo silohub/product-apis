@@ -12,55 +12,14 @@ info:
     name: SILOHUB Support
     email: support@silohub.ag
     url: 'https://silohub.atlassian.net/servicedesk/customer/portals'
-  x-logo:
-    url: https://www.silohub.ag/wp-content/uploads/2021/09/logo_silohub_blanco.svg
-    altText: Logo
 externalDocs:
   description: Confluence
   url: 'https://silohub.atlassian.net/wiki/spaces/SH/pages/82346030/SILOHUB+APIs'
 servers:
   - url: 'https://api.silohub.net/develop/tenant-admin'
 tags:
-  - name: Tenant
-    description: Tenants son nuestros clientes, son unos genios.
-    externalDocs:
-      url: https://silohub.atlassian.net/wiki/spaces/SH/pages/17760258/Arch-Tenant
-x-google-backend:
-  address: http://localhost.silohub.ag
+  - name: server-info
+    description: Server Runtime Information
 paths:
-  /companies:
-    $ref: paths/companies/companies.yaml
-  /tenants:
-    get:
-      operationId: getAllTenants
-      tags:
-        - Tenant
-      summary: Devuelve todos los Tenants disponibles
-      responses:
-        200:
-          description: OK
-
-        401:
-          description: No estas autorizado. Chequea la autorización y/o los permisos.
-  /tenants/{id}:
-    parameters:
-      - name: id
-        description: Id unico del Tenant
-        in: path
-        required: true
-        schema:
-          type: string
-    get:
-      operationId: getTenant
-      tags:
-        - Tenant
-      summary: Devuelve el Tenants con ese id
-      responses:
-        200:
-          description: OK
-        401:
-          description: No estas autorizado para acceder a este recurso. Chequea la autorización y/o los permisos.
-components:
-  securitySchemes:
-    OAuth2:
-      $ref: ./components/securitySchemes/OAuth2.yaml
+  /server-info:
+    $ref: paths/serverInfo/serverInfo.yaml

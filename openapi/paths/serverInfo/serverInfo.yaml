@@ -1,0 +1,14 @@
+tags:
+  - server-info
+get:
+  operationId: getServerInfo
+  summary: Show Server Runtime Information
+  responses:
+    '200':
+      $ref: ../../components/responses/serverInfo/ServerInfo.yaml
+    '400':
+      $ref: ../../components/responses/400.yaml
+    '403':
+      $ref: ../../components/responses/403.yaml
+    '500':
+      $ref: ../../components/responses/500.yaml
