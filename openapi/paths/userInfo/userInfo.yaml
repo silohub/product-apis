@@ -1,11 +1,13 @@
 get:
-  operationId: getServerInfo
-  summary: Show Server Runtime Information
+  operationId: getUserInfo
+  summary: Show User Information
   tags:
-    - server-info
+    - user-info
+  security:
+    - OAuth2: []
   responses:
     '200':
-      $ref: ../../components/responses/serverInfo/ServerInfo.yaml
+      $ref: ../../components/responses/userInfo/UserInfo.yaml
     '400':
       $ref: ../../components/responses/400.yaml
     '403':

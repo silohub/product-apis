@@ -1,0 +1,8 @@
+description: Success
+content:
+  application/json:
+    schema:
+      $ref: ../../schemas/users/User.yaml
+    examples:
+      bffRetailer:
+        $ref: ../../examples/users/User1.yaml
