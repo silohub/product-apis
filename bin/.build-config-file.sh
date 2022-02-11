@@ -14,10 +14,12 @@ YAML_FILE="${BASE_DIR:?Error!!}/openapi/$API.yaml"
 API_VERSION=$(grep -e '^\s*version:.*' "$YAML_FILE" | cut -d \" -f 2 )
 API_TITLE=$(grep -e '^\s*title:.*' "$YAML_FILE" | cut -d \" -f 2 )
 API_TRANSLATED=${API//-/.}
+API_BASE_PATH=$(echo "${API//-/_}" | tr '[:lower:]' '[:upper:]')
 export API_VERSION
 export API_TRANSLATED
 export API_TITLE
-VARS="API API_TRANSLATED API_VERSION API_TITLE $VARS_"
+export API_BASE_PATH
+VARS="API API_TRANSLATED API_VERSION API_TITLE API_BASE_PATH $VARS_"
 #
 echo "{ " > "$TARGET"
 #
