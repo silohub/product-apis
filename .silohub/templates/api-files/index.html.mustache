@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"> <!-- Important: rapi-doc uses utf8 characters -->
     <!-- https://www.w3schools.com/howto/howto_css_social_media_buttons.asp  -->
-    <script type="module" src="https://unpkg.com/rapidoc/dist/rapidoc-min.js"></script>
+    <script type="module" src="https://unpkg.com/rapidoc@9.1.1/dist/rapidoc-min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://api.silohub.ag/assets/font-jones.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code">
@@ -56,6 +56,11 @@ ToDo
         <a href="https://www.instagram.com/silohub/" target="_blank" class="fa fa-instagram"></a>
         <a href="https://twitter.com/silohub" target="_blank" class="fa fa-twitter"></a>
         <a href="https://www.linkedin.com/company/silohub/" target="_blank" class="fa fa-linkedin"></a>
+        <span style="float:right">
+            <a target="_blank" href="//online.swagger.io/validator/debug?url={{{ OPENAPI_URL }}}">
+                <img id="validator" src="//online.swagger.io/validator?url={{{ OPENAPI_URL }}}" alt="validator"/>
+            </a>
+        </span>
     </p>
 
 </rapi-doc>
