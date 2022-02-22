@@ -2,6 +2,8 @@ summary: "User 1"
 value:
   userId: 74327988-2c24-4931-8547-2a870d86c044
   displayName: User 1 example
+  language: "es_AR"
+  timezone: "America/Argentina/Cordoba"
   uniqueReferences:
     - refType: "DNI"
       refValue: "33444555"

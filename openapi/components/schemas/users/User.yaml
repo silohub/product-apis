@@ -7,6 +7,12 @@ properties:
   displayName:
     description: User Display Name
     type: string
+  language:
+    description: User Language / Locale
+    type: string
+  timezone:
+    description: User Timezone
+    type: string
   uniqueReferences:
     $ref: ../common/UniqueReferences.yaml
   references:
