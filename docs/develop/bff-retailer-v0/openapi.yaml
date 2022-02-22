@@ -11,7 +11,7 @@ info:
     name: UNLICENSED
     url: https://www.silohub.ag
   title: Retailer Application Backend
-  version: 0.0.73
+  version: 0.0.74
 externalDocs:
   description: Confluence
   url: https://silohub.atlassian.net/wiki/spaces/SH/pages/82346030/SILOHUB+APIs
@@ -129,6 +129,8 @@ components:
       value:
         userId: 74327988-2c24-4931-8547-2a870d86c044
         displayName: User 1 example
+        language: es_AR
+        timezone: America/Argentina/Cordoba
         uniqueReferences:
         - refType: DNI
           refValue: "33444555"
@@ -167,6 +169,12 @@ components:
           $ref: '#/components/schemas/Uuid'
         displayName:
           description: User Display Name
+          type: string
+        language:
+          description: User Language / Locale
+          type: string
+        timezone:
+          description: User Timezone
           type: string
         uniqueReferences:
           $ref: '#/components/schemas/UniqueReferences'
