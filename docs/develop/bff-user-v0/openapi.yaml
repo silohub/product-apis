@@ -29,51 +29,9 @@ servers:
       enum:
       - silohub
 tags:
-- description: Server Runtime Information
-  name: server-info
 - description: User Information
   name: user-info
 paths:
-  /server-info:
-    get:
-      operationId: getServerInfo
-      responses:
-        "200":
-          content:
-            application/json:
-              examples:
-                bffRetailer:
-                  $ref: '#/components/examples/BffRetailer'
-              schema:
-                $ref: '#/components/schemas/ServerInfo'
-          description: Success
-        "400":
-          content:
-            application/json:
-              schema:
-                nullable: true
-                type: object
-          description: Check parameters and try again.
-          x-summary: Bad Request
-        "403":
-          content:
-            application/json:
-              schema:
-                nullable: true
-                type: object
-          description: Unable to access the resource. Check the security or permissions
-          x-summary: Forbidden
-        "500":
-          content:
-            application/json:
-              schema:
-                nullable: true
-                type: object
-          description: This is a server side problem, check the message and logs.
-          x-summary: Unexpected Error
-      summary: Show Server Runtime Information
-      tags:
-      - server-info
   /user-info:
     get:
       operationId: getUserInfo
@@ -116,14 +74,50 @@ paths:
       summary: Show User Information
       tags:
       - user-info
+  /user-permissions:
+    get:
+      operationId: getBffUserPermissions
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                bffRetailer:
+                  $ref: '#/components/examples/User1Permissions'
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+          description: Success
+        "400":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: Check parameters and try again.
+          x-summary: Bad Request
+        "403":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: Unable to access the resource. Check the security or permissions
+          x-summary: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: This is a server side problem, check the message and logs.
+          x-summary: Unexpected Error
+      security:
+      - OAuth2: []
+      summary: Get User Permissions for the BFF
+      tags:
+      - user-info
 components:
   examples:
-    BffRetailer:
-      summary: BFF Retailer
-      value:
-        version: 1.0.1234-develop
-        versionShort: 1.0
-        runtimeEnvironment: test
     User1:
       summary: User 1
       value:
@@ -142,25 +136,14 @@ components:
           You should be able to store long values here.
         created: 2021-09-10T12:32:28Z
         updated: 2021-10-10T12:32:28Z
+    User1Permissions:
+      summary: User 1 Permissions
+      value:
+        permissions:
+        - /hub/home:*
+        - /hub/grain/*:*
+        - /*:read
   schemas:
-    ServerInfo:
-      description: |
-        La información del server que nos estamos conectando
-      properties:
-        version:
-          description: Versión completa del runtime
-          type: string
-        versionShort:
-          description: Versión corta (major.mino) del runtime
-          type: string
-        runtimeEnvironment:
-          description: Entorno del runtime
-          type: string
-      required:
-      - runtimeEnvironment
-      - version
-      - versionShort
-      type: object
     User:
       description: |
         Un usuario del sistema
@@ -252,6 +235,14 @@ components:
       example: "30224445556"
       pattern: ^[A-Za-z0-9\-_]+$
       type: string
+    inline_response_200:
+      description: Permissions
+      properties:
+        permissions:
+          items:
+            type: string
+          type: array
+      type: object
   securitySchemes:
     OAuth2:
       flows:
