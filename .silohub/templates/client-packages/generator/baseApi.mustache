@@ -7,7 +7,7 @@ import { Configuration } from "./configuration";
 // @ts-ignore
 import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 
-export const BASE_PATH = process.env.API_BASE_PATH_{{{ silohubApiBasePath }}};
+export const BASE_PATH = "{{{basePath}}}".replace(/\/+$/, "");
 
 /**
  *
