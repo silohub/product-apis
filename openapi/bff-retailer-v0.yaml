@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: "Retailer Application Backend"
+  title: "BFF for Retailer"
   description: |
     Esta API es el "Back for Front" (BFF) de la aplicación "SILOHUB Retailer".
     Provee los servicios para la aplicación de usuario (Web, Android, iOS).
@@ -34,13 +34,9 @@ servers:
 tags:
   - name: server-info
     description: Server Runtime Information
-  - name: user-info
-    description: User Information
 paths:
   /server-info:
     $ref: paths/serverInfo/serverInfo.yaml
-  /user-info:
-    $ref: paths/userInfo/userInfo.yaml
 components:
   securitySchemes:
     OAuth2:

@@ -2,13 +2,7 @@ description: Success
 content:
   application/json:
     schema:
-      type: object
-      description: Permissions
-      properties:
-        permissions:
-          type: array
-          items:
-            type: string
+      $ref: ../../schemas/users/UserPermissions.yaml
     examples:
       bffRetailer:
         $ref: ../../examples/users/User1Permissions.yaml

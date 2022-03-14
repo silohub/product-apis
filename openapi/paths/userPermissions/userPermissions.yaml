@@ -1,6 +1,6 @@
 get:
   operationId: getBffUserPermissions
-  summary: Get User Permissions for the BFF
+  summary: Get User Permissions for BFF
   tags:
     - user-info
   security:

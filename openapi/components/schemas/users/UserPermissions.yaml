@@ -1,0 +1,9 @@
+type: object
+description: Permissions
+properties:
+  permissions:
+    type: array
+    items:
+      type: string
+required:
+  - permissions
