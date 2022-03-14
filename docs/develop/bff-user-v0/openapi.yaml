@@ -5,13 +5,13 @@ info:
     name: SILOHUB Support
     url: https://silohub.atlassian.net/servicedesk/customer/portals
   description: |
-    Esta API es el "Back for Front" (BFF) de la aplicación "SILOHUB Retailer".
+    Esta API es parte del "Back for Front" (BFF) de las aplicaciones Front.
     Provee los servicios para la aplicación de usuario (Web, Android, iOS).
   license:
     name: UNLICENSED
     url: https://www.silohub.ag
-  title: Retailer Application Backend
-  version: 0.0.75
+  title: BFF User Information
+  version: 0.0.76
 externalDocs:
   description: Confluence
   url: https://silohub.atlassian.net/wiki/spaces/SH/pages/82346030/SILOHUB+APIs
@@ -85,7 +85,7 @@ paths:
                 bffRetailer:
                   $ref: '#/components/examples/User1Permissions'
               schema:
-                $ref: '#/components/schemas/inline_response_200'
+                $ref: '#/components/schemas/UserPermissions'
           description: Success
         "400":
           content:
@@ -113,7 +113,7 @@ paths:
           x-summary: Unexpected Error
       security:
       - OAuth2: []
-      summary: Get User Permissions for the BFF
+      summary: Get User Permissions for BFF
       tags:
       - user-info
 components:
@@ -175,6 +175,16 @@ components:
       - updated
       - userId
       type: object
+    UserPermissions:
+      description: Permissions
+      properties:
+        permissions:
+          items:
+            type: string
+          type: array
+      required:
+      - permissions
+      type: object
     Uuid:
       description: |
         [Identificador único universal](https://es.wikipedia.org/wiki/Identificador_%C3%BAnico_universal) (UUID)
@@ -235,14 +245,6 @@ components:
       example: "30224445556"
       pattern: ^[A-Za-z0-9\-_]+$
       type: string
-    inline_response_200:
-      description: Permissions
-      properties:
-        permissions:
-          items:
-            type: string
-          type: array
-      type: object
   securitySchemes:
     OAuth2:
       flows:

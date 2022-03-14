@@ -10,8 +10,8 @@ info:
   license:
     name: UNLICENSED
     url: https://www.silohub.ag
-  title: Retailer Application Backend
-  version: 0.0.75
+  title: BFF for Retailer
+  version: 0.0.76
 externalDocs:
   description: Confluence
   url: https://silohub.atlassian.net/wiki/spaces/SH/pages/82346030/SILOHUB+APIs
@@ -31,8 +31,6 @@ servers:
 tags:
 - description: Server Runtime Information
   name: server-info
-- description: User Information
-  name: user-info
 paths:
   /server-info:
     get:
@@ -74,48 +72,6 @@ paths:
       summary: Show Server Runtime Information
       tags:
       - server-info
-  /user-info:
-    get:
-      operationId: getUserInfo
-      responses:
-        "200":
-          content:
-            application/json:
-              examples:
-                bffRetailer:
-                  $ref: '#/components/examples/User1'
-              schema:
-                $ref: '#/components/schemas/User'
-          description: Success
-        "400":
-          content:
-            application/json:
-              schema:
-                nullable: true
-                type: object
-          description: Check parameters and try again.
-          x-summary: Bad Request
-        "403":
-          content:
-            application/json:
-              schema:
-                nullable: true
-                type: object
-          description: Unable to access the resource. Check the security or permissions
-          x-summary: Forbidden
-        "500":
-          content:
-            application/json:
-              schema:
-                nullable: true
-                type: object
-          description: This is a server side problem, check the message and logs.
-          x-summary: Unexpected Error
-      security:
-      - OAuth2: []
-      summary: Show User Information
-      tags:
-      - user-info
 components:
   examples:
     BffRetailer:
@@ -124,24 +80,6 @@ components:
         version: 1.0.1234-develop
         versionShort: 1.0
         runtimeEnvironment: test
-    User1:
-      summary: User 1
-      value:
-        userId: 74327988-2c24-4931-8547-2a870d86c044
-        displayName: User 1 example
-        language: es_AR
-        timezone: America/Argentina/Cordoba
-        uniqueReferences:
-        - refType: DNI
-          refValue: "33444555"
-        references:
-        - refType: SITUACION
-          refValue: Pendiente
-        notes: |
-          This is a sample note.
-          You should be able to store long values here.
-        created: 2021-09-10T12:32:28Z
-        updated: 2021-10-10T12:32:28Z
   schemas:
     ServerInfo:
       description: |
@@ -161,97 +99,6 @@ components:
       - version
       - versionShort
       type: object
-    User:
-      description: |
-        Un usuario del sistema
-      properties:
-        userId:
-          $ref: '#/components/schemas/Uuid'
-        displayName:
-          description: User Display Name
-          type: string
-        language:
-          description: User Language / Locale
-          type: string
-        timezone:
-          description: User Timezone
-          type: string
-        uniqueReferences:
-          $ref: '#/components/schemas/UniqueReferences'
-        references:
-          $ref: '#/components/schemas/References'
-        notes:
-          $ref: '#/components/schemas/Notes'
-        created:
-          $ref: '#/components/schemas/AuditDate'
-        updated:
-          $ref: '#/components/schemas/AuditDate'
-      required:
-      - created
-      - displayName
-      - updated
-      - userId
-      type: object
-    Uuid:
-      description: |
-        [Identificador único universal](https://es.wikipedia.org/wiki/Identificador_%C3%BAnico_universal) (UUID)
-      format: uuid
-      readOnly: true
-      type: string
-    UniqueReferences:
-      description: Key-Value pair of references, keys are unique between the entities.
-        Like a unique key in a database.
-      example:
-        key1: value1
-        key2: value2
-      items:
-        $ref: '#/components/schemas/Reference'
-      type: array
-    References:
-      description: Key-Value pair of references, keys can be repeated between entities
-      example:
-        key1: value1
-        key2: value2
-      items:
-        $ref: '#/components/schemas/Reference'
-      type: array
-    Notes:
-      description: |
-        Notas adicionales
-      maxLength: 5000
-      type: string
-    AuditDate:
-      description: |
-        [Marca temporal](https://es.wikipedia.org/wiki/Marca_temporal) (Timestamp)
-      format: date-time
-      readOnly: true
-      type: string
-    Reference:
-      description: |
-        Referencia externa de la entidad.
-
-        Siempre consiste en un tipo de referencia y el valor de la ella.
-      properties:
-        refType:
-          $ref: '#/components/schemas/RefType'
-        refValue:
-          $ref: '#/components/schemas/RefValue'
-      required:
-      - refType
-      - refValue
-      type: object
-    RefType:
-      description: |
-        Tipo de referencia. Por ejemplo CUIT
-      example: CUIT
-      pattern: ^[A-Z\-]+$
-      type: string
-    RefValue:
-      description: |
-        Valor de la referencia. Por ejemplo el número de CUIT
-      example: "30224445556"
-      pattern: ^[A-Za-z0-9\-_]+$
-      type: string
   securitySchemes:
     OAuth2:
       flows:
