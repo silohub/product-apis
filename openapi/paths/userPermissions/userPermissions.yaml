@@ -1,0 +1,16 @@
+get:
+  operationId: getBffUserPermissions
+  summary: Get User Permissions for the BFF
+  tags:
+    - user-info
+  security:
+    - OAuth2: []
+  responses:
+    '200':
+      $ref: ../../components/responses/userPermissions/UserPermissions.yaml
+    '400':
+      $ref: ../../components/responses/400.yaml
+    '403':
+      $ref: ../../components/responses/403.yaml
+    '500':
+      $ref: ../../components/responses/500.yaml

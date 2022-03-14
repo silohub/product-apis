@@ -1,0 +1,6 @@
+summary: "User 1 Permissions"
+value:
+  permissions:
+    - "/hub/home:*"
+    - "/hub/grain/*:*"
+    - "/*:read"
