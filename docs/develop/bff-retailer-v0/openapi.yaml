@@ -11,7 +11,7 @@ info:
     name: UNLICENSED
     url: https://www.silohub.ag
   title: BFF for Retailer
-  version: 0.0.76
+  version: 0.0.77
 externalDocs:
   description: Confluence
   url: https://silohub.atlassian.net/wiki/spaces/SH/pages/82346030/SILOHUB+APIs
