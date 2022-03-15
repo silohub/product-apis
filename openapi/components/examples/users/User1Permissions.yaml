@@ -1,6 +1,9 @@
 summary: "User 1 Permissions"
 value:
   permissions:
-    - "/hub/home:*"
-    - "/hub/grain/*:*"
-    - "/*:read"
+    - path: "/hub/home"
+      actions: ["*"]
+    - path: "/hub/grain/*"
+      actions: ["*"]
+    - path: "/*"
+      actions: ["read", "write"]
