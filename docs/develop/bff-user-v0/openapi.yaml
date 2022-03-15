@@ -11,7 +11,7 @@ info:
     name: UNLICENSED
     url: https://www.silohub.ag
   title: BFF User Information
-  version: 0.0.77
+  version: 0.0.78
 externalDocs:
   description: Confluence
   url: https://silohub.atlassian.net/wiki/spaces/SH/pages/82346030/SILOHUB+APIs
@@ -140,9 +140,16 @@ components:
       summary: User 1 Permissions
       value:
         permissions:
-        - /hub/home:*
-        - /hub/grain/*:*
-        - /*:read
+        - path: /hub/home
+          actions:
+          - '*'
+        - path: /hub/grain/*
+          actions:
+          - '*'
+        - path: /*
+          actions:
+          - read
+          - write
   schemas:
     User:
       description: |
@@ -180,7 +187,7 @@ components:
       properties:
         permissions:
           items:
-            type: string
+            $ref: '#/components/schemas/UserPermissions_permissions'
           type: array
       required:
       - permissions
@@ -245,6 +252,15 @@ components:
       example: "30224445556"
       pattern: ^[A-Za-z0-9\-_]+$
       type: string
+    UserPermissions_permissions:
+      properties:
+        path:
+          type: string
+        actions:
+          items:
+            type: string
+          type: array
+      type: object
   securitySchemes:
     OAuth2:
       flows:
