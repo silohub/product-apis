@@ -11,7 +11,7 @@ info:
     name: UNLICENSED
     url: https://www.silohub.ag
   title: BFF for Retailer
-  version: 0.0.81
+  version: 0.0.82
 externalDocs:
   description: Confluence
   url: https://silohub.atlassian.net/wiki/spaces/SH/pages/82346030/SILOHUB+APIs
@@ -180,8 +180,13 @@ components:
         totalRows:
           type: integer
         rows:
-          $ref: '#/components/schemas/Movement'
+          $ref: '#/components/schemas/ArrayOfMovement'
       type: object
+    ArrayOfMovement:
+      description: List of movements
+      items:
+        $ref: '#/components/schemas/Movement'
+      type: array
     Movement:
       description: |
         La información del server que nos estamos conectando
