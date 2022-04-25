@@ -40,7 +40,7 @@ paths:
   /server-info:
     $ref: paths/serverInfo/serverInfo.yaml
   /accounts/{accountId}/movements:
-    $ref: paths/retailers/accounts/searchMovements.yaml
+    $ref: paths/retailers/accounts/SearchMovements.yaml
 components:
   securitySchemes:
     OAuth2:
