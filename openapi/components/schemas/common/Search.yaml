@@ -8,6 +8,8 @@ properties:
     type: integer
   to:
     type: integer
+  maxRows:
+    type: integer
   filters:
     type: array
     items:
@@ -15,3 +17,4 @@ properties:
 required:
   - from
   - to
+  - maxRows
