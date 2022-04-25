@@ -11,6 +11,24 @@ properties:
   runtimeEnvironment:
     description: Entorno del runtime
     type: string
+  money:
+    description: Entorno del runtime
+    type: number
+    format: double
+  versionNumber:
+    description: Entorno del runtime
+    type: integer
+  versionDate:
+    description: Entorno del runtime
+    type: string
+    format: date
+  versionCreate:
+    description: Entorno del runtime
+    type: string
+    format: date-time
+  versionActive:
+    description: Entorno del runtime
+    type: boolean
 required:
   - version
   - versionShort
