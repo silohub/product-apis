@@ -11,7 +11,7 @@ info:
     name: UNLICENSED
     url: https://www.silohub.ag
   title: BFF for Retailer
-  version: 0.0.78
+  version: 0.0.80
 externalDocs:
   description: Confluence
   url: https://silohub.atlassian.net/wiki/spaces/SH/pages/82346030/SILOHUB+APIs
@@ -31,6 +31,8 @@ servers:
 tags:
 - description: Server Runtime Information
   name: server-info
+- description: Account Information
+  name: accounts
 paths:
   /server-info:
     get:
@@ -72,6 +74,59 @@ paths:
       summary: Show Server Runtime Information
       tags:
       - server-info
+  /accounts/{accountId}/movements:
+    post:
+      operationId: searchRetailerAccountsMovements
+      parameters:
+      - description: Account Id
+        in: path
+        name: accountId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Search'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchMovementsResult'
+          description: The response contains the search result
+          x-summary: Success
+        "400":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: Check parameters and try again.
+          x-summary: Bad Request
+        "403":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: Unable to access the resource. Check the security or permissions
+          x-summary: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: This is a server side problem, check the message and logs.
+          x-summary: Unexpected Error
+      security:
+      - OAuth2: []
+      summary: List Account Movements
+      tags:
+      - accounts
 components:
   examples:
     BffRetailer:
@@ -82,6 +137,49 @@ components:
         runtimeEnvironment: test
   schemas:
     ServerInfo:
+      description: |
+        La información del server que nos estamos conectando
+      properties:
+        version:
+          description: Versión completa del runtime
+          type: string
+        versionShort:
+          description: Versión corta (major.mino) del runtime
+          type: string
+        runtimeEnvironment:
+          description: Entorno del runtime
+          type: string
+      required:
+      - runtimeEnvironment
+      - version
+      - versionShort
+      type: object
+    Search:
+      description: Search parameters
+      properties:
+        queryId:
+          type: string
+        from:
+          type: integer
+        to:
+          type: integer
+        filters:
+          items:
+            type: string
+          type: array
+      required:
+      - from
+      - to
+      type: object
+    SearchMovementsResult:
+      description: Collection of users
+      properties:
+        totalRows:
+          type: integer
+        rows:
+          $ref: '#/components/schemas/Movement'
+      type: object
+    Movement:
       description: |
         La información del server que nos estamos conectando
       properties:
