@@ -3,10 +3,7 @@ set -e # exit on first failed command
 #set -x # mostrar cada comando que se ejecuta
 # este script genera los archivos openAPI completos para cada API
 #
-# shellcheck disable=SC2128
-# ahora generamos los archivos YAML compilados
-. "$(dirname "${BASH_SOURCE}")/.local-init.sh"
+. "$(dirname "${BASH_SOURCE[0]}")/.local-init.sh"
 #
-# shellcheck disable=SC2128
-# ahora generamos los archivos YAML compilados
-. "$(dirname "${BASH_SOURCE}")/github/generate-api-index.sh"
+# generamos el índice de APIs para HTML
+. "$(dirname "${BASH_SOURCE[0]}")/github/generate-api-index.sh"

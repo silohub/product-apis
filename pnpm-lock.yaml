@@ -1,14 +1,14 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@openapitools/openapi-generator-cli': ^2.4.25
+  '@openapitools/openapi-generator-cli': ^2.4.26
   check-node-version: ^4.2.1
   gh-pages: ^3.2.3
   mustache: ^4.2.0
   npe: ^1.2.0
 
 devDependencies:
-  '@openapitools/openapi-generator-cli': 2.4.25
+  '@openapitools/openapi-generator-cli': 2.4.26
   check-node-version: 4.2.1
   gh-pages: 3.2.3
   mustache: 4.2.0
@@ -16,8 +16,8 @@ devDependencies:
 
 packages:
 
-  /@nestjs/common/8.2.5_88a789cb3f20cca25c3f70fe96f41643:
-    resolution: {integrity: sha512-8VOZmHcCyhBtfvxehDfudsCrNghUoqDpZA5W8d/PUhMgz4Y1eT0M2ENBIuxr3C3j1vLypFOo30La2ymfQlOC8Q==}
+  /@nestjs/common/8.2.6_88a789cb3f20cca25c3f70fe96f41643:
+    resolution: {integrity: sha512-flLYSXunxcKyjbYddrhwbc49uE705MxBt85rS3mHyhDbAIPSGGeZEqME44YyAzCg1NTfJSNe7ztmOce5kNkb9A==}
     peerDependencies:
       cache-manager: '*'
       class-transformer: '*'
@@ -42,8 +42,8 @@ packages:
       - debug
     dev: true
 
-  /@nestjs/core/8.2.5_4d34bcc4311a780925020c9f901d5309:
-    resolution: {integrity: sha512-R0vp0VlAQFP7qBTZMzMspwOCO6MpsMJON/MsrfHVGgZS5Sd5DInfboWhe2COPnAr+VAT0o4FAKObW08Pdb5hMg==}
+  /@nestjs/core/8.2.6_0f75cad7c3bc55c714d492fe95499bdf:
+    resolution: {integrity: sha512-NwPcEIMmCsucs3QaDlQvkoU1FlFM2wm/WjaqLQhkSoIEmAR1gNtBo88f5io5cpMwCo1k5xYhqGlaSl6TfngwWQ==}
     requiresBuild: true
     peerDependencies:
       '@nestjs/common': ^8.0.0
@@ -60,7 +60,7 @@ packages:
       '@nestjs/websockets':
         optional: true
     dependencies:
-      '@nestjs/common': 8.2.5_88a789cb3f20cca25c3f70fe96f41643
+      '@nestjs/common': 8.2.6_88a789cb3f20cca25c3f70fe96f41643
       '@nuxtjs/opencollective': 0.3.2
       fast-safe-stringify: 2.1.1
       iterare: 1.2.1
@@ -86,14 +86,14 @@ packages:
       - encoding
     dev: true
 
-  /@openapitools/openapi-generator-cli/2.4.25:
-    resolution: {integrity: sha512-n2RExPLkscjgjryEW+SbhJNs22LHsCLIlBtD5FaZsW84tTcii2YcbyHOIfz9xAoNKbpshk2hgxjtnXqTK92mGg==}
+  /@openapitools/openapi-generator-cli/2.4.26:
+    resolution: {integrity: sha512-O42H9q1HWGoIpcpMaUu318b6bmOgcjP3MieHwOrFdoG3KyttceBGlbLf9Kbf7WM91WSNCDXum7cnEKASuoGjAg==}
     engines: {node: '>=10.0.0'}
     hasBin: true
     requiresBuild: true
     dependencies:
-      '@nestjs/common': 8.2.5_88a789cb3f20cca25c3f70fe96f41643
-      '@nestjs/core': 8.2.5_4d34bcc4311a780925020c9f901d5309
+      '@nestjs/common': 8.2.6_88a789cb3f20cca25c3f70fe96f41643
+      '@nestjs/core': 8.2.6_0f75cad7c3bc55c714d492fe95499bdf
       '@nuxtjs/opencollective': 0.3.2
       chalk: 4.1.2
       commander: 8.3.0

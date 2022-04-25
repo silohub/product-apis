@@ -21,9 +21,8 @@ SHGH_TOKEN=${SHGH_TOKEN:?No está definida la variable de entorno SHGH_TOKEN. No
 export SHGH_USER
 export SHGH_TOKEN
 #
-# shellcheck disable=SC2128
 # esto carga las variables de entorno y verifica las versiones
-. "$(dirname "${BASH_SOURCE}")/../.load-env.sh"
+. "$(dirname "${BASH_SOURCE[0]}")/../.load-env.sh"
 #
 # Buscamos la lista de APIs para generar
 APIS=$("$BIN_DIR"/github/list-apis.sh)

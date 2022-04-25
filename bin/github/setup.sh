@@ -6,8 +6,7 @@ set -e # exit on first failed command
 # depende de estas variables de entorno
 # ...
 #
-# shellcheck disable=SC2128
-GITHUB_DIR=$(dirname "${BASH_SOURCE}")
+GITHUB_DIR=$(dirname "${BASH_SOURCE[0]}")
 GITHUB_DIR=$(cd "$GITHUB_DIR" && pwd) # lo transformamos en absoluto para evitar problemas
 BIN_DIR=$(dirname "$GITHUB_DIR")
 BASE_DIR=$(dirname "$BIN_DIR")

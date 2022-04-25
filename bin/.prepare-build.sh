@@ -12,8 +12,7 @@ set -e # exit on first failed command
 # OJO... cuando avancemos en el desarrollo, cada api podría tener su version, entonces necesitamos
 # revisar el versionado para que algunas sean 3.0.algo y otras 0.0.build
 #
-# shellcheck disable=SC2128
-BIN_DIR=$(dirname "${BASH_SOURCE}")
+BIN_DIR=$(dirname "${BASH_SOURCE[0]}")
 BIN_DIR=$(cd "$BIN_DIR" && pwd) # lo transformamos en absoluto para evitar problemas
 #
 #

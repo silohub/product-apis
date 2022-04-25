@@ -7,8 +7,7 @@ set -e # exit on first failed command
 # $GITHUB_REF_NAME - el branch donde está corriendo
 # GITHUB_RUN_NUMBER - el numero de build
 #
-# shellcheck disable=SC2128
-. "$(dirname "${BASH_SOURCE}")/.github-init.sh"
+. "$(dirname "${BASH_SOURCE[0]}")/.github-init.sh"
 #
 #
 # Publish Html

@@ -3,8 +3,7 @@ set -e # exit on first failed command
 #set -x # mostrar cada comando que se ejecuta
 # este script carga las variables de entorno generales y chequea si está las versiones bien
 #
-# shellcheck disable=SC2128
-BIN_DIR=$(dirname "${BASH_SOURCE}")
+BIN_DIR=$(dirname "${BASH_SOURCE[0]}")
 BIN_DIR=$(cd "$BIN_DIR" && pwd) # lo transformamos en absoluto para evitar problemas
 BASE_DIR=$(dirname "$BIN_DIR")
 #

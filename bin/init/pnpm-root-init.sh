@@ -3,8 +3,7 @@ set -e
 #set -x
 # este script inicializa el monorepo usando pnpm
 #
-# shellcheck disable=SC2128
-INIT_DIR=$(dirname "${BASH_SOURCE}")
+INIT_DIR=$(dirname "${BASH_SOURCE[0]}")
 INIT_DIR=$(cd "$INIT_DIR" && pwd)
 BIN_DIR=$(dirname "${INIT_DIR}")
 BASE_DIR=$(dirname "${BIN_DIR}")

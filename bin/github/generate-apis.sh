@@ -7,12 +7,10 @@ set -e # exit on first failed command
 # $GITHUB_REF_NAME - el branch donde está corriendo
 # GITHUB_RUN_NUMBER - el numero de build
 #
-# shellcheck disable=SC2128
-. "$(dirname "${BASH_SOURCE}")/.github-init.sh"
+. "$(dirname "${BASH_SOURCE[0]}")/.github-init.sh"
 #
-# shellcheck disable=SC2128
 # Buscamos la lista de APIs para generar
-. "$(dirname "${BASH_SOURCE}")/generate-api-index.sh"
+. "$(dirname "${BASH_SOURCE[0]}")/generate-api-index.sh"
 for API in ${APIS:?Horroooorrr!!} ; do
   export API
   . "$BIN_DIR/.generate-api-file.sh"
