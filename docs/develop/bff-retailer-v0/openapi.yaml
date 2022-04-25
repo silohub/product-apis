@@ -11,7 +11,7 @@ info:
     name: UNLICENSED
     url: https://www.silohub.ag
   title: BFF for Retailer
-  version: 0.0.82
+  version: 0.0.83
 externalDocs:
   description: Confluence
   url: https://silohub.atlassian.net/wiki/spaces/SH/pages/82346030/SILOHUB+APIs
@@ -200,6 +200,24 @@ components:
         runtimeEnvironment:
           description: Entorno del runtime
           type: string
+        money:
+          description: Entorno del runtime
+          format: double
+          type: number
+        versionNumber:
+          description: Entorno del runtime
+          type: integer
+        versionDate:
+          description: Entorno del runtime
+          format: date
+          type: string
+        versionCreate:
+          description: Entorno del runtime
+          format: date-time
+          type: string
+        versionActive:
+          description: Entorno del runtime
+          type: boolean
       required:
       - runtimeEnvironment
       - version
