@@ -4,4 +4,4 @@ properties:
   totalRows:
     type: integer
   rows:
-    $ref: ./Movement.yaml
+    $ref: ./ArrayOfMovement.yaml
