@@ -1,0 +1,6 @@
+name: queryId
+in: query
+description: Query Id
+required: false
+schema:
+  type: string

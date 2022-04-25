@@ -5,13 +5,13 @@ properties:
   currencyCode:
     $ref: ../common/CurrencyCode.yaml
   currencyNumericCode:
-    description: Curency numeric code
+    description: Currency numeric code
     type: integer
   decimals:
     description: Decimals in the currency
     type: integer
   name:
-    description: Curency Name
+    description: Currency Name
     type: string
   active:
     description: Is Active

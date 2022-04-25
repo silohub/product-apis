@@ -1,0 +1,17 @@
+type: object
+description: |
+  La información del server que nos estamos conectando
+properties:
+  version:
+    description: Versión completa del runtime
+    type: string
+  versionShort:
+    description: Versión corta (major.mino) del runtime
+    type: string
+  runtimeEnvironment:
+    description: Entorno del runtime
+    type: string
+required:
+  - version
+  - versionShort
+  - runtimeEnvironment

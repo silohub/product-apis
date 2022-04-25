@@ -1,0 +1,11 @@
+name: SearchFilter
+type: object
+description: Search filter
+properties:
+  key:
+    type: string
+  value:
+    type: string
+required:
+  - key
+  - value

@@ -1,0 +1,17 @@
+name: Search
+type: object
+description: Search parameters
+properties:
+  queryId:
+    type: string
+  from:
+    type: integer
+  to:
+    type: integer
+  filters:
+    type: array
+    items:
+      type: string
+required:
+  - from
+  - to

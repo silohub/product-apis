@@ -1,0 +1,7 @@
+type: object
+description: Collection of users
+properties:
+  totalRows:
+    type: integer
+  rows:
+    $ref: ./Movement.yaml
