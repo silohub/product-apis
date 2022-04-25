@@ -1,6 +1,8 @@
 type: object
 description: Collection of users
 properties:
+  queryId:
+    type: string
   totalRows:
     type: integer
   rows:
