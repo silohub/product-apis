@@ -2,7 +2,7 @@
 set -e # exit on first failed command
 #set -x # mostrar cada comando que se ejecuta
 #
-GITHUB_REF_NAME=$(git branch --show-current)
+GITHUB_REF_NAME=${BRANCH:-$(git branch --show-current)}
 GITHUB_RUN_NUMBER=local
 CLEAN_ROOT=true
 #
