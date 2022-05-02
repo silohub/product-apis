@@ -22,6 +22,7 @@ fi
 #
 for API in ${APIS:?Horroooorrr!!} ; do
   export API
-  . "$BIN_DIR/.generate-client-package.sh"
+  . "$BIN_DIR/.generate-client-javascript-package.sh"
+#  . "$BIN_DIR/.generate-client-java-package.sh"
 done
 echo "--> Generate Client Done <--"

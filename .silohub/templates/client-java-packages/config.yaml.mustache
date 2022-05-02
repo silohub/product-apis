@@ -1,0 +1,32 @@
+inputSpec: openapi/{{{ API }}}.yaml
+generatorName: java-micronaut-server
+outputDir: build/server-packages/{{{ API }}}
+templateDir: .silohub/templates/server-packages/generator
+#
+generateControllerAsAbstract: true
+hideGenerationTimestamp: true
+build: gradle
+artifactId: {{{ API }}}
+groupId: ag.silohub.openapi.server
+apiPackage: ag.silohub.openapi.server.{{{ API_TRANSLATED }}}
+modelPackage: ag.silohub.openapi.server.{{{ API_TRANSLATED }}}.model
+#
+globalProperties:
+  verbose: true
+  apiTests: false
+  apiDocs: false
+  modelTests: false
+  modelDocs: false
+#
+# estos datos sirven más que nada para publicar, no se guardan en el código generado
+additionalProperties:
+  micronautVersion: 3.1.1
+  shghUser: {{{ SHGH_USER }}}
+  shghToken: {{{ SHGH_TOKEN }}}
+#
+typeMappings:
+  DateTime: java.time.OffsetDateTime
+  LocalDateTime: java.time.OffsetDateTime
+importMappings:
+  DateTime: java.time.OffsetDateTime
+  LocalDateTime: java.time.OffsetDateTime

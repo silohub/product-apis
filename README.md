@@ -37,5 +37,6 @@ Algunas de las cosas que usamos para publicar las APIs
 
 # Customizar templates
 - para extraer los templates de server: `pnpm exec openapi-generator-cli author template --generator-name java-micronaut-server --output .silohub/templates/server-packages/generator`
-- para extraer los templates de client: `pnpm exec openapi-generator-cli author template --generator-name typescript-axios --output .silohub/templates/client-packages/generator`
+- para extraer los templates de client js: `pnpm exec openapi-generator-cli author template --generator-name typescript-axios --output .silohub/templates/client-javascript-packages/generator`
+- para extraer los templates de client java: `pnpm exec openapi-generator-cli author template --generator-name java-micronaut-client --output .silohub/templates/client-java-packages/generator`
 - para extraer los templates de api-files: `pnpm exec openapi-generator-cli author template --output build/templates/api-files --generator-name openapi-yaml`

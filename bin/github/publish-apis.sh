@@ -21,10 +21,16 @@ pnpm exec gh-pages --dist "$BUILD_DIR/api-files" --branch gh-pages --dest "docs/
 for API in ${APIS:?Horroooorrr!!} ; do
   export API
   #
-  # Publish Client Package
-  echo "--> Publicando el paquete Client $API"
-  cd "$BUILD_DIR/client-packages/$API"
+  # Publish Client Javascript Package
+  echo "--> Publicando el paquete Client Javascript $API"
+  cd "$BUILD_DIR/client-packages/javascript/$API"
   pnpm publish --access public --no-git-checks
+  cd -
+  #
+  # Publish Client Kotlin Package
+  echo "--> Publicando el paquete Server $API"
+  cd "$BUILD_DIR/client-packages/java/$API"
+  ./gradlew --console plain --no-daemon publish
   cd -
   #
   # Publish Server Package
