@@ -1,0 +1,46 @@
+openapi: 3.0.3
+info:
+  title: SILOHUB Retailer API
+  description: |
+    Esta API es el core de negocio del retailer para SILOHUB
+  version: "0.0"
+  license:
+    name: UNLICENSED
+    url: https://www.silohub.ag
+  contact:
+    name: SILOHUB Support
+    email: support@silohub.ag
+    url: 'https://silohub.atlassian.net/servicedesk/customer/portals'
+externalDocs:
+  description: Confluence
+  url: 'https://silohub.atlassian.net/wiki/spaces/SH/pages/82346030/SILOHUB+APIs'
+servers:
+  - url: 'https://{apiServer}/api/retailers/v0/{retailerCode}'
+    variables:
+      apiServer:
+        default: api-develop.silohub.net
+        description: Nombre de dominio del api server SILOHUB
+        enum:
+          - api-develop.silohub.net
+      #          - mock-api-develop.silohub.net
+      retailerCode:
+        default: silohub
+        enum:
+          - silohub
+        #          - redpil
+        #          - bluepill
+        description: Código del retailer al que representa la API
+tags:
+  - name: server-info
+    description: Server Runtime Information
+  - name: accounts
+    description: Account Information
+paths:
+  /server-info:
+    $ref: paths/serverInfo/serverInfo.yaml
+  /accounts/{accountId}/movements:
+    $ref: paths/retailers/accounts/SearchMovements.yaml
+components:
+  securitySchemes:
+    OAuth2:
+      $ref: components/securitySchemes/OAuth2.yaml
