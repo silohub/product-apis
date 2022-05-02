@@ -13,5 +13,5 @@ export API=$1
 . "$(dirname "${BASH_SOURCE[0]}")/.generate-api-file.sh"
 . "$(dirname "${BASH_SOURCE[0]}")/.generate-graphql-file.sh"
 . "$(dirname "${BASH_SOURCE[0]}")/.generate-client-javascript-package.sh"
-#. "$(dirname "${BASH_SOURCE[0]}")/.generate-client-java-package.sh"
+. "$(dirname "${BASH_SOURCE[0]}")/.generate-client-java-package.sh"
 . "$(dirname "${BASH_SOURCE[0]}")/.generate-server-package.sh"

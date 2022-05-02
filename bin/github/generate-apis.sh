@@ -16,7 +16,7 @@ for API in ${APIS:?Horroooorrr!!} ; do
   . "$BIN_DIR/.generate-api-file.sh"
   . "$BIN_DIR/.generate-graphql-file.sh"
   . "$BIN_DIR/.generate-client-javascript-package.sh"
-#  . "$BIN_DIR/.generate-client-java-package.sh"
+  . "$BIN_DIR/.generate-client-java-package.sh"
   . "$BIN_DIR/.generate-server-package.sh"
 done
 echo "--> Generate Done <--"

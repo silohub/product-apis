@@ -1,15 +1,15 @@
 inputSpec: openapi/{{{ API }}}.yaml
 generatorName: java-micronaut-server
-outputDir: build/server-packages/{{{ API }}}
-templateDir: .silohub/templates/server-packages/generator
+outputDir: build/client-packages/java/{{{ API }}}
+templateDir: .silohub/templates/client-java-packages/generator
 #
 generateControllerAsAbstract: true
 hideGenerationTimestamp: true
 build: gradle
 artifactId: {{{ API }}}
 groupId: ag.silohub.openapi.server
-apiPackage: ag.silohub.openapi.server.{{{ API_TRANSLATED }}}
-modelPackage: ag.silohub.openapi.server.{{{ API_TRANSLATED }}}.model
+apiPackage: ag.silohub.openapi.client.{{{ API_TRANSLATED }}}
+modelPackage: ag.silohub.openapi.client.{{{ API_TRANSLATED }}}.model
 #
 globalProperties:
   verbose: true
