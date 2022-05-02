@@ -3,14 +3,23 @@ plugins {
     id("groovy")
     {{/isTestSpock}}
     id("com.github.johnrengelman.shadow") version "7.1.1"
-    id("io.micronaut.application") version "3.1.1"
+    id("io.micronaut.library") version "3.1.1"
+    id("maven-publish")
 }
 
 version = "{{artifactVersion}}"
-group = "{{invokerPackage}}"
+group = "{{groupId}}"
 
 repositories {
     mavenCentral()
+    maven {
+        name = "SILOHUB Product APIs"
+        url = uri("https://maven.pkg.github.com/silohub/product-apis")
+        credentials {
+            username = "{{{ shghUser }}}"
+            password = "{{{ shghToken }}}"
+        }
+    }
 }
 
 micronaut {
@@ -30,6 +39,7 @@ micronaut {
 
 dependencies {
     annotationProcessor("io.micronaut:micronaut-http-validation")
+    api("io.projectreactor:reactor-core:3.4.17")
     {{#useAuth}}
     annotationProcessor("io.micronaut.security:micronaut-security-annotations")
     {{/useAuth}}
@@ -41,17 +51,46 @@ dependencies {
     implementation("io.micronaut.security:micronaut-security-oauth2")
     {{/useAuth}}
     implementation("io.micronaut.reactor:micronaut-reactor")
-    implementation("io.swagger:swagger-annotations:1.5.9")
+    implementation("io.swagger:swagger-annotations:1.6.6")
     runtimeOnly("ch.qos.logback:logback-classic")
 }
 
-// TODO Set the main class
-application {
-    mainClass.set("{{invokerPackage}}.Application")
-}
 java {
-    sourceCompatibility = JavaVersion.toVersion("1.8")
-    targetCompatibility = JavaVersion.toVersion("1.8")
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+    withSourcesJar()
+}
+
+sourceSets {
+    main {
+        resources {
+            exclude "logback.xml"
+            exclude "application.yml"
+            exclude ".openapi-generator"
+            exclude ".openapi-generator-ignore"
+        }
+        java {
+            exclude "**/Application.java"
+        }
+    }
 }
 
 graalvmNative.toolchainDetection = false
+
+publishing {
+    repositories {
+        maven {
+            name = "silohub-github"
+            url = uri("https://maven.pkg.github.com/silohub/product-apis")
+            credentials {
+                username = "{{{ shghUser }}}"
+                password = "{{{ shghToken }}}"
+            }
+        }
+    }
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
+}
