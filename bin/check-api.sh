@@ -9,9 +9,9 @@ set -e # exit on first failed command
 # el API es el primer argumento
 export API=$1
 #
-. "$(dirname "${BASH_SOURCE[0]}")/.validate-api.sh"
-. "$(dirname "${BASH_SOURCE[0]}")/.generate-api-file.sh"
-. "$(dirname "${BASH_SOURCE[0]}")/.generate-graphql-file.sh"
-. "$(dirname "${BASH_SOURCE[0]}")/.generate-client-javascript-package.sh"
-. "$(dirname "${BASH_SOURCE[0]}")/.generate-client-java-package.sh"
-. "$(dirname "${BASH_SOURCE[0]}")/.generate-server-package.sh"
+. "${BIN_DIR}/.validate-api.sh"
+. "${BIN_DIR}/.generate-api-file.sh"
+. "${BIN_DIR}/.generate-graphql-file.sh"
+. "${BIN_DIR}/.generate-client-javascript-package.sh"
+. "${BIN_DIR}/.generate-client-java-package.sh"
+. "${BIN_DIR}/.generate-server-package.sh"

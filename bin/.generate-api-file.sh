@@ -17,6 +17,9 @@ CONFIG_FILE="$CONFIG_DIR/config.yaml"
 OUTPUT_DIR="${BUILD_DIR:?la variable BUILD_DIR no esta definida}/api-files/${API:?la variable API no esta definida}"
 HTML_FILE="$OUTPUT_DIR/index.html"
 #
+# siempre hay que empezar desde el directorio base
+cd "$BASE_DIR"
+#
 # Borrando
 rm -rf "$OUTPUT_DIR"
 mkdir -p "$OUTPUT_DIR"

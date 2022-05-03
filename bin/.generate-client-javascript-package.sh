@@ -15,6 +15,9 @@ VIEW_FILE="$CONFIG_DIR/config.json"
 CONFIG_FILE="$CONFIG_DIR/config.yaml"
 OUTPUT_DIR="${BUILD_DIR:?la variable BUILD_DIR no esta definida}/client-packages/javascript/${API:?la variable API no esta definida}"
 #
+# siempre hay que empezar desde el directorio base
+cd "$BASE_DIR"
+#
 # Borrando
 rm -rf "$OUTPUT_DIR"
 mkdir -p "$OUTPUT_DIR"
@@ -36,6 +39,4 @@ pnpm exec openapi-generator-cli batch --root-dir "$BASE_DIR" --verbose "$CONFIG_
 # compilar el repo
 cd "$OUTPUT_DIR"
 pnpm install
-cd -
 #
-#cp "$BASE_DIR/.npmrc" "$PACKAGE_DIR/"
