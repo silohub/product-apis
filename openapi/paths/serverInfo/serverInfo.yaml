@@ -1,6 +1,8 @@
 get:
   operationId: getServerInfo
   summary: Show Server Runtime Information
+  parameters:
+    - $ref: ../../components/parameters/common/RetailerCode.yaml
   tags:
     - server-info
   responses:

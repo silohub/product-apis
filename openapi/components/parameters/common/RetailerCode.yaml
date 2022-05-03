@@ -1,0 +1,10 @@
+in: path
+name: retailerCode
+schema:
+  type: string
+required: true
+description: |
+  El código del retailer sobre el cual se consulta la información
+examples:
+  silohub:
+    value: "silohub"

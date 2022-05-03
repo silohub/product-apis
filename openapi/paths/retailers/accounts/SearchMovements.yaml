@@ -6,6 +6,7 @@ post:
   security:
     - OAuth2: []
   parameters:
+    - $ref: ../../../components/parameters/common/RetailerCode.yaml
     - in: path
       name: accountId
       schema:
