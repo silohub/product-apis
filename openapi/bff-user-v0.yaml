@@ -5,6 +5,8 @@ info:
     Esta API es parte del "Back for Front" (BFF) de las aplicaciones Front.
     Provee los servicios para la aplicación de usuario (Web, Android, iOS).
   version: "0.0"
+  x-group: "BFF-Retailer"
+  x-client-id: "bff-retailer"
   license:
     name: UNLICENSED
     url: https://www.silohub.ag

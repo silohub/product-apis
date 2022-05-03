@@ -9,7 +9,7 @@ build: gradle
 artifactId: {{{ API }}}
 groupId: ag.silohub.openapi.client
 apiPackage: ag.silohub.openapi.client.{{{ API_TRANSLATED }}}
-modelPackage: ag.silohub.openapi.client.{{{ API_TRANSLATED }}}.model
+modelPackage: ag.silohub.openapi.model
 #
 globalProperties:
   verbose: true
@@ -23,6 +23,8 @@ additionalProperties:
   micronautVersion: 3.1.1
   shghUser: {{{ SHGH_USER }}}
   shghToken: {{{ SHGH_TOKEN }}}
+  shApiClientId: {{{ API_CLIENT_ID }}}
+  shApiGroup: {{{ API_GROUP }}}
 #
 typeMappings:
   DateTime: java.time.OffsetDateTime

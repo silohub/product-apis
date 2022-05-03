@@ -1,9 +1,11 @@
 openapi: 3.0.3
 info:
-  title: SILOHUB Retailer API
+  title: "SILOHUB Retailer API"
   description: |
     Esta API es el core de negocio del retailer para SILOHUB
   version: "0.0"
+  x-group: "API"
+  x-client-id: "api-client-retailer"
   license:
     name: UNLICENSED
     url: https://www.silohub.ag

@@ -23,7 +23,7 @@ import javax.validation.constraints.*;
 {{/useBeanValidation}}
 
 {{>common/generatedAnnotation}}
-@Client("${base-path}")
+@Client("{{{ shApiClientId }}}")
 public interface {{classname}} {
 {{#operations}}
     {{#operation}}
