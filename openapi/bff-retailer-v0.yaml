@@ -18,7 +18,7 @@ externalDocs:
   description: Confluence
   url: 'https://silohub.atlassian.net/wiki/spaces/SH/pages/82346030/SILOHUB+APIs'
 servers:
-  - url: 'https://{apiServer}/bff/retailers/v0/{retailerCode}'
+  - url: 'https://{apiServer}'
     variables:
       apiServer:
         default: api-develop.silohub.net
@@ -26,22 +26,15 @@ servers:
         enum:
           - api-develop.silohub.net
 #          - mock-api-develop.silohub.net
-      retailerCode:
-        default: silohub
-        enum:
-          - silohub
-#          - redpil
-#          - bluepill
-        description: Código del retailer al que representa el BFF
 tags:
   - name: server-info
     description: Server Runtime Information
   - name: accounts
     description: Account Information
 paths:
-  /server-info:
+  /bff/retailers/v0/{retailerCode}/server-info:
     $ref: paths/serverInfo/serverInfo.yaml
-  /accounts/{accountId}/movements:
+  /bff/retailers/v0/{retailerCode}/accounts/{accountId}/movements:
     $ref: paths/retailers/accounts/SearchMovements.yaml
 components:
   securitySchemes:
