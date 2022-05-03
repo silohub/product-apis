@@ -10,34 +10,40 @@ info:
     name: UNLICENSED
     url: https://www.silohub.ag
   title: SILOHUB Retailer API
-  version: 0.0.90
+  version: 0.0.91
   x-group: API
   x-client-id: api-client-retailer
 externalDocs:
   description: Confluence
   url: https://silohub.atlassian.net/wiki/spaces/SH/pages/82346030/SILOHUB+APIs
 servers:
-- url: https://{apiServer}/api/retailers/v0/{retailerCode}
+- url: https://{apiServer}
   variables:
     apiServer:
       default: api-develop.silohub.net
       description: Nombre de dominio del api server SILOHUB
       enum:
       - api-develop.silohub.net
-    retailerCode:
-      default: silohub
-      description: Código del retailer al que representa la API
-      enum:
-      - silohub
 tags:
 - description: Server Runtime Information
   name: server-info
 - description: Account Information
   name: accounts
 paths:
-  /server-info:
+  /api/retailers/v0/{retailerCode}/server-info:
     get:
       operationId: getServerInfo
+      parameters:
+      - description: |
+          El código del retailer sobre el cual se consulta la información
+        examples:
+          silohub:
+            value: silohub
+        in: path
+        name: retailerCode
+        required: true
+        schema:
+          type: string
       responses:
         "200":
           content:
@@ -75,10 +81,20 @@ paths:
       summary: Show Server Runtime Information
       tags:
       - server-info
-  /accounts/{accountId}/movements:
+  /api/retailers/v0/{retailerCode}/accounts/{accountId}/movements:
     post:
       operationId: searchRetailerAccountsMovements
       parameters:
+      - description: |
+          El código del retailer sobre el cual se consulta la información
+        examples:
+          silohub:
+            value: silohub
+        in: path
+        name: retailerCode
+        required: true
+        schema:
+          type: string
       - description: Account Id
         in: path
         name: accountId

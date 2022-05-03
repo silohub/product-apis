@@ -11,7 +11,7 @@ info:
     name: UNLICENSED
     url: https://www.silohub.ag
   title: BFF for Retailer
-  version: 0.0.90
+  version: 0.0.91
   x-group: BFF-Retailer
   x-client-id: bff-retailer
 externalDocs:
@@ -39,6 +39,17 @@ paths:
   /server-info:
     get:
       operationId: getServerInfo
+      parameters:
+      - description: |
+          El código del retailer sobre el cual se consulta la información
+        examples:
+          silohub:
+            value: silohub
+        in: path
+        name: retailerCode
+        required: true
+        schema:
+          type: string
       responses:
         "200":
           content:
@@ -80,6 +91,16 @@ paths:
     post:
       operationId: searchRetailerAccountsMovements
       parameters:
+      - description: |
+          El código del retailer sobre el cual se consulta la información
+        examples:
+          silohub:
+            value: silohub
+        in: path
+        name: retailerCode
+        required: true
+        schema:
+          type: string
       - description: Account Id
         in: path
         name: accountId
