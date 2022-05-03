@@ -62,8 +62,15 @@ java {
 }
 
 sourceSets {
+    readme {
+        resources {
+            srcDir "$projectDir"
+            include 'README.md'
+        }
+    }
     main {
         resources {
+            srcDir readme.resources
             exclude "logback.xml"
             exclude "application.yml"
             exclude ".openapi-generator"

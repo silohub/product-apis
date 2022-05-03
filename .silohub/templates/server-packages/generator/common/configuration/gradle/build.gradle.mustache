@@ -62,8 +62,15 @@ java {
 }
 
 sourceSets {
+    readme {
+        resources {
+            srcDir "$projectDir"
+            include 'README.md'
+        }
+    }
     main {
         resources {
+            srcDir readme.resources
             srcDir "$rootDir/../../graphql-files/{{artifactId}}"
             exclude "logback.xml"
             exclude "application.yml"
