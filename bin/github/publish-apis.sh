@@ -30,13 +30,13 @@ for API in ${APIS:?Horroooorrr!!} ; do
   # Publish Client Kotlin Package
   echo "--> Publicando el paquete Server $API"
   cd "$BUILD_DIR/client-packages/java/$API"
-  ./gradlew --console plain --no-daemon publish
+  ./gradlew --console plain publish
   cd -
   #
   # Publish Server Package
   echo "--> Publicando el paquete Server $API"
   cd "$BUILD_DIR/server-packages/$API"
-  ./gradlew --console plain --no-daemon publish
+  ./gradlew --console plain publish
   cd -
 done
 echo "--> Generate Done <--"
