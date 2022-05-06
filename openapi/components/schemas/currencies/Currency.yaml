@@ -17,8 +17,8 @@ properties:
     description: Is Active
     type: boolean
 required:
-  - code
-  - numericCode
+  - currencyCode
+  - currencyNumericCode
   - decimals
   - name
   - active
