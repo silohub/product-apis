@@ -4,4 +4,3 @@ description: Active
 required: false
 schema:
   type: boolean
-  default: true
