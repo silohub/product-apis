@@ -10,7 +10,7 @@ info:
     name: UNLICENSED
     url: https://www.silohub.ag
   title: SILOHUB Core API
-  version: 0.0.93
+  version: 0.0.94
   x-group: API
   x-client-id: api-client-retailer
 externalDocs:
@@ -27,7 +27,67 @@ servers:
 tags:
 - description: Información de países
   name: countries
+- description: Información de monedas
+  name: currencies
 paths:
+  /api/retailers/v0/{retailerCode}/currencies:
+    get:
+      operationId: getAllCurrencies
+      parameters:
+      - description: |
+          El código del retailer sobre el cual se consulta la información
+        examples:
+          silohub:
+            value: silohub
+        in: path
+        name: retailerCode
+        required: true
+        schema:
+          type: string
+      - description: Active
+        in: query
+        name: active
+        required: false
+        schema:
+          default: true
+          type: boolean
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ArrayOfCurrency'
+          description: The response contains the list of currencies
+          x-summary: Success
+        "400":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: Check parameters and try again.
+          x-summary: Bad Request
+        "403":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: Unable to access the resource. Check the security or permissions
+          x-summary: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: This is a server side problem, check the message and logs.
+          x-summary: Unexpected Error
+      security:
+      - OAuth2: []
+      summary: Lista todas las monedas
+      tags:
+      - currencies
   /api/retailers/v0/{retailerCode}/countries:
     get:
       operationId: getAllCountries
@@ -530,6 +590,13 @@ components:
       description: Información de la subdivisión del país
       required: true
   schemas:
+    ArrayOfCurrency:
+      description: Collection of currencies
+      example:
+        $ref: ../../examples/currencies/ArrayOfCurrency.yaml
+      items:
+        $ref: '#/components/schemas/Currency'
+      type: array
     ArrayOfCountry:
       description: Collection of countries
       example:
@@ -568,6 +635,8 @@ components:
           $ref: '#/components/schemas/AuditDate'
       required:
       - active
+      - countryCode
+      - countryNumericCode
       - created
       - currencyCode
       - name
@@ -638,6 +707,29 @@ components:
           type: boolean
       required:
       - active
+      type: object
+    Currency:
+      description: |
+        Una moneda definida por la ISO
+      properties:
+        currencyCode:
+          $ref: '#/components/schemas/CurrencyCode'
+        currencyNumericCode:
+          description: Currency numeric code
+          type: integer
+        decimals:
+          description: Decimals in the currency
+          type: integer
+        name:
+          description: Currency Name
+          type: string
+        active:
+          description: Is Active
+          type: boolean
+      required:
+      - active
+      - decimals
+      - name
       type: object
     CountryCode:
       description: |
