@@ -28,8 +28,8 @@ properties:
   updated:
     $ref: ../common/AuditDate.yaml
 required:
-  - code
-  - numericCode
+  - countryCode
+  - countryNumericCode
   - name
   - currencyCode
   - active

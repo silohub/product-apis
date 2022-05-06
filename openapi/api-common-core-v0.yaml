@@ -28,7 +28,11 @@ servers:
 tags:
   - name: countries
     description: Información de países
+  - name: currencies
+    description: Información de monedas
 paths:
+  /api/retailers/v0/{retailerCode}/currencies:
+    $ref: paths/currencies/currenciesRetailer.yaml
   /api/retailers/v0/{retailerCode}/countries:
     $ref: paths/countries/countriesRetailer.yaml
   /api/retailers/v0/{retailerCode}/countries/{countryCode}:
