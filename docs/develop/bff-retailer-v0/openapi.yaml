@@ -11,7 +11,7 @@ info:
     name: UNLICENSED
     url: https://www.silohub.ag
   title: BFF for Retailer
-  version: 0.0.92
+  version: 0.0.93
   x-group: BFF-Retailer
   x-client-id: bff-retailer
 externalDocs:

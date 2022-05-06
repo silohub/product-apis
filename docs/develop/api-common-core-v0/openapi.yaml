@@ -1,0 +1,722 @@
+openapi: 3.0.3
+info:
+  contact:
+    email: support@silohub.ag
+    name: SILOHUB Support
+    url: https://silohub.atlassian.net/servicedesk/customer/portals
+  description: |
+    Esta API contiene los datos maestros generales para SILOHUB
+  license:
+    name: UNLICENSED
+    url: https://www.silohub.ag
+  title: SILOHUB Core API
+  version: 0.0.93
+  x-group: API
+  x-client-id: api-client-retailer
+externalDocs:
+  description: Confluence
+  url: https://silohub.atlassian.net/wiki/spaces/SH/pages/82346030/SILOHUB+APIs
+servers:
+- url: https://{apiServer}
+  variables:
+    apiServer:
+      default: api-develop.silohub.net
+      description: Nombre de dominio del api server SILOHUB
+      enum:
+      - api-develop.silohub.net
+tags:
+- description: Información de países
+  name: countries
+paths:
+  /api/retailers/v0/{retailerCode}/countries:
+    get:
+      operationId: getAllCountries
+      parameters:
+      - description: |
+          El código del retailer sobre el cual se consulta la información
+        examples:
+          silohub:
+            value: silohub
+        in: path
+        name: retailerCode
+        required: true
+        schema:
+          type: string
+      - description: Active
+        in: query
+        name: active
+        required: false
+        schema:
+          default: true
+          type: boolean
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ArrayOfCountry'
+          description: The response contains the list of countries
+          x-summary: Success
+        "400":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: Check parameters and try again.
+          x-summary: Bad Request
+        "403":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: Unable to access the resource. Check the security or permissions
+          x-summary: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: This is a server side problem, check the message and logs.
+          x-summary: Unexpected Error
+      security:
+      - OAuth2: []
+      summary: Lista todos los países
+      tags:
+      - countries
+  /api/retailers/v0/{retailerCode}/countries/{countryCode}:
+    get:
+      operationId: getCountryByCode
+      parameters:
+      - description: |
+          El código del retailer sobre el cual se consulta la información
+        examples:
+          silohub:
+            value: silohub
+        in: path
+        name: retailerCode
+        required: true
+        schema:
+          type: string
+      - description: Código ISO-3166-1 de 3 dígitos del país
+        examples:
+          ARG:
+            value: ARG
+          BRA:
+            value: BRA
+          USA:
+            value: USA
+        in: path
+        name: countryCode
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                ARG:
+                  $ref: '#/components/examples/ARG'
+                BRA:
+                  $ref: '#/components/examples/BRA'
+                USA:
+                  $ref: '#/components/examples/USA'
+              schema:
+                $ref: '#/components/schemas/Country'
+          description: Success
+        "400":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: Check parameters and try again.
+          x-summary: Bad Request
+        "403":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: Unable to access the resource. Check the security or permissions
+          x-summary: Forbidden
+        "404":
+          description: Country not found
+        "500":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: This is a server side problem, check the message and logs.
+          x-summary: Unexpected Error
+      security:
+      - OAuth2: []
+      summary: Obtiene un país por código
+      tags:
+      - countries
+    put:
+      operationId: updateCountry
+      parameters:
+      - description: |
+          El código del retailer sobre el cual se consulta la información
+        examples:
+          silohub:
+            value: silohub
+        in: path
+        name: retailerCode
+        required: true
+        schema:
+          type: string
+      - description: Código ISO-3166-1 de 3 dígitos del país
+        examples:
+          ARG:
+            value: ARG
+          BRA:
+            value: BRA
+          USA:
+            value: USA
+        in: path
+        name: countryCode
+        required: true
+        schema:
+          type: string
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateCountry'
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                ARG:
+                  $ref: '#/components/examples/ARG'
+                BRA:
+                  $ref: '#/components/examples/BRA'
+                USA:
+                  $ref: '#/components/examples/USA'
+              schema:
+                $ref: '#/components/schemas/Country'
+          description: Success
+        "400":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: Check parameters and try again.
+          x-summary: Bad Request
+        "403":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: Unable to access the resource. Check the security or permissions
+          x-summary: Forbidden
+        "404":
+          description: Country not found
+        "500":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: This is a server side problem, check the message and logs.
+          x-summary: Unexpected Error
+      security:
+      - OAuth2: []
+      summary: Cambia los datos de un país para el retailer (referencias, notas)
+      tags:
+      - countries
+  /api/retailers/v0/{retailerCode}/countries/{countryCode}/subdivisions:
+    get:
+      operationId: getAllCountrySubdivisions
+      parameters:
+      - description: |
+          El código del retailer sobre el cual se consulta la información
+        examples:
+          silohub:
+            value: silohub
+        in: path
+        name: retailerCode
+        required: true
+        schema:
+          type: string
+      - description: Código ISO-3166-1 de 3 dígitos del país
+        examples:
+          ARG:
+            value: ARG
+          BRA:
+            value: BRA
+          USA:
+            value: USA
+        in: path
+        name: countryCode
+        required: true
+        schema:
+          type: string
+      - description: Active
+        in: query
+        name: active
+        required: false
+        schema:
+          default: true
+          type: boolean
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ArrayOfCountrySubdivision'
+          description: La respuesta contiene una lista de provincias
+          x-summary: Success
+        "400":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: Check parameters and try again.
+          x-summary: Bad Request
+        "403":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: Unable to access the resource. Check the security or permissions
+          x-summary: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: This is a server side problem, check the message and logs.
+          x-summary: Unexpected Error
+      security:
+      - OAuth2: []
+      summary: Lista todas las subdivisiones (provincias) de un país
+      tags:
+      - countries
+  /api/retailers/v0/{retailerCode}/countries/{countryCode}/subdivisions/{countrySubdivisionCode}:
+    get:
+      operationId: getCountrySubdivisionByCode
+      parameters:
+      - description: |
+          El código del retailer sobre el cual se consulta la información
+        examples:
+          silohub:
+            value: silohub
+        in: path
+        name: retailerCode
+        required: true
+        schema:
+          type: string
+      - description: Código ISO-3166-1 de 3 dígitos del país
+        examples:
+          ARG:
+            value: ARG
+          BRA:
+            value: BRA
+          USA:
+            value: USA
+        in: path
+        name: countryCode
+        required: true
+        schema:
+          type: string
+      - description: Código ISO-3166-2 de la subdivisión
+        examples:
+          AR-B:
+            value: AR-B
+          AR-X:
+            value: AR-X
+          BR-SC:
+            value: BR-SC
+        in: path
+        name: countrySubdivisionCode
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                ARG:
+                  $ref: '#/components/examples/ARG'
+                BRA:
+                  $ref: '#/components/examples/BRA'
+                USA:
+                  $ref: '#/components/examples/USA'
+              schema:
+                $ref: '#/components/schemas/CountrySubdivision'
+          description: Success
+        "400":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: Check parameters and try again.
+          x-summary: Bad Request
+        "403":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: Unable to access the resource. Check the security or permissions
+          x-summary: Forbidden
+        "404":
+          description: Country not found
+        "500":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: This is a server side problem, check the message and logs.
+          x-summary: Unexpected Error
+      security:
+      - OAuth2: []
+      summary: Obtiene una subdivisión de un país por código
+      tags:
+      - countries
+    put:
+      operationId: updateCountrySubdivision
+      parameters:
+      - description: |
+          El código del retailer sobre el cual se consulta la información
+        examples:
+          silohub:
+            value: silohub
+        in: path
+        name: retailerCode
+        required: true
+        schema:
+          type: string
+      - description: Código ISO-3166-1 de 3 dígitos del país
+        examples:
+          ARG:
+            value: ARG
+          BRA:
+            value: BRA
+          USA:
+            value: USA
+        in: path
+        name: countryCode
+        required: true
+        schema:
+          type: string
+      - description: Código ISO-3166-2 de la subdivisión
+        examples:
+          AR-B:
+            value: AR-B
+          AR-X:
+            value: AR-X
+          BR-SC:
+            value: BR-SC
+        in: path
+        name: countrySubdivisionCode
+        required: true
+        schema:
+          type: string
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateCountrySubdivision'
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                ARG:
+                  $ref: '#/components/examples/ARG'
+                BRA:
+                  $ref: '#/components/examples/BRA'
+                USA:
+                  $ref: '#/components/examples/USA'
+              schema:
+                $ref: '#/components/schemas/CountrySubdivision'
+          description: Success
+        "400":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: Check parameters and try again.
+          x-summary: Bad Request
+        "403":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: Unable to access the resource. Check the security or permissions
+          x-summary: Forbidden
+        "404":
+          description: Country not found
+        "500":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: This is a server side problem, check the message and logs.
+          x-summary: Unexpected Error
+      security:
+      - OAuth2: []
+      summary: Cambia los datos de un país para el retailer (referencias, notas)
+      tags:
+      - countries
+components:
+  examples:
+    ARG:
+      summary: ARG
+      value:
+        code: ARG
+        name: Argentina
+        numericCode: 32
+        currencyCode: ARS
+        active: true
+    BRA:
+      summary: BRA
+      value:
+        code: BRA
+        name: Brasil
+        numericCode: 76
+        currencyCode: BRL
+        active: true
+    USA:
+      summary: USA
+      value:
+        code: USA
+        name: Estados Unidos
+        numericCode: 840
+        currencyCode: USD
+        active: true
+    UpdateARG:
+      summary: ARG
+      value:
+        currencyCode: ARS
+        active: false
+    UpdateUSA:
+      summary: USA
+      value:
+        currencyCode: USD
+        active: false
+  requestBodies:
+    UpdateCountry:
+      content:
+        application/json:
+          examples:
+            ARG:
+              $ref: '#/components/examples/UpdateARG'
+            USA:
+              $ref: '#/components/examples/UpdateUSA'
+          schema:
+            $ref: '#/components/schemas/UpdateCountry'
+      description: Datos a actualizar del país
+      required: true
+    UpdateCountrySubdivision:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateCountrySubdivision'
+      description: Información de la subdivisión del país
+      required: true
+  schemas:
+    ArrayOfCountry:
+      description: Collection of countries
+      example:
+        $ref: ../../examples/countries/ArrayOfCountry.yaml
+      items:
+        $ref: '#/components/schemas/Country'
+      type: array
+    Country:
+      description: |
+        Un país definido por la ISO
+      properties:
+        countryCode:
+          $ref: '#/components/schemas/CountryCode'
+        countryNumericCode:
+          description: Country numeric code
+          type: integer
+        name:
+          description: Country Name
+          type: string
+        currencyCode:
+          $ref: '#/components/schemas/CurrencyCode'
+        active:
+          description: Is Active
+          type: boolean
+        mainReference:
+          $ref: '#/components/schemas/Reference'
+        uniqueReferences:
+          $ref: '#/components/schemas/UniqueReferences'
+        references:
+          $ref: '#/components/schemas/References'
+        notes:
+          $ref: '#/components/schemas/Notes'
+        created:
+          $ref: '#/components/schemas/AuditDate'
+        updated:
+          $ref: '#/components/schemas/AuditDate'
+      required:
+      - active
+      - created
+      - currencyCode
+      - name
+      - updated
+      type: object
+    ArrayOfCountrySubdivision:
+      description: Lista de provincias
+      items:
+        $ref: '#/components/schemas/CountrySubdivision'
+      type: array
+    CountrySubdivision:
+      description: |
+        Una provincia dentro de un país
+      properties:
+        countryCode:
+          $ref: '#/components/schemas/CountryCode'
+        countrySubdivisionCode:
+          $ref: '#/components/schemas/CountrySubdivisionCode'
+        name:
+          description: Country Subdivision Name
+          type: string
+        type:
+          description: Country Subdivision Type
+          type: string
+        parent:
+          $ref: '#/components/schemas/CountrySubdivisionCode'
+        active:
+          description: Is Active
+          type: boolean
+        mainReference:
+          $ref: '#/components/schemas/Reference'
+        uniqueReferences:
+          $ref: '#/components/schemas/UniqueReferences'
+        references:
+          $ref: '#/components/schemas/References'
+        notes:
+          $ref: '#/components/schemas/Notes'
+        created:
+          $ref: '#/components/schemas/AuditDate'
+        updated:
+          $ref: '#/components/schemas/AuditDate'
+      required:
+      - active
+      - countryCode
+      - countrySubdivisionCode
+      - created
+      - mainReference
+      - name
+      - type
+      - updated
+      type: object
+    UpdateCountry:
+      properties:
+        currencyCode:
+          $ref: '#/components/schemas/CurrencyCode'
+        active:
+          description: Is Active
+          type: boolean
+      required:
+      - active
+      type: object
+    UpdateCountrySubdivision:
+      properties:
+        currencyCode:
+          $ref: '#/components/schemas/CurrencyCode'
+        active:
+          description: Is Active
+          type: boolean
+      required:
+      - active
+      type: object
+    CountryCode:
+      description: |
+        Identificador de país según [ISO 3166-1 alpha-3](https://es.wikipedia.org/wiki/ISO_3166-1)
+      example: '[ARG, BRA, CHL, URY, USA]'
+      maxLength: 3
+      minLength: 3
+      type: string
+    CurrencyCode:
+      description: '[ISO 4217 Code](https://es.wikipedia.org/wiki/ISO_4217)'
+      example: '[ARS, USD, BRL, CNY]'
+      maxLength: 3
+      minLength: 3
+      type: string
+    Reference:
+      description: |
+        Referencia externa de la entidad.
+
+        Siempre consiste en un tipo de referencia y el valor de la ella.
+      properties:
+        refType:
+          $ref: '#/components/schemas/RefType'
+        refValue:
+          $ref: '#/components/schemas/RefValue'
+      required:
+      - refType
+      - refValue
+      type: object
+    UniqueReferences:
+      description: Key-Value pair of references, keys are unique between the entities.
+        Like a unique key in a database.
+      example:
+        key1: value1
+        key2: value2
+      items:
+        $ref: '#/components/schemas/Reference'
+      type: array
+    References:
+      description: Key-Value pair of references, keys can be repeated between entities
+      example:
+        key1: value1
+        key2: value2
+      items:
+        $ref: '#/components/schemas/Reference'
+      type: array
+    Notes:
+      description: |
+        Notas adicionales
+      maxLength: 5000
+      type: string
+    AuditDate:
+      description: |
+        [Marca temporal](https://es.wikipedia.org/wiki/Marca_temporal) (Timestamp)
+      format: date-time
+      readOnly: true
+      type: string
+    CountrySubdivisionCode:
+      description: |
+        Identificador de la subdivisión del país según [ISO 3166-2](https://es.wikipedia.org/wiki/ISO_3166-2)
+      example: '[AR-B, AR-C, AR-X, BR-SP, BR-SC]'
+      maxLength: 7
+      minLength: 4
+      type: string
+    RefType:
+      description: |
+        Tipo de referencia. Por ejemplo CUIT
+      example: CUIT
+      pattern: ^[A-Z\-]+$
+      type: string
+    RefValue:
+      description: |
+        Valor de la referencia. Por ejemplo el número de CUIT
+      example: "30224445556"
+      pattern: ^[A-Za-z0-9\-_]+$
+      type: string
+  securitySchemes:
+    OAuth2:
+      flows:
+        clientCredentials:
+          scopes: {}
+          tokenUrl: https://iam-develop.silohub.net/auth/realms/SILOHUB/protocol/openid-connect/token
+      type: oauth2
