@@ -1,9 +1,8 @@
-description: Información del país
-required: true
+description: Success
 content:
   application/json:
     schema:
-      $ref: ../../schemas/countries/Country.yaml
+      $ref: ../../schemas/countries/CountrySubdivision.yaml
     examples:
       ARG:
         $ref: ../../examples/countries/ARG.yaml

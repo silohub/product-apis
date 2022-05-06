@@ -1,0 +1,19 @@
+get:
+  operationId: getAllCountries
+  summary: Lista todos los países
+  tags:
+    - countries
+  security:
+    - OAuth2: []
+  parameters:
+    - $ref: ../../components/parameters/common/RetailerCode.yaml
+    - $ref: ../../components/parameters/common/Active.yaml
+  responses:
+    '200':
+      $ref: ../../components/responses/countries/ArrayOfCountry.yaml
+    '400':
+      $ref: ../../components/responses/400.yaml
+    '403':
+      $ref: ../../components/responses/403.yaml
+    '500':
+      $ref: ../../components/responses/500.yaml

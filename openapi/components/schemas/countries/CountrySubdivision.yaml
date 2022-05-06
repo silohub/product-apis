@@ -1,17 +1,19 @@
 type: object
 description: |
-  Un país definido por la ISO
+  Una provincia dentro de un país
 properties:
   countryCode:
     $ref: ../common/CountryCode.yaml
-  countryNumericCode:
-    description: Country numeric code
-    type: integer
+  countrySubdivisionCode:
+    $ref: ../common/CountrySubdivisionCode.yaml
   name:
-    description: Country Name
+    description: Country Subdivision Name
     type: string
-  currencyCode:
-    $ref: ../common/CurrencyCode.yaml
+  type:
+    description: Country Subdivision Type
+    type: string
+  parent:
+    $ref: ../common/CountrySubdivisionCode.yaml
   active:
     description: Is Active
     type: boolean
@@ -28,10 +30,11 @@ properties:
   updated:
     $ref: ../common/AuditDate.yaml
 required:
-  - code
-  - numericCode
+  - countryCode
+  - countrySubdivisionCode
   - name
-  - currencyCode
+  - type
   - active
+  - mainReference
   - created
   - updated

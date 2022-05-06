@@ -1,0 +1,46 @@
+get:
+  operationId: getCountrySubdivisionByCode
+  summary: Obtiene una subdivisión de un país por código
+  tags:
+    - countries
+  security:
+    - OAuth2: []
+  parameters:
+    - $ref: ../../components/parameters/common/RetailerCode.yaml
+    - $ref: ../../components/parameters/countries/CountryCodeInPath.yaml
+    - $ref: ../../components/parameters/countries/CountrySubdivisionCodeInPath.yaml
+  responses:
+    '200':
+      $ref: ../../components/responses/countries/CountrySubdivision.yaml
+    '400':
+      $ref: ../../components/responses/400.yaml
+    '403':
+      $ref: ../../components/responses/403.yaml
+    '404':
+      description: Country not found
+    '500':
+      $ref: ../../components/responses/500.yaml
+put:
+  operationId: updateCountrySubdivision
+  summary: Cambia los datos de un país para el retailer (referencias, notas)
+  tags:
+    - countries
+  security:
+    - OAuth2: []
+  parameters:
+    - $ref: ../../components/parameters/common/RetailerCode.yaml
+    - $ref: ../../components/parameters/countries/CountryCodeInPath.yaml
+    - $ref: ../../components/parameters/countries/CountrySubdivisionCodeInPath.yaml
+  requestBody:
+    $ref: ../../components/requestBodies/countries/UpdateCountrySubdivision.yaml
+  responses:
+    '200':
+      $ref: ../../components/responses/countries/CountrySubdivision.yaml
+    '400':
+      $ref: ../../components/responses/400.yaml
+    '403':
+      $ref: ../../components/responses/403.yaml
+    '404':
+      description: Country not found
+    '500':
+      $ref: ../../components/responses/500.yaml

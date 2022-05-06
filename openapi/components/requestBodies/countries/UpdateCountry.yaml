@@ -1,4 +1,4 @@
-description: Country Information
+description: Datos a actualizar del país
 required: true
 content:
   application/json:

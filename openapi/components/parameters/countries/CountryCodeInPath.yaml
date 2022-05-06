@@ -1,9 +1,10 @@
 name: countryCode
 in: path
-description: Country Code
+description: Código ISO-3166-1 de 3 dígitos del país
 required: true
 schema:
-  $ref: ../../../components/schemas/common/CountryCode.yaml
+  type: string
+#  $ref: ../../../components/schemas/common/CountryCode.yaml
 examples:
   ARG:
     value: ARG

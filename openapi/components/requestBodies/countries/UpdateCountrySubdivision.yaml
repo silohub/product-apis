@@ -1,0 +1,6 @@
+description: Información de la subdivisión del país
+required: true
+content:
+  application/json:
+    schema:
+      $ref: ../../schemas/countries/UpdateCountrySubdivision.yaml

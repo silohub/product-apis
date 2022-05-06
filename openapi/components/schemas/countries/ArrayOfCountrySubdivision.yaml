@@ -1,0 +1,6 @@
+type: array
+description: Lista de provincias
+items:
+  $ref: CountrySubdivision.yaml
+#example:
+#  $ref: ../../examples/countries/ArrayOfProvince.yaml

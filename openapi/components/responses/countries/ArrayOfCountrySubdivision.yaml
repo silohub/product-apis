@@ -1,0 +1,6 @@
+x-summary: Success
+description: La respuesta contiene una lista de provincias
+content:
+  application/json:
+    schema:
+      $ref: ../../schemas/countries/ArrayOfCountrySubdivision.yaml

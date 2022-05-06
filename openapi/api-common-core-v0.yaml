@@ -1,0 +1,43 @@
+openapi: 3.0.3
+info:
+  title: "SILOHUB Core API"
+  description: |
+    Esta API contiene los datos maestros generales para SILOHUB
+  version: "0.0"
+  x-group: "API"
+  x-client-id: "api-client-retailer"
+  license:
+    name: UNLICENSED
+    url: https://www.silohub.ag
+  contact:
+    name: SILOHUB Support
+    email: support@silohub.ag
+    url: 'https://silohub.atlassian.net/servicedesk/customer/portals'
+externalDocs:
+  description: Confluence
+  url: 'https://silohub.atlassian.net/wiki/spaces/SH/pages/82346030/SILOHUB+APIs'
+servers:
+  - url: 'https://{apiServer}'
+    variables:
+      apiServer:
+        default: api-develop.silohub.net
+        description: Nombre de dominio del api server SILOHUB
+        enum:
+          - api-develop.silohub.net
+      #          - mock-api-develop.silohub.net
+tags:
+  - name: countries
+    description: Información de países
+paths:
+  /api/retailers/v0/{retailerCode}/countries:
+    $ref: paths/countries/countriesRetailer.yaml
+  /api/retailers/v0/{retailerCode}/countries/{countryCode}:
+    $ref: paths/countries/countryRetailer.yaml
+  /api/retailers/v0/{retailerCode}/countries/{countryCode}/subdivisions:
+    $ref: paths/countries/countrySubdivisionsRetailer.yaml
+  /api/retailers/v0/{retailerCode}/countries/{countryCode}/subdivisions/{countrySubdivisionCode}:
+    $ref: paths/countries/countrySubdivisionRetailer.yaml
+components:
+  securitySchemes:
+    OAuth2:
+      $ref: components/securitySchemes/OAuth2.yaml

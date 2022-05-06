@@ -1,0 +1,14 @@
+name: countrySubdivisionCode
+in: path
+description: Código ISO-3166-2 de la subdivisión
+required: true
+schema:
+  type: string
+#  $ref: ../../../components/schemas/common/CountryCode.yaml
+examples:
+  AR-B:
+    value: AR-B
+  AR-X:
+    value: AR-X
+  BR-SC:
+    value: BR-SC
