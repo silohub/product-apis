@@ -10,7 +10,7 @@ info:
     name: UNLICENSED
     url: https://www.silohub.ag
   title: SILOHUB Core API
-  version: 0.0.94
+  version: 0.0.95
   x-group: API
   x-client-id: api-client-retailer
 externalDocs:
@@ -728,6 +728,8 @@ components:
           type: boolean
       required:
       - active
+      - currencyCode
+      - currencyNumericCode
       - decimals
       - name
       type: object
