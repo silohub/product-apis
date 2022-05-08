@@ -17,8 +17,6 @@ properties:
   active:
     description: Is Active
     type: boolean
-  mainReference:
-    $ref: ../common/Reference.yaml
   uniqueReferences:
     $ref: ../common/UniqueReferences.yaml
   references:
@@ -35,6 +33,5 @@ required:
   - name
   - type
   - active
-  - mainReference
   - created
   - updated

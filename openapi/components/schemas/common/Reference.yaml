@@ -6,6 +6,8 @@ description: |
 properties:
   refType:
     $ref: RefType.yaml
+  refKey:
+    $ref: RefKey.yaml
   refValue:
     $ref: RefValue.yaml
 required:

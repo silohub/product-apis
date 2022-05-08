@@ -3,5 +3,9 @@ properties:
   active:
     description: Is Active
     type: boolean
+  uniqueReferences:
+    $ref: ../common/UniqueReferences.yaml
+  references:
+    $ref: ../common/References.yaml
 required:
   - active

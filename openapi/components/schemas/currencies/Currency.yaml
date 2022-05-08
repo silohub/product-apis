@@ -16,6 +16,14 @@ properties:
   active:
     description: Is Active
     type: boolean
+  uniqueReferences:
+    $ref: ../common/UniqueReferences.yaml
+  references:
+    $ref: ../common/References.yaml
+  created:
+    $ref: ../common/AuditDate.yaml
+  updated:
+    $ref: ../common/AuditDate.yaml
 required:
   - currencyCode
   - currencyNumericCode
