@@ -10,7 +10,7 @@ info:
     name: UNLICENSED
     url: https://www.silohub.ag
   title: SILOHUB Core API
-  version: 0.0.95
+  version: 0.0.96
   x-group: API
   x-client-id: api-client-retailer
 externalDocs:
@@ -49,7 +49,6 @@ paths:
         name: active
         required: false
         schema:
-          default: true
           type: boolean
       responses:
         "200":
@@ -107,7 +106,6 @@ paths:
         name: active
         required: false
         schema:
-          default: true
           type: boolean
       responses:
         "200":
@@ -323,7 +321,6 @@ paths:
         name: active
         required: false
         schema:
-          default: true
           type: boolean
       responses:
         "200":
@@ -621,8 +618,6 @@ components:
         active:
           description: Is Active
           type: boolean
-        mainReference:
-          $ref: '#/components/schemas/Reference'
         uniqueReferences:
           $ref: '#/components/schemas/UniqueReferences'
         references:
@@ -666,8 +661,6 @@ components:
         active:
           description: Is Active
           type: boolean
-        mainReference:
-          $ref: '#/components/schemas/Reference'
         uniqueReferences:
           $ref: '#/components/schemas/UniqueReferences'
         references:
@@ -683,7 +676,6 @@ components:
       - countryCode
       - countrySubdivisionCode
       - created
-      - mainReference
       - name
       - type
       - updated
@@ -695,6 +687,10 @@ components:
         active:
           description: Is Active
           type: boolean
+        uniqueReferences:
+          $ref: '#/components/schemas/UniqueReferences'
+        references:
+          $ref: '#/components/schemas/References'
       required:
       - active
       type: object
@@ -705,6 +701,10 @@ components:
         active:
           description: Is Active
           type: boolean
+        uniqueReferences:
+          $ref: '#/components/schemas/UniqueReferences'
+        references:
+          $ref: '#/components/schemas/References'
       required:
       - active
       type: object
@@ -726,6 +726,14 @@ components:
         active:
           description: Is Active
           type: boolean
+        uniqueReferences:
+          $ref: '#/components/schemas/UniqueReferences'
+        references:
+          $ref: '#/components/schemas/References'
+        created:
+          $ref: '#/components/schemas/AuditDate'
+        updated:
+          $ref: '#/components/schemas/AuditDate'
       required:
       - active
       - currencyCode
@@ -746,20 +754,6 @@ components:
       maxLength: 3
       minLength: 3
       type: string
-    Reference:
-      description: |
-        Referencia externa de la entidad.
-
-        Siempre consiste en un tipo de referencia y el valor de la ella.
-      properties:
-        refType:
-          $ref: '#/components/schemas/RefType'
-        refValue:
-          $ref: '#/components/schemas/RefValue'
-      required:
-      - refType
-      - refValue
-      type: object
     UniqueReferences:
       description: Key-Value pair of references, keys are unique between the entities.
         Like a unique key in a database.
@@ -795,10 +789,32 @@ components:
       maxLength: 7
       minLength: 4
       type: string
+    Reference:
+      description: |
+        Referencia externa de la entidad.
+
+        Siempre consiste en un tipo de referencia y el valor de la ella.
+      properties:
+        refType:
+          $ref: '#/components/schemas/RefType'
+        refKey:
+          $ref: '#/components/schemas/RefKey'
+        refValue:
+          $ref: '#/components/schemas/RefValue'
+      required:
+      - refType
+      - refValue
+      type: object
     RefType:
       description: |
         Tipo de referencia. Por ejemplo CUIT
       example: CUIT
+      pattern: ^[A-Z\-]+$
+      type: string
+    RefKey:
+      description: |
+        Clave de referencia. Por ejemplo Empresa Algoritmo
+      example: ALG
       pattern: ^[A-Z\-]+$
       type: string
     RefValue:

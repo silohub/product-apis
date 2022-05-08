@@ -11,7 +11,7 @@ info:
     name: UNLICENSED
     url: https://www.silohub.ag
   title: BFF User Information
-  version: 0.0.95
+  version: 0.0.96
   x-group: BFF-Retailer
   x-client-id: bff-retailer
 externalDocs:
@@ -236,6 +236,8 @@ components:
       properties:
         refType:
           $ref: '#/components/schemas/RefType'
+        refKey:
+          $ref: '#/components/schemas/RefKey'
         refValue:
           $ref: '#/components/schemas/RefValue'
       required:
@@ -246,6 +248,12 @@ components:
       description: |
         Tipo de referencia. Por ejemplo CUIT
       example: CUIT
+      pattern: ^[A-Z\-]+$
+      type: string
+    RefKey:
+      description: |
+        Clave de referencia. Por ejemplo Empresa Algoritmo
+      example: ALG
       pattern: ^[A-Z\-]+$
       type: string
     RefValue:
