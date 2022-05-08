@@ -11,7 +11,7 @@ info:
     name: UNLICENSED
     url: https://www.silohub.ag
   title: BFF User Information
-  version: 0.0.97
+  version: 0.0.98
   x-group: BFF-Retailer
   x-client-id: bff-retailer
 externalDocs:
@@ -241,6 +241,7 @@ components:
         refValue:
           $ref: '#/components/schemas/RefValue'
       required:
+      - refKey
       - refType
       - refValue
       type: object
