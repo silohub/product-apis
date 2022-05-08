@@ -22,13 +22,13 @@ for API in ${APIS:?Horroooorrr!!} ; do
   export API
   #
   # Publish Client Javascript Package
-  echo "--> Publicando el paquete Client Javascript $API"
+  echo "--> Publicando el paquete Cliente Javascript $API"
   cd "$BUILD_DIR/client-packages/javascript/$API"
   pnpm publish --access public --no-git-checks
   cd -
   #
   # Publish Client Kotlin Package
-  echo "--> Publicando el paquete Server $API"
+  echo "--> Publicando el paquete Cliente Java $API"
   cd "$BUILD_DIR/client-packages/java/$API"
   ./gradlew --console plain publish
   cd -
