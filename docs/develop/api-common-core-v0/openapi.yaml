@@ -10,7 +10,7 @@ info:
     name: UNLICENSED
     url: https://www.silohub.ag
   title: SILOHUB Core API
-  version: 0.0.98
+  version: 0.0.99
   x-group: API
   x-client-id: api-client-retailer
 externalDocs:
@@ -736,10 +736,12 @@ components:
           $ref: '#/components/schemas/AuditDate'
       required:
       - active
+      - created
       - currencyCode
       - currencyNumericCode
       - decimals
       - name
+      - updated
       type: object
     CountryCode:
       description: |
@@ -755,8 +757,7 @@ components:
       minLength: 3
       type: string
     UniqueReferences:
-      description: Key-Value pair of references, keys are unique between the entities.
-        Like a unique key in a database.
+      description: Pares de clave-valor, que son únicas entre distintas entidades
       example:
         key1: value1
         key2: value2
@@ -764,7 +765,7 @@ components:
         $ref: '#/components/schemas/Reference'
       type: array
     References:
-      description: Key-Value pair of references, keys can be repeated between entities
+      description: Pares de clave-valor, que se pueden repetir entre distintas entidades
       example:
         key1: value1
         key2: value2
