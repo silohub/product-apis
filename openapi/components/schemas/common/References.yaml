@@ -1,5 +1,5 @@
 type: array
-description: Key-Value pair of references, keys can be repeated between entities
+description: Pares de clave-valor, que se pueden repetir entre distintas entidades
 items:
   $ref: Reference.yaml
 example:

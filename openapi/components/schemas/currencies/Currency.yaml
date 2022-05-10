@@ -27,6 +27,8 @@ properties:
 required:
   - currencyCode
   - currencyNumericCode
-  - decimals
   - name
+  - decimals
   - active
+  - created
+  - updated

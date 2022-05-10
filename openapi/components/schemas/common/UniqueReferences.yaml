@@ -1,5 +1,5 @@
 type: array
-description: Key-Value pair of references, keys are unique between the entities. Like a unique key in a database.
+description: Pares de clave-valor, que son únicas entre distintas entidades
 items:
   $ref: Reference.yaml
 example:
