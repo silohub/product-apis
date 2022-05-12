@@ -23,6 +23,19 @@ properties:
     description: Fecha-Hora de la conversión más reciente
     type: string
     format: date-time
+  history:
+    description: Historia de los valores de la conversión
+    type: array
+    items:
+      type: object
+      properties:
+        value:
+          type: number
+          format: double
+        date:
+          $ref: ../common/AuditDate.yaml
+        created:
+          $ref: ../common/AuditDate.yaml
   created:
     $ref: ../common/AuditDate.yaml
   updated:
