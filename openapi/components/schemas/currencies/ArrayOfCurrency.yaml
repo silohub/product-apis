@@ -1,5 +1,5 @@
 type: array
-description: Collection of currencies
+description: Lista de monedas
 items:
   $ref: Currency.yaml
 example:

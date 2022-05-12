@@ -1,0 +1,37 @@
+type: object
+description: |
+  Una conversión de monedas
+properties:
+  id:
+    description: Código de la conversión
+    type: string
+  currencyFrom:
+    $ref: ../common/CurrencyCode.yaml
+  currencyTo:
+    $ref: ../common/CurrencyCode.yaml
+  name:
+    description: Nombre de la conversión
+    type: string
+  active:
+    description: Is Active
+    type: boolean
+  currentRateValue:
+    description: El valor de la conversión más reciente (fecha de actualización <= hoy)
+    type: number
+    format: double
+  currentRateUpdated:
+    description: Fecha-Hora de la conversión más reciente
+    type: string
+    format: date-time
+  created:
+    $ref: ../common/AuditDate.yaml
+  updated:
+    $ref: ../common/AuditDate.yaml
+required:
+  - id
+  - currencyFrom
+  - currencyTo
+  - name
+  - active
+  - created
+  - updated

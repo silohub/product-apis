@@ -1,0 +1,6 @@
+x-summary: Success
+description: Una lista de conversiones de monedas
+content:
+  application/json:
+    schema:
+      $ref: ../../schemas/currencies/ArrayOfCurrencyConversion.yaml

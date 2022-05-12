@@ -1,0 +1,4 @@
+type: array
+description: Lista de conversión de monedas
+items:
+  $ref: CurrencyConversion.yaml

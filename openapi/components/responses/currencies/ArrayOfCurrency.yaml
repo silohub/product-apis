@@ -1,5 +1,5 @@
 x-summary: Success
-description: The response contains the list of currencies
+description: Una lista de monedas
 content:
   application/json:
     schema:

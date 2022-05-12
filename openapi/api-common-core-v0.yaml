@@ -33,6 +33,8 @@ tags:
 paths:
   /api/retailers/v0/{retailerCode}/currencies:
     $ref: paths/currencies/currenciesRetailer.yaml
+  /api/retailers/v0/{retailerCode}/currencyConversions:
+    $ref: paths/currencies/currencyConversionsRetailer.yaml
   /api/retailers/v0/{retailerCode}/countries:
     $ref: paths/countries/countriesRetailer.yaml
   /api/retailers/v0/{retailerCode}/countries/{countryCode}:

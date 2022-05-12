@@ -1,0 +1,18 @@
+get:
+  operationId: getAllCurrencyConversions
+  summary: Lista todas las conversiones de monedas
+  tags:
+    - currencies
+  security:
+    - OAuth2: []
+  parameters:
+    - $ref: ../../components/parameters/common/RetailerCode.yaml
+  responses:
+    '200':
+      $ref: ../../components/responses/currencies/ArrayOfCurrencyConversion.yaml
+    '400':
+      $ref: ../../components/responses/400.yaml
+    '403':
+      $ref: ../../components/responses/403.yaml
+    '500':
+      $ref: ../../components/responses/500.yaml
