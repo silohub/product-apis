@@ -33,9 +33,15 @@ properties:
           type: number
           format: double
         date:
-          $ref: ../common/AuditDate.yaml
+          type: string
+          format: date-time
+          description: |
+            [Marca temporal](https://es.wikipedia.org/wiki/Marca_temporal) (Timestamp)
         created:
-          $ref: ../common/AuditDate.yaml
+          type: string
+          format: date-time
+          description: |
+            [Marca temporal](https://es.wikipedia.org/wiki/Marca_temporal) (Timestamp)
   created:
     $ref: ../common/AuditDate.yaml
   updated:
