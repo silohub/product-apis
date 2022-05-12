@@ -10,7 +10,7 @@ info:
     name: UNLICENSED
     url: https://www.silohub.ag
   title: SILOHUB Core API
-  version: 0.0.101
+  version: 0.0.102
   x-group: API
   x-client-id: api-client-retailer
 externalDocs:
@@ -931,9 +931,15 @@ components:
           format: double
           type: number
         date:
-          $ref: '#/components/schemas/AuditDate'
+          description: |
+            [Marca temporal](https://es.wikipedia.org/wiki/Marca_temporal) (Timestamp)
+          format: date-time
+          type: string
         created:
-          $ref: '#/components/schemas/AuditDate'
+          description: |
+            [Marca temporal](https://es.wikipedia.org/wiki/Marca_temporal) (Timestamp)
+          format: date-time
+          type: string
       type: object
   securitySchemes:
     OAuth2:
