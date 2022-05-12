@@ -10,7 +10,7 @@ info:
     name: UNLICENSED
     url: https://www.silohub.ag
   title: SILOHUB Retailer API
-  version: 0.0.100
+  version: 0.0.101
   x-group: API
   x-client-id: api-client-retailer
 externalDocs:

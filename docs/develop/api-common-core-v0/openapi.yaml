@@ -10,7 +10,7 @@ info:
     name: UNLICENSED
     url: https://www.silohub.ag
   title: SILOHUB Core API
-  version: 0.0.100
+  version: 0.0.101
   x-group: API
   x-client-id: api-client-retailer
 externalDocs:
@@ -825,6 +825,11 @@ components:
           description: Fecha-Hora de la conversión más reciente
           format: date-time
           type: string
+        history:
+          description: Historia de los valores de la conversión
+          items:
+            $ref: '#/components/schemas/CurrencyConversion_history'
+          type: array
         created:
           $ref: '#/components/schemas/AuditDate'
         updated:
@@ -920,6 +925,16 @@ components:
       example: "30224445556"
       pattern: ^[A-Za-z0-9\-_]+$
       type: string
+    CurrencyConversion_history:
+      properties:
+        value:
+          format: double
+          type: number
+        date:
+          $ref: '#/components/schemas/AuditDate'
+        created:
+          $ref: '#/components/schemas/AuditDate'
+      type: object
   securitySchemes:
     OAuth2:
       flows:
