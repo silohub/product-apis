@@ -1,0 +1,9 @@
+type: object
+description: List de monedas
+properties:
+  queryId:
+    type: string
+  totalRows:
+    type: integer
+  rows:
+    $ref: ../../currencies/ArrayOfCurrency.yaml

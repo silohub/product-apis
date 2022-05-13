@@ -31,11 +31,19 @@ tags:
     description: Server Runtime Information
   - name: accounts
     description: Account Information
+  - name: countries
+    description: Información de países
+  - name: currencies
+    description: Información de monedas
 paths:
   /bff/retailers/v0/{retailerCode}/server-info:
     $ref: paths/serverInfo/serverInfo.yaml
   /bff/retailers/v0/{retailerCode}/accounts/{accountId}/movements:
     $ref: paths/retailers/accounts/SearchMovements.yaml
+  /bff/retailers/v0/{retailerCode}/countries:
+    $ref: paths/retailers/core/SearchCountries.yaml
+  /bff/retailers/v0/{retailerCode}/currencies:
+    $ref: paths/retailers/core/SearchCurrencies.yaml
 components:
   securitySchemes:
     OAuth2:

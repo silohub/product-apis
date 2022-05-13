@@ -1,5 +1,5 @@
 type: array
-description: Collection of countries
+description: Lista de países
 items:
   $ref: Country.yaml
 example:
