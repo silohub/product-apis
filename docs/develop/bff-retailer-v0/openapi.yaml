@@ -11,7 +11,7 @@ info:
     name: UNLICENSED
     url: https://www.silohub.ag
   title: BFF for Retailer
-  version: 0.0.102
+  version: 0.0.103
   x-group: BFF-Retailer
   x-client-id: bff-retailer
 externalDocs:
@@ -30,6 +30,10 @@ tags:
   name: server-info
 - description: Account Information
   name: accounts
+- description: Información de países
+  name: countries
+- description: Información de monedas
+  name: currencies
 paths:
   /bff/retailers/v0/{retailerCode}/server-info:
     get:
@@ -145,6 +149,120 @@ paths:
       summary: List Account Movements
       tags:
       - accounts
+  /bff/retailers/v0/{retailerCode}/countries:
+    post:
+      operationId: searchRetailerCountries
+      parameters:
+      - description: |
+          El código del retailer sobre el cual se consulta la información
+        examples:
+          silohub:
+            value: silohub
+        in: path
+        name: retailerCode
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Search'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchCountriesResult'
+          description: The response contains the search result
+          x-summary: Success
+        "400":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: Check parameters and try again.
+          x-summary: Bad Request
+        "403":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: Unable to access the resource. Check the security or permissions
+          x-summary: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: This is a server side problem, check the message and logs.
+          x-summary: Unexpected Error
+      security:
+      - OAuth2: []
+      summary: Listar los países
+      tags:
+      - countries
+  /bff/retailers/v0/{retailerCode}/currencies:
+    post:
+      operationId: searchRetailerCurrencies
+      parameters:
+      - description: |
+          El código del retailer sobre el cual se consulta la información
+        examples:
+          silohub:
+            value: silohub
+        in: path
+        name: retailerCode
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Search'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchCurrenciesResult'
+          description: The response contains the search result
+          x-summary: Success
+        "400":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: Check parameters and try again.
+          x-summary: Bad Request
+        "403":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: Unable to access the resource. Check the security or permissions
+          x-summary: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: This is a server side problem, check the message and logs.
+          x-summary: Unexpected Error
+      security:
+      - OAuth2: []
+      summary: Listar las monedas
+      tags:
+      - currencies
 components:
   examples:
     BffRetailer:
@@ -202,10 +320,44 @@ components:
         rows:
           $ref: '#/components/schemas/ArrayOfMovement'
       type: object
+    SearchCountriesResult:
+      description: Lista de países
+      properties:
+        queryId:
+          type: string
+        totalRows:
+          type: integer
+        rows:
+          $ref: '#/components/schemas/ArrayOfCountry'
+      type: object
+    SearchCurrenciesResult:
+      description: List de monedas
+      properties:
+        queryId:
+          type: string
+        totalRows:
+          type: integer
+        rows:
+          $ref: '#/components/schemas/ArrayOfCurrency'
+      type: object
     ArrayOfMovement:
       description: List of movements
       items:
         $ref: '#/components/schemas/Movement'
+      type: array
+    ArrayOfCountry:
+      description: Lista de países
+      example:
+        $ref: ../../examples/countries/ArrayOfCountry.yaml
+      items:
+        $ref: '#/components/schemas/Country'
+      type: array
+    ArrayOfCurrency:
+      description: Lista de monedas
+      example:
+        $ref: ../../examples/currencies/ArrayOfCurrency.yaml
+      items:
+        $ref: '#/components/schemas/Currency'
       type: array
     Movement:
       description: |
@@ -243,6 +395,152 @@ components:
       - version
       - versionShort
       type: object
+    Country:
+      description: |
+        Un país definido por la ISO
+      properties:
+        countryCode:
+          $ref: '#/components/schemas/CountryCode'
+        countryNumericCode:
+          description: Country numeric code
+          type: integer
+        name:
+          description: Country Name
+          type: string
+        currencyCode:
+          $ref: '#/components/schemas/CurrencyCode'
+        active:
+          description: Is Active
+          type: boolean
+        uniqueReferences:
+          $ref: '#/components/schemas/UniqueReferences'
+        references:
+          $ref: '#/components/schemas/References'
+        notes:
+          $ref: '#/components/schemas/Notes'
+        created:
+          $ref: '#/components/schemas/AuditDate'
+        updated:
+          $ref: '#/components/schemas/AuditDate'
+      required:
+      - active
+      - countryCode
+      - countryNumericCode
+      - created
+      - currencyCode
+      - name
+      - updated
+      type: object
+    Currency:
+      description: |
+        Una moneda definida por la ISO
+      properties:
+        currencyCode:
+          $ref: '#/components/schemas/CurrencyCode'
+        currencyNumericCode:
+          description: Currency numeric code
+          type: integer
+        decimals:
+          description: Decimals in the currency
+          type: integer
+        name:
+          description: Currency Name
+          type: string
+        active:
+          description: Is Active
+          type: boolean
+        uniqueReferences:
+          $ref: '#/components/schemas/UniqueReferences'
+        references:
+          $ref: '#/components/schemas/References'
+        created:
+          $ref: '#/components/schemas/AuditDate'
+        updated:
+          $ref: '#/components/schemas/AuditDate'
+      required:
+      - active
+      - created
+      - currencyCode
+      - currencyNumericCode
+      - decimals
+      - name
+      - updated
+      type: object
+    CountryCode:
+      description: |
+        Identificador de país según [ISO 3166-1 alpha-3](https://es.wikipedia.org/wiki/ISO_3166-1)
+      example: '[ARG, BRA, CHL, URY, USA]'
+      maxLength: 3
+      minLength: 3
+      type: string
+    CurrencyCode:
+      description: '[ISO 4217 Code](https://es.wikipedia.org/wiki/ISO_4217)'
+      example: '[ARS, USD, BRL, CNY]'
+      maxLength: 3
+      minLength: 3
+      type: string
+    UniqueReferences:
+      description: Pares de clave-valor, que son únicas entre distintas entidades
+      example:
+        key1: value1
+        key2: value2
+      items:
+        $ref: '#/components/schemas/Reference'
+      type: array
+    References:
+      description: Pares de clave-valor, que se pueden repetir entre distintas entidades
+      example:
+        key1: value1
+        key2: value2
+      items:
+        $ref: '#/components/schemas/Reference'
+      type: array
+    Notes:
+      description: |
+        Notas adicionales
+      maxLength: 5000
+      type: string
+    AuditDate:
+      description: |
+        [Marca temporal](https://es.wikipedia.org/wiki/Marca_temporal) (Timestamp)
+      format: date-time
+      readOnly: true
+      type: string
+    Reference:
+      description: |
+        Referencia externa de la entidad.
+
+        Siempre consiste en un tipo de referencia y el valor de la ella.
+      properties:
+        refType:
+          $ref: '#/components/schemas/RefType'
+        refKey:
+          $ref: '#/components/schemas/RefKey'
+        refValue:
+          $ref: '#/components/schemas/RefValue'
+      required:
+      - refKey
+      - refType
+      - refValue
+      type: object
+    RefType:
+      description: |
+        Tipo de referencia. Por ejemplo CUIT
+      example: CUIT
+      pattern: ^[A-Z\-]+$
+      type: string
+    RefKey:
+      description: |
+        Clave de referencia. Por ejemplo Empresa Algoritmo
+      example: ALG
+      pattern: ^[A-Z\-]+$
+      type: string
+    RefValue:
+      description: |
+        Valor de la referencia. Por ejemplo el número de CUIT
+      example: "30224445556"
+      pattern: ^[A-Za-z0-9\-_]+$
+      type: string
   securitySchemes:
     OAuth2:
       flows:
