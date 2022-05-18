@@ -10,7 +10,7 @@ info:
     name: UNLICENSED
     url: https://www.silohub.ag
   title: SILOHUB Core API
-  version: 0.0.104
+  version: 0.0.105
   x-group: API
   x-client-id: api-client-retailer
 externalDocs:
@@ -755,8 +755,8 @@ components:
       type: object
     UpdateCountrySubdivision:
       properties:
-        currencyCode:
-          $ref: '#/components/schemas/CurrencyCode'
+        type:
+          type: string
         active:
           description: Is Active
           type: boolean
@@ -766,6 +766,7 @@ components:
           $ref: '#/components/schemas/References'
       required:
       - active
+      - type
       type: object
     Currency:
       description: |
