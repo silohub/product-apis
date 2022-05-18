@@ -1,7 +1,7 @@
 type: object
 properties:
-  currencyCode:
-    $ref: ../common/CurrencyCode.yaml
+  type:
+    type: string
   active:
     description: Is Active
     type: boolean
@@ -11,3 +11,4 @@ properties:
     $ref: ../common/References.yaml
 required:
   - active
+  - type
