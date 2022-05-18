@@ -11,7 +11,7 @@ info:
     name: UNLICENSED
     url: https://www.silohub.ag
   title: BFF for Retailer
-  version: 0.0.103
+  version: 0.0.104
   x-group: BFF-Retailer
   x-client-id: bff-retailer
 externalDocs:
@@ -401,6 +401,8 @@ components:
       properties:
         countryCode:
           $ref: '#/components/schemas/CountryCode'
+        countryAlpha3Code:
+          $ref: '#/components/schemas/CountryAlpha3Code'
         countryNumericCode:
           description: Country numeric code
           type: integer
@@ -424,6 +426,7 @@ components:
           $ref: '#/components/schemas/AuditDate'
       required:
       - active
+      - countryAlpha3Code
       - countryCode
       - countryNumericCode
       - created
@@ -467,6 +470,13 @@ components:
       - updated
       type: object
     CountryCode:
+      description: |
+        Identificador de país según [ISO 3166-1 alpha-2](https://es.wikipedia.org/wiki/ISO_3166-1)
+      example: '[AR, BR, CL, UY, US]'
+      maxLength: 2
+      minLength: 2
+      type: string
+    CountryAlpha3Code:
       description: |
         Identificador de país según [ISO 3166-1 alpha-3](https://es.wikipedia.org/wiki/ISO_3166-1)
       example: '[ARG, BRA, CHL, URY, USA]'
