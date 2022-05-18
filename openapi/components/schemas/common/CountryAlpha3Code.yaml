@@ -1,0 +1,11 @@
+type: string
+description: |
+  Identificador de país según [ISO 3166-1 alpha-3](https://es.wikipedia.org/wiki/ISO_3166-1)
+minLength: 3
+maxLength: 3
+example:
+  - ARG
+  - BRA
+  - CHL
+  - URY
+  - USA

@@ -4,6 +4,8 @@ description: |
 properties:
   countryCode:
     $ref: ../common/CountryCode.yaml
+  countryAlpha3Code:
+    $ref: ../common/CountryAlpha3Code.yaml
   countryNumericCode:
     description: Country numeric code
     type: integer
@@ -27,6 +29,7 @@ properties:
     $ref: ../common/AuditDate.yaml
 required:
   - countryCode
+  - countryAlpha3Code
   - countryNumericCode
   - name
   - currencyCode
