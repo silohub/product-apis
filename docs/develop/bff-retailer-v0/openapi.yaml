@@ -11,7 +11,7 @@ info:
     name: UNLICENSED
     url: https://www.silohub.ag
   title: BFF for Retailer
-  version: 0.0.105
+  version: 0.0.106
   x-group: BFF-Retailer
   x-client-id: bff-retailer
 externalDocs:
@@ -206,6 +206,76 @@ paths:
       summary: Listar los países
       tags:
       - countries
+  /bff/retailers/v0/{retailerCode}/countries/{countryCode}/subdivisions:
+    post:
+      operationId: searchRetailerCountrySubdivisions
+      parameters:
+      - description: |
+          El código del retailer sobre el cual se consulta la información
+        examples:
+          silohub:
+            value: silohub
+        in: path
+        name: retailerCode
+        required: true
+        schema:
+          type: string
+      - description: |
+          Identificador de país según [ISO 3166-1 alpha-2](https://es.wikipedia.org/wiki/ISO_3166-1)
+        example:
+        - AR
+        - BR
+        - CL
+        - UY
+        - US
+        in: path
+        name: countryCode
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Search'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchCountrySubdivisionsResult'
+          description: The response contains the search result
+          x-summary: Success
+        "400":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: Check parameters and try again.
+          x-summary: Bad Request
+        "403":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: Unable to access the resource. Check the security or permissions
+          x-summary: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                nullable: true
+                type: object
+          description: This is a server side problem, check the message and logs.
+          x-summary: Unexpected Error
+      security:
+      - OAuth2: []
+      summary: Listar las subdivisiones de un país
+      tags:
+      - countries
   /bff/retailers/v0/{retailerCode}/currencies:
     post:
       operationId: searchRetailerCurrencies
@@ -330,6 +400,16 @@ components:
         rows:
           $ref: '#/components/schemas/ArrayOfCountry'
       type: object
+    SearchCountrySubdivisionsResult:
+      description: Lista de subdivisiones
+      properties:
+        queryId:
+          type: string
+        totalRows:
+          type: integer
+        rows:
+          $ref: '#/components/schemas/ArrayOfCountrySubdivision'
+      type: object
     SearchCurrenciesResult:
       description: List de monedas
       properties:
@@ -351,6 +431,11 @@ components:
         $ref: ../../examples/countries/ArrayOfCountry.yaml
       items:
         $ref: '#/components/schemas/Country'
+      type: array
+    ArrayOfCountrySubdivision:
+      description: Lista de provincias
+      items:
+        $ref: '#/components/schemas/CountrySubdivision'
       type: array
     ArrayOfCurrency:
       description: Lista de monedas
@@ -434,6 +519,44 @@ components:
       - name
       - updated
       type: object
+    CountrySubdivision:
+      description: |
+        Una provincia dentro de un país
+      properties:
+        countryCode:
+          $ref: '#/components/schemas/CountryCode'
+        countrySubdivisionCode:
+          $ref: '#/components/schemas/CountrySubdivisionCode'
+        name:
+          description: Country Subdivision Name
+          type: string
+        type:
+          description: Country Subdivision Type
+          type: string
+        parent:
+          $ref: '#/components/schemas/CountrySubdivisionCode'
+        active:
+          description: Is Active
+          type: boolean
+        uniqueReferences:
+          $ref: '#/components/schemas/UniqueReferences'
+        references:
+          $ref: '#/components/schemas/References'
+        notes:
+          $ref: '#/components/schemas/Notes'
+        created:
+          $ref: '#/components/schemas/AuditDate'
+        updated:
+          $ref: '#/components/schemas/AuditDate'
+      required:
+      - active
+      - countryCode
+      - countrySubdivisionCode
+      - created
+      - name
+      - type
+      - updated
+      type: object
     Currency:
       description: |
         Una moneda definida por la ISO
@@ -515,6 +638,13 @@ components:
         [Marca temporal](https://es.wikipedia.org/wiki/Marca_temporal) (Timestamp)
       format: date-time
       readOnly: true
+      type: string
+    CountrySubdivisionCode:
+      description: |
+        Identificador de la subdivisión del país según [ISO 3166-2](https://es.wikipedia.org/wiki/ISO_3166-2)
+      example: '[AR-B, AR-C, AR-X, BR-SP, BR-SC]'
+      maxLength: 7
+      minLength: 4
       type: string
     Reference:
       description: |
