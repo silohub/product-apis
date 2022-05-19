@@ -1,0 +1,6 @@
+x-summary: Success
+description: The response contains the search result
+content:
+  application/json:
+    schema:
+      $ref: ../../../schemas/retailers/core/SearchCountrySubdivisionsResult.yaml

@@ -1,0 +1,15 @@
+in: path
+name: countryCode
+schema:
+  type: string
+required: true
+description: |
+  Identificador de país según [ISO 3166-1 alpha-2](https://es.wikipedia.org/wiki/ISO_3166-1)
+minLength: 2
+maxLength: 2
+example:
+  - AR
+  - BR
+  - CL
+  - UY
+  - US

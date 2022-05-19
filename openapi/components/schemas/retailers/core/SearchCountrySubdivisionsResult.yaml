@@ -1,0 +1,9 @@
+type: object
+description: Lista de subdivisiones
+properties:
+  queryId:
+    type: string
+  totalRows:
+    type: integer
+  rows:
+    $ref: ../../countries/ArrayOfCountrySubdivision.yaml

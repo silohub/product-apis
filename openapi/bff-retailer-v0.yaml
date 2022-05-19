@@ -42,6 +42,8 @@ paths:
     $ref: paths/retailers/accounts/SearchMovements.yaml
   /bff/retailers/v0/{retailerCode}/countries:
     $ref: paths/retailers/core/SearchCountries.yaml
+  /bff/retailers/v0/{retailerCode}/countries/{countryCode}/subdivisions:
+    $ref: paths/retailers/core/SearchCountrySubdivisions.yaml
   /bff/retailers/v0/{retailerCode}/currencies:
     $ref: paths/retailers/core/SearchCurrencies.yaml
 components:

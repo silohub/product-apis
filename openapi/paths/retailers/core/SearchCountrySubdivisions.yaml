@@ -1,0 +1,26 @@
+post:
+  operationId: searchRetailerCountrySubdivisions
+  summary: Listar las subdivisiones de un país
+  tags:
+    - countries
+  security:
+    - OAuth2: []
+  parameters:
+    - $ref: ../../../components/parameters/common/RetailerCode.yaml
+    - name: countryCode
+      $ref: ../../../components/parameters/common/CountryCode.yaml
+  requestBody:
+    required: true
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: ../../../components/schemas/common/Search.yaml
+  responses:
+    '200':
+      $ref: ../../../components/responses/retailers/core/SearchCountrySubdivisions.yaml
+    '400':
+      $ref: ../../../components/responses/400.yaml
+    '403':
+      $ref: ../../../components/responses/403.yaml
+    '500':
+      $ref: ../../../components/responses/500.yaml
