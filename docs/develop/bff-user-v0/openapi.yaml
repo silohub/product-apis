@@ -11,7 +11,7 @@ info:
     name: UNLICENSED
     url: https://www.silohub.ag
   title: BFF User Information
-  version: 0.0.108
+  version: 0.0.109
   x-group: BFF-Retailer
   x-client-id: bff-retailer
 externalDocs:
@@ -26,7 +26,7 @@ servers:
       enum:
       - api-develop.silohub.net
 tags:
-- description: User Information
+- description: Información de usuarios
   name: user-info
 paths:
   /bff/retailers/v0/{retailerCode}/user-info:
@@ -79,7 +79,7 @@ paths:
           x-summary: Unexpected Error
       security:
       - OAuth2: []
-      summary: Show User Information
+      summary: Devuelve la información del usuario conectado
       tags:
       - user-info
   /bff/retailers/v0/{retailerCode}/user-permissions:
@@ -132,7 +132,7 @@ paths:
           x-summary: Unexpected Error
       security:
       - OAuth2: []
-      summary: Get User Permissions for BFF
+      summary: Devuelve los permisos del usuario conectado
       tags:
       - user-info
 components:
