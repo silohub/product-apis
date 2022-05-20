@@ -11,7 +11,7 @@ info:
     name: UNLICENSED
     url: https://www.silohub.ag
   title: BFF for Retailer
-  version: 0.0.109
+  version: 0.0.110
   x-group: BFF-Retailer
   x-client-id: bff-retailer
 externalDocs:
@@ -26,9 +26,9 @@ servers:
       enum:
       - api-develop.silohub.net
 tags:
-- description: Server Runtime Information
+- description: Información del server
   name: server-info
-- description: Account Information
+- description: Información de cuentas
   name: accounts
 - description: Información de países
   name: countries
