@@ -24,7 +24,6 @@ servers:
         description: Nombre de dominio del api server SILOHUB
         enum:
           - api-develop.silohub.net
-      #          - mock-api-develop.silohub.net
 tags:
   - name: countries
     description: Información de países
