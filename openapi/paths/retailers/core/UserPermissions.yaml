@@ -1,6 +1,6 @@
 get:
   operationId: getBffUserPermissions
-  summary: Get User Permissions for BFF
+  summary: Devuelve los permisos del usuario conectado
   tags:
     - user-info
   parameters:

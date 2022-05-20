@@ -1,6 +1,6 @@
 get:
   operationId: getUserInfo
-  summary: Show User Information
+  summary: Devuelve la información del usuario conectado
   tags:
     - user-info
   parameters:

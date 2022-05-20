@@ -28,7 +28,7 @@ servers:
 #          - mock-api-develop.silohub.net
 tags:
   - name: user-info
-    description: User Information
+    description: Información de usuarios
 paths:
   /bff/retailers/v0/{retailerCode}/user-info:
     $ref: paths/retailers/core/UserInfo.yaml
