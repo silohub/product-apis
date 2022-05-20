@@ -33,7 +33,7 @@ paths:
   /bff/retailers/v0/{retailerCode}/user-info:
     $ref: paths/retailers/core/UserInfo.yaml
   /bff/retailers/v0/{retailerCode}/user-permissions:
-    $ref: paths/userPermissions/userPermissions.yaml
+    $ref: paths/retailers/core/UserPermissions.yaml
 components:
   securitySchemes:
     OAuth2:
