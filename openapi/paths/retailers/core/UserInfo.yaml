@@ -1,0 +1,18 @@
+get:
+  operationId: getUserInfo
+  summary: Show User Information
+  tags:
+    - user-info
+  parameters:
+    - $ref: ../../../components/parameters/common/RetailerCode.yaml
+  security:
+    - OAuth2: []
+  responses:
+    '200':
+      $ref: ../../../components/responses/userInfo/UserInfo.yaml
+    '400':
+      $ref: ../../../components/responses/400.yaml
+    '403':
+      $ref: ../../../components/responses/403.yaml
+    '500':
+      $ref: ../../../components/responses/500.yaml
