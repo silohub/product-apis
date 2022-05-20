@@ -28,9 +28,9 @@ servers:
 #          - mock-api-develop.silohub.net
 tags:
   - name: server-info
-    description: Server Runtime Information
+    description: Información del server
   - name: accounts
-    description: Account Information
+    description: Información de cuentas
   - name: countries
     description: Información de países
   - name: currencies
