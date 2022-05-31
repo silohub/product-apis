@@ -4,6 +4,8 @@ description: |
 properties:
   userId:
     $ref: ../common/Uuid.yaml
+  email:
+    $ref: ../common/Email.yaml
   displayName:
     description: User Display Name
     type: string

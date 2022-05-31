@@ -1,0 +1,4 @@
+type: string
+description: |
+  Email, Correo electrónico
+format: email
