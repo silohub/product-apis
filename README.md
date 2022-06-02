@@ -8,19 +8,19 @@ Como nos tenemos que conectar al repositorio de paquetes privado de Github, nece
 - Acá se generan los Personal access tokens: (https://github.com/settings/tokens)
 - Hay que generar un token con el scope **read:packages** por lo menos
 - La expiración pueden dejarla en **"No expiration"** si es que dejan solo el permiso para leer
-- luego tenes que crear dos propiedades en tu shell
-  - **SHGH_USER**: tu usuario github
+- luego tenés que crear dos propiedades en tu shell
+  - **SHGH_USER**: tu usuario GitHub
   - **SHGH_TOKEN**: el PAT que te bajaste recién
 - Este mismo token va a servir para conectarse en el repo de frontends, backends... :-)
 
 # Estructura de directorios
-- **openapi**: tiene las fuentes de las APIs. Separadas en la estructura sugerida por OpenAPI.
-  - __*.yaml__: la papa: acá están las APIs declaradas, que usan paths y components
-  - **paths**: tiene la definición de las operaciones
-  - **components**: tiene parámetros, requests, responses, etc... Asociadas a los paths.
+- [**openapi**](openapi/README.md): tiene las fuentes de las API. Separadas en la estructura sugerida por OpenAPI.
+  - __*.yaml__: la papa: acá están las API declaradas, que usan paths y components
+  - [**paths**](openapi/paths/README.md): tiene la definición de las operaciones
+  - [**components**](openapi/components/README.md): tiene parámetros, requests, responses, etc... Asociadas a los paths.
 
 **Una definición importante...**: los fuentes adentro de openapi funcionan directo, no hay que generar nada, se pueden ver y navegar sin problema. 
-Las APIs en yaml no se tocan en el build. Se tocan por afuera con scripts, pero los yaml no cambian durante el build.
+Las API en yaml no se tocan en el build. Se tocan por afuera con scripts, pero los yaml no cambian durante el build.
 
 ## Que generamos
 - un openapi.yaml completo por cada API, que no depende de otros archivos, como están los originales
@@ -29,13 +29,13 @@ Las APIs en yaml no se tocan en el build. Se tocan por afuera con scripts, pero 
 - el sitio de documentación, por ahora subido a github pages
 
 # Versionado de APIs
-Las APIs no se versionan como el código, sino que nosotros decidimos cambiar la version. 
+Las API no se versionan como el código, sino que nosotros decidimos cambiar la version. 
 
 # Dependencias
-Algunas de las cosas que usamos para publicar las APIs
-- [RapiDoc](https://mrin9.github.io/RapiDoc/) esto sirva para mostrar la api Yaml en formato entendible... está muy buena!
+Algunas de las cosas que usamos para publicar las API
+- [RapiDoc](https://mrin9.github.io/RapiDoc/) esto sirva para mostrar la api Yaml en formato entendible... ¡está muy buena!
 
-# Customizar templates
+# Modificar templates
 - para extraer los templates de server: `pnpm exec openapi-generator-cli author template --generator-name java-micronaut-server --output .silohub/templates/server-packages/generator`
 - para extraer los templates de client js: `pnpm exec openapi-generator-cli author template --generator-name typescript-axios --output .silohub/templates/client-javascript-packages/generator`
 - para extraer los templates de client java: `pnpm exec openapi-generator-cli author template --generator-name java-micronaut-client --output .silohub/templates/client-java-packages/generator`

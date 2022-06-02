@@ -1,13 +1,15 @@
-## The `openapi` folder
+## La carpeta `openapi`
 
-This folder contains your entrypoint `openapi.yaml`.
+Esta carpeta tiene los puntos de entrada de las apis (`api-*.yaml` y `bff-*.yaml`).
 
-That file contains references to the entire API definition.
+Estos archivos tienen referencias a otros archivos en los subdirectorios `components` y `paths` que definen los métodos de la api.
 
-Here are some sections to pay attention to:
+En las definiciones hay que prestarle atención a:
 
-* Top-level **description**: this accepts markdown, and Redoc and Redocly API Reference will render it at the top of the docs.  Consider maintaining your markdown in a separate file and [embedding it](https://redoc.ly/docs/api-reference-docs/embedded-markdown/). Note to Redoc community edition users, the special tags are only available to the Redocly API Reference users, but you can still embed markdown.
-* Security schemes: you will define the scheme(s) your API uses for security (eg OAuth2, API Key, etc...). The security schemes are used by the Redocly API Reference "Try It" API console feature.
-* [Paths](paths/README.md): this defines each endpoint.  A path can have one operation per http method.
-* Tags: it's a good idea to organize each operation.  Each tag can have a description.  The description is used as a section description within the reference docs.
-* Servers: a list of your servers, each with a URL.
+* La sección **info** es bastante común a todas las apis, tiene info de links, documentación, contacto, etc.
+* En **externalDocs** está un link a confluence, pero ya me imagino que lo vieron
+* En **servers** vale la pena mencionar que ahí está definido la API server que es donde puedes probar la API  
+* **tags**: acá agrupamos los métodos de la api para que luego se generen juntos. A nivel definición es solo informativo.
+* [components](components/README.md) Solo para mencionar el subdirectorio donde están todas las definiciones de tipos, respuestas, etc.   
+  * **securitySchemes** acá referenciamos a la configuración de autenticación con OAuth con keycloak
+* [paths](paths/README.md): Cada path representa una URL con los métodos que soporta. Está separado por negocio, más o menos
