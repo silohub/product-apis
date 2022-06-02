@@ -10,7 +10,7 @@ info:
     name: UNLICENSED
     url: https://www.silohub.ag
   title: SILOHUB Core API
-  version: 0.0.113
+  version: 0.0.114
   x-group: API
   x-client-id: api-client-retailer
 externalDocs:
@@ -641,7 +641,16 @@ components:
     ArrayOfCurrency:
       description: Lista de monedas
       example:
-        $ref: ../../examples/currencies/ArrayOfCurrency.yaml
+      - code: ARS
+        name: Peso argentino
+        numericCode: 32
+        decimals: 2
+        active: true
+      - code: USD
+        name: Dólar estadounidense
+        numericCode: 840
+        decimals: 2
+        active: true
       items:
         $ref: '#/components/schemas/Currency'
       type: array
@@ -653,7 +662,21 @@ components:
     ArrayOfCountry:
       description: Lista de países
       example:
-        $ref: ../../examples/countries/ArrayOfCountry.yaml
+      - code: ARG
+        name: Argentina
+        numericCode: 32
+        currencyCode: ARS
+        active: true
+      - code: BRA
+        name: Brasil
+        numericCode: 76
+        currencyCode: BRL
+        active: true
+      - code: USA
+        name: Estados Unidos
+        numericCode: 840
+        currencyCode: USD
+        active: true
       items:
         $ref: '#/components/schemas/Country'
       type: array
