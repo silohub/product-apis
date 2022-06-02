@@ -3,4 +3,18 @@ description: Collection of users
 items:
   $ref: User.yaml
 example:
-  $ref: ../../examples/users/ArrayOfUser1.yaml
+  - userId: 74327988-2c24-4931-8547-2a870d86c044
+    displayName: User 1 example
+    uniqueReferences:
+      - refType: "DNI"
+        refValue: "33444555"
+    references:
+      - refType: "SITUACION"
+        refValue: "Pendiente"
+  - userId: 14d320f3-215d-4aee-99c3-be410720ec21
+    displayName: User 2 example
+    uniqueReferences:
+      - refType: "DNI"
+        refValue: "22999333"
+    created: "2021-10-01T12:32:28Z"
+    updated: "2021-10-01T12:32:28Z"

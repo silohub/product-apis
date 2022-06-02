@@ -3,4 +3,13 @@ description: Lista de monedas
 items:
   $ref: Currency.yaml
 example:
-  $ref: ../../examples/currencies/ArrayOfCurrency.yaml
+  - code: ARS
+    name: Peso argentino
+    numericCode: 32
+    decimals: 2
+    active: true
+  - code: USD
+    name: Dólar estadounidense
+    numericCode: 840
+    decimals: 2
+    active: true
